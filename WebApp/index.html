@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PMR</title>
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/modernizr.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+<style>
+.header-row {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.button-right {
+	float: right;
+}
+
+.button-left {
+	float: left;
+}
+
+.header-button a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+	
+}
+
+/* Change the link color to #111 (black) on hover */
+.header-button a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+.header-button a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+.title-button a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+	
+}
+
+/* Change the link color to #111 (black) on hover */
+.title-button a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+.title-button a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+li a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #727475;
+}
+
+.footer a:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #525454;
+}
+
+.footer a:focus {
+	background-color: #727475;
+	text-decoration: none;
+	color: white;
+}
+
+.bubble {
+	position: relative;
+	width: 250px;
+	height: 120px;
+	padding: 0px;
+	background: #b2b8c1;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 0 15px 15px;
+	border-color: #b2b8c1 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	top: -15px;
+	left: 110px;
+}
+
+.w3-display-left {
+	position: absolute;
+	top: 50%;
+	left: 2%;
+	transform: translate(0%, -50%);
+}
+
+.w3-display-right {
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	transform: translate(0%, -50%);
+}
+
+.w3-btn-floating {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	transition: background-color .25s, color .15s, box-shadow .15s, opacity
+		.25s, filter .25s, border .15s;
+	display: inline-block;
+	text-align: center;
+	color: #fff;
+	background-color: #000;
+	overflow: hidden;
+	z-index: 1;
+	padding: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.w3-btn-floating:hover {
+	text-decoration: none;
+}
+
+.slide-content {
+	text-align: center;
+	font-size: 20px;
+}
+
+.grad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #fff , #4286f4); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #fff, #4286f4); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #fff, #4286f4); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #fff , #4286f4); /* Standard syntax */
+}
+</style>
+</head>
+<body style="height: 100%">
+
+	<!-- header -->
+	<div class="main-nav row header header-row"
+		style=" box-shadow: 0px -3px 31px 5px rgba(4, 40, 111, 0.4);">
+		<div class="col-md-4 grad" style="background-color:#4286f4">
+			<div class="title-button button-left">
+				<a class="pmr-logo" style="color:blue" href="#">PMR</a>
+			</div>
+		</div>
+		<div class="col-md-6 header-button " style="background-color:#4286f4; padding:22px"></div>
+		<div class="col-md-1" style="background-color:#4286f4">
+			<div class="header-button button-right">
+				<a class="cd-signup" href="#0">Sign Up</a>
+			</div>
+		</div>
+		<div class="col-md-1" style="background-color:#4286f4">
+			<div class="header-button button-right">
+				<a class="cd-signin" href="#0">Log In</a>
+			</div>
+		</div>
+	</div>
+	<!-- header -->
+
+
+	<div class="cd-user-modal">
+		<!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container" style="border-radius: 20px">
+			<!-- this is the container wrapper -->
+			<ul class="cd-switcher"
+				style="border-top-left-radius: 20px; border-top-right-radius: 20px">
+				<li><a href="#0" style="padding-top: 0px;border-top-left-radius:20px">Sign in</a></li>
+				<li><a href="#0" style="padding-top: 0px;border-top-right-radius:20px">New account</a></li>
+			</ul>
+
+			<div id="cd-login">
+				<!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email"
+							type="email" placeholder="E-mail"> <span
+							class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border"
+							id="signin-password" type="text" placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a> <span
+							class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked> <label
+							for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input style="background-color: #4286f4" class="full-width"
+							type="submit" value="Login">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message">
+					<a href="#0">Forgot your password?</a>
+				</p>
+			</div>
+			<!-- cd-login -->
+
+			<div id="cd-signup">
+				<!-- sign up form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border"
+							id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email"
+							type="email" placeholder="E-mail"> <span
+							class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border"
+							id="signup-password" type="text" placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a> <span
+							class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms"> <label
+							for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input style="background-color: #4286f4"
+							class="full-width has-padding" id="create" type="submit"
+							value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div>
+			<!-- cd-signup -->
+
+			<div id="cd-reset-password">
+				<!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your
+					email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email"
+							type="email" placeholder="E-mail"> <span
+							class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input style="background-color: #4286f4"
+							class="full-width has-padding" type="submit"
+							value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message">
+					<a href="#0">Back to log-in</a>
+				</p>
+			</div>
+			<!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div>
+		<!-- cd-user-modal-container -->
+	</div>
+	<!-- cd-user-modal -->
+
+
+	<div style="height: 5%"></div>
+	<div style="height: 80%;" class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10"
+			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
+
+			<div class="row" style="padding-top: 40px; font-size: 30px">
+				<div class="col-md-1"></div>
+				<div class="col-md-10"">
+					<p style="text-align: center">GET YOUR SPORTS HIGHLIGHTS FIRST</p>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+
+			<div class="row" style="padding-top: 50px; height: 80%;">
+				<div class="col-md-1"></div>
+
+				<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+				<a class="w3-btn-floating w3-display-right" onclick="plusDivs(+1)">&#10095;</a>
+
+				<div class="mySlides">
+					<div class="col-md-10 slide-content">
+						<p>Gone are the days of staring at your sports app for vague
+							play-by-play updates - now you can receive customized video
+							highlights within minutes of live action!</p>
+					</div>
+				</div>
+				<div class="mySlides">
+					<div class="col-md-10 slide-content">
+						<p>Subscribe to updates from any player, team, or league!</p>
+					</div>
+				</div>
+				<div class="mySlides">
+					<div class="col-md-10 slide-content">
+						<p>Enjoy simple, hassle-free sign-up and notification
+							customization!</p>
+					</div>
+				</div>
+				<div class="mySlides">
+					<div class="col-md-10 slide-content">
+						<p>Receive video links within twenty minutes of live action!</p>
+					</div>
+				</div>
+
+				<div class="col-md-1"></div>
+			</div>
+
+			<div class="main-nav">
+				<button
+					style="position: relative; left: 50%; transform: translateX(-50%); background-color: #4286f4"
+					type="button"  class="btn btn-success cd-signup">Sign Up
+					Now!</button>
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+
+	</div>
+	<div style="height: 5%"></div>
+
+
+
+
+
+	<!-- footer -->
+	<ul class="footer"
+		style="box-shadow: 0px 6px 31px 5px rgba(4, 40, 111, 0.4);">
+		<li class="button-left"><a class="pmr-logo" href="#"></a></li>
+		<li class="button-right"><a href="#">Terms</a></li>
+		<li class="button-right"><a href="#">Contact Us</a></li>
+	</ul>
+
+	<script>
+
+
+    $(document).ready(function(){
+      $("#create").click(function(e){
+          e.preventDefault();
+        $.ajax({type: "GET",
+                url: "http://localhost:8080/greeting",
+                dataType:'json',
+				success: function(result) {
+					console.log(result);
+					return result;
+				}
+      	});
+      });
+	});
+  
+
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			if (n > x.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = x.length
+			}
+			;
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			x[slideIndex - 1].style.display = "block";
+		}
+
+		var slideIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > x.length) {
+				slideIndex = 1
+			}
+			x[slideIndex - 1].style.display = "block";
+			setTimeout(carousel, 10000); // Change image every 2 seconds
+		}
+	</script>
+
+</body>
+</html>
