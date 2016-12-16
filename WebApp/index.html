@@ -37,7 +37,6 @@
 	text-align: center;
 	padding: 14px 25px;
 	text-decoration: none;
-	
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -59,7 +58,6 @@
 	text-align: center;
 	padding: 14px 25px;
 	text-decoration: none;
-	
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -190,11 +188,15 @@ html, body {
 }
 
 .grad {
-  background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #fff , #4286f4); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #fff, #4286f4); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #fff, #4286f4); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #fff , #4286f4); /* Standard syntax */
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #fff, #4286f4);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #fff, #4286f4);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #fff, #4286f4);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #fff, #4286f4);
+	/* Standard syntax */
 }
 </style>
 </head>
@@ -202,19 +204,20 @@ html, body {
 
 	<!-- header -->
 	<div class="main-nav row header header-row"
-		style=" box-shadow: 0px -3px 31px 5px rgba(4, 40, 111, 0.4);">
-		<div class="col-md-4 grad" style="background-color:#4286f4">
+		style="box-shadow: 0px -3px 31px 5px rgba(4, 40, 111, 0.4);">
+		<div class="col-md-4 grad" style="background-color: #4286f4">
 			<div class="title-button button-left">
-				<a class="pmr-logo" style="color:blue" href="#">PMR</a>
+				<a class="pmr-logo" style="color: blue" href="#">PMR</a>
 			</div>
 		</div>
-		<div class="col-md-6 header-button " style="background-color:#4286f4; padding:22px"></div>
-		<div class="col-md-1" style="background-color:#4286f4">
+		<div class="col-md-6 header-button "
+			style="background-color: #4286f4; padding: 22px"></div>
+		<div class="col-md-1" style="background-color: #4286f4">
 			<div class="header-button button-right">
 				<a class="cd-signup" href="#0">Sign Up</a>
 			</div>
 		</div>
-		<div class="col-md-1" style="background-color:#4286f4">
+		<div class="col-md-1" style="background-color: #4286f4">
 			<div class="header-button button-right">
 				<a class="cd-signin" href="#0">Log In</a>
 			</div>
@@ -229,8 +232,11 @@ html, body {
 			<!-- this is the container wrapper -->
 			<ul class="cd-switcher"
 				style="border-top-left-radius: 20px; border-top-right-radius: 20px">
-				<li><a href="#0" style="padding-top: 0px;border-top-left-radius:20px">Sign in</a></li>
-				<li><a href="#0" style="padding-top: 0px;border-top-right-radius:20px">New account</a></li>
+				<li><a href="#0"
+					style="padding-top: 0px; border-top-left-radius: 20px">Sign in</a></li>
+				<li><a href="#0"
+					style="padding-top: 0px; border-top-right-radius: 20px">New
+						account</a></li>
 			</ul>
 
 			<div id="cd-login">
@@ -391,7 +397,7 @@ html, body {
 			<div class="main-nav">
 				<button
 					style="position: relative; left: 50%; transform: translateX(-50%); background-color: #4286f4"
-					type="button"  class="btn btn-success cd-signup">Sign Up
+					type="button" class="btn btn-success cd-signup">Sign Up
 					Now!</button>
 			</div>
 		</div>
@@ -413,22 +419,20 @@ html, body {
 	</ul>
 
 	<script>
-
-
-    $(document).ready(function(){
-      $("#create").click(function(e){
-          e.preventDefault();
-        $.ajax({type: "GET",
-                url: "http://localhost:8080/greeting",
-                dataType:'json',
-				success: function(result) {
-					console.log(result);
-					return result;
-				}
-      	});
-      });
-	});
-  
+		$(document).ready(function() {
+			$("#create").click(function(e) {
+				e.preventDefault();
+				$.ajax({
+					type : "GET",
+					url : "http://localhost:8080/greeting",
+					dataType : 'json',
+					success : function(result) {
+						console.log(result);
+						return result;
+					}
+				});
+			});
+		});
 
 		var slideIndex = 1;
 		showDivs(slideIndex);
