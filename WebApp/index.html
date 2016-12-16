@@ -7,6 +7,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" href="favicon.ico?" type="image/x-icon">
+
 <script src="js/modernizr.js"></script>
 
 <script
@@ -421,11 +423,12 @@ html, body {
 	<script>
 		$(document).ready(function() {
 			$("#create").click(function(e) {
+				console.log("clicked?")
 				e.preventDefault();
 				$.ajax({
 					type : "GET",
-					url : "http://localhost:8080/greeting",
-					dataType : 'json',
+					data: $("#signup-username").val(),
+					url : "http://localhost:8080/verify",
 					success : function(result) {
 						console.log(result);
 						return result;
