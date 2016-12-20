@@ -1,7 +1,8 @@
 # pmr-web < 20
 just the webapp though
 
-clone into `/var/www/html`
-then run `mv /WebApp/* .`
+`cd /var/www/html`\n
+`git clone https://github.com/jaxmann/pmr-web.git`\n 
+`mv /WebApp/* .`
 
 
