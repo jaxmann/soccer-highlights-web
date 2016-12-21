@@ -16,8 +16,24 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-
+<!-- will need to build a custom page for under 992 px width -->
 <style>
+@media ( max-width : 1450px) {
+	.header-button {
+		height: 60px;
+	}
+	.grad {
+		height: 60px
+	}
+	.title-button {
+		height: 100%;
+	}
+	.pmr-logo {
+		top: 50%;
+		transform: translateY(25%);
+	}
+}
+
 .header-row {
 	list-style-type: none;
 	margin: 0;
@@ -294,6 +310,13 @@ html, body {
 					</p>
 
 					<p class="fieldset">
+						<label class="image-replace cd-phone" for="signup-phone">Phone
+							Number</label> <input class="full-width has-padding has-border"
+							id="signup-phone" type="text" placeholder="Phone Number">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
 						<label class="image-replace cd-password" for="signup-password">Password</label>
 						<input class="full-width has-padding has-border"
 							id="signup-password" type="text" placeholder="Password">
@@ -422,13 +445,20 @@ html, body {
 
 	<script>
 		$(document).ready(function() {
+
 			$("#create").click(function(e) {
-				console.log("clicked?")
+				console.log("clicked")
 				e.preventDefault();
 				$.ajax({
 					type : "GET",
-					data: $("#signup-username").val(),
-					url : "http://localhost:8080/verify",
+					data : {
+						userName : $("#signup-username").val(),
+						email : $("#signup-email").val(),
+						passHash : "asdfad",
+						passSalt : "asdfasdf",
+						phoneNumber : $("#signup-phone").val()
+					},
+					url : "http://localhost:8080/signup",
 					success : function(result) {
 						console.log(result);
 						return result;
