@@ -282,7 +282,7 @@ html, body {
 
 					<p class="fieldset">
 						<input style="background-color: #4286f4" class="full-width"
-							type="submit" value="Login">
+							type="submit" id="login" value="Login">
 					</p>
 				</form>
 
@@ -355,7 +355,7 @@ html, body {
 
 					<p class="fieldset">
 						<input style="background-color: #4286f4"
-							class="full-width has-padding" type="submit"
+							class="full-width has-padding" id="reset" type="submit"
 							value="Reset password">
 					</p>
 				</form>
@@ -446,8 +446,10 @@ html, body {
 	<script>
 		$(document).ready(function() {
 
+			
+			//signup
 			$("#create").click(function(e) {
-				console.log("clicked")
+				console.log("create account clicked")
 				e.preventDefault();
 				$.ajax({
 					type : "GET",
@@ -459,6 +461,46 @@ html, body {
 						phoneNumber : $("#signup-phone").val()
 					},
 					url : "http://localhost:8080/signup",
+					success : function(result) {
+						console.log(result);
+						return result;
+					}
+				});
+			});
+			//reset
+			$("#reset").click(function(e) {
+				console.log("reset password clicked")
+				e.preventDefault();
+				$.ajax({
+					type : "GET",
+					data : {
+						userName : $("#signup-username").val(),
+						email : $("#signup-email").val(),
+						passHash : "asdfad",
+						passSalt : "asdfasdf",
+						phoneNumber : $("#signup-phone").val()
+					},
+					url : "http://localhost:8080/reset",
+					success : function(result) {
+						console.log(result);
+						return result;
+					}
+				});
+			});
+			//login
+			$("#login").click(function(e) {
+				console.log("login clicked")
+				e.preventDefault();
+				$.ajax({
+					type : "GET",
+					data : {
+						userName : $("#signup-username").val(),
+						email : $("#signup-email").val(),
+						passHash : "asdfad",
+						passSalt : "asdfasdf",
+						phoneNumber : $("#signup-phone").val()
+					},
+					url : "http://localhost:8080/login",
 					success : function(result) {
 						console.log(result);
 						return result;
