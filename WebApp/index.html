@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-<!-- will need to build a custom page for under 992 px width -->
+<!-- will need to build a custom page for under 992 px width and 1450-1490 -->
 <style>
 @media ( max-width : 1450px) {
 	.header-button {
@@ -442,11 +442,28 @@ html, body {
 		<li class="button-right"><a href="#">Terms</a></li>
 		<li class="button-right"><a href="#">Contact Us</a></li>
 	</ul>
-
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/libsodium-wrappers/0.4.2/sodium.min.js"></script>
 	<script>
+	
+		
+		
+		var serverUrl = "https://localhost:8080"
+		
+		function makeId() {
+		    var text = "";
+		    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+		
+		    for( var i=0; i < 32; i++ )
+		        text += possible.charAt(Math.floor(Math.random() * possible.length));
+		
+		    return text;
+		}
+		
+		console.log(sodium.to_hex(sodium.crypto_generichash(32, makeId())));
+		
 		$(document).ready(function() {
-
-			
+		
 			//signup
 			$("#create").click(function(e) {
 				console.log("create account clicked")
@@ -456,14 +473,30 @@ html, body {
 					data : {
 						userName : $("#signup-username").val(),
 						email : $("#signup-email").val(),
-						passHash : "asdfad",
-						passSalt : "asdfasdf",
 						phoneNumber : $("#signup-phone").val()
 					},
-					url : "http://localhost:8080/signup",
+					url : serverUrl + "/checkavailable",
 					success : function(result) {
-						console.log(result);
-						return result;
+						if (result === true) {
+							console.log("account params available")
+							e.preventDefault();
+							var salt = makeId();
+							$.ajax({
+								type : "POST",
+								data : {
+									userName : $("#signup-username").val(),
+									email : $("#signup-email").val(),
+									passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
+									passSalt : salt,
+									phoneNumber : $("#signup-phone").val()
+								},
+								url : serverUrl + "/signup",
+								success : function(result) {
+									//proceed with logged in page
+								}
+							});
+						} else {
+						console.log("username/email/phone already exists");
 					}
 				});
 			});
@@ -474,16 +507,13 @@ html, body {
 				$.ajax({
 					type : "GET",
 					data : {
-						userName : $("#signup-username").val(),
 						email : $("#signup-email").val(),
-						passHash : "asdfad",
-						passSalt : "asdfasdf",
-						phoneNumber : $("#signup-phone").val()
 					},
-					url : "http://localhost:8080/reset",
+					url : serverUrl + "/reset",
 					success : function(result) {
-						console.log(result);
-						return result;
+						console.log("a password recovery email has been sent")
+						//we also need a way for users to validate their email addresses to they can't spam people by entering their emails
+						//or only send 1 email ever, on login? 
 					}
 				});
 			});
@@ -496,18 +526,22 @@ html, body {
 					data : {
 						userName : $("#signup-username").val(),
 						email : $("#signup-email").val(),
-						passHash : "asdfad",
-						passSalt : "asdfasdf",
 						phoneNumber : $("#signup-phone").val()
 					},
-					url : "http://localhost:8080/login",
+					url : serverUrl + "/login",
 					success : function(result) {
-						console.log(result);
-						return result;
+						if (result === true) { //if user exists
+							if (sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())) === result.hash) {
+								//allow login
+							}
+							console.log(result);
+						}
 					}
 				});
 			});
 		});
+		
+		
 
 		var slideIndex = 1;
 		showDivs(slideIndex);
