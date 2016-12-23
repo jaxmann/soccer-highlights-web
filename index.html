@@ -525,16 +525,24 @@ html, body {
 					type : "GET",
 					data : {
 						userName : $("#signup-username").val(),
-						email : $("#signup-email").val(),
-						phoneNumber : $("#signup-phone").val()
 					},
-					url : serverUrl + "/login",
+					url : serverUrl + "/checkUser",
 					success : function(result) {
 						if (result === true) { //if user exists
-							if (sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())) === result.hash) {
-								//allow login
-							}
-							console.log(result);
+							$.ajax({
+								type : "GET",
+								data : {
+									passHash : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
+								},
+								url : serverUrl + "/login",
+								success : function(result) {
+									if (result.valid === true) {
+										//allow entry
+									}
+								}
+							});
+
+							
 						}
 					}
 				});
