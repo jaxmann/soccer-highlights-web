@@ -34,6 +34,23 @@
 	}
 }
 
+@media ( min-width: 1450px ) and (max-width : 1641px) {
+.header-button {
+		height: 60px;
+	}
+	.grad {
+		height: 60px
+	}
+	.title-button {
+		height: 100%;
+	}
+	.pmr-logo {
+		top: 50%;
+		transform: translateY(25%);
+	}
+
+}
+
 .header-row {
 	list-style-type: none;
 	margin: 0;
@@ -250,7 +267,7 @@ table td {
 	margin: 0 auto;
 	margin-top: 10%;
 	/* NOT IMPORTANT */
-	width: 300px;
+	width: 800px;
 	border: 2px solid #fff;
 	height: 30px;
 }
@@ -265,32 +282,34 @@ table td {
 }
 
 .btn-diag:nth-child(1) {
-	border-top: 30px solid #c74523;
+	width: 400px;
+	border-top: 30px solid gray;
 	border-right: 20px solid transparent;
 	left: 0px;
 	z-index: 1;
 }
 
-.btn-diag:nth-child(1):hover {
-	border-top: 30px solid gray;
+.btn-diag:nth-child(1):hover, .btn-diag:nth-child(1).hovered {
+	border-top: 30px solid green;
 	color: #c74523;
 }
 
 .btn-diag:nth-child(2) {
+	width:400px;
 	border-left: 20px solid transparent;
-	border-bottom: 30px solid #c74523;
+	border-bottom: 30px solid gray;
 	right: 0px;
 	z-index: 2;
 }
 
-.btn-diag:nth-child(2):hover {
-	border-bottom: 30px solid gray;
+.btn-diag:nth-child(2):hover, .btn-diag:nth-child(2).hovered {
+	border-bottom: 30px solid #4286f4;
 	color: #c74523;
 }
 
 .btn-diag:nth-child(2):before {
-	border-right: 2px solid #fff;
-	content: "";
+/* 	border-right: 2px solid #fff;
+ */	content: "";
 	height: 40px;
 	position: absolute;
 	right: 150px;
@@ -346,7 +365,11 @@ table td {
 	</div>
 	<!-- header -->
 
-
+	<div id="mid-block" style="height: 80%; display:none; position:absolute;" class="row">
+		<div class="col-md-12"
+			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
+		</div>
+	</div>
 
 
 	<div id="btn_cont">
@@ -357,8 +380,6 @@ table td {
 			<span>SETTINGS</span>
 		</div>
 	</div>
-
-
 
 
 
@@ -388,24 +409,54 @@ table td {
 
 	<script>
 	
-	
+
 		$('.btn-left').on('click', function() {
 		    $(this).toggleClass('clicked');
+		    $(this).toggleClass('hovered');
+		    $("#btn_cont").css("border", "none")
 		    $(".btn-right").hide();
 		    $(".btn-left").animate({
 		    	top: "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) +"px",
 		    	left: "-=" + (parseInt($(".btn-left").offset().left)) +"px"
 		    })	
+		    $("#mid-block").css("display", "block")
+		    $("#mid-block").css("height", (
+		    		  parseInt($(window).height())
+		    		- parseInt($(".header-row").height())
+		    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
+		    $("#mid-block").css("top", 
+		    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
+				    		  parseInt($(window).height())
+					    		- parseInt($(".header-row").height())
+					    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
+		    ))
+		    $("#mid-block").css("width", $(window).width()- $(window).width()/5)
+		    $("#mid-block").css("left", $(window).width()/10)
+		    $("#mid-block").children().css("border", "2px solid green")
 		});
 		
 		$('.btn-right').on('click', function() {
 		    $(this).toggleClass('clicked');
+		    $(this).toggleClass('hovered');
+		    $("#btn_cont").css("border", "none")
 		    $(".btn-left").hide();
 		    $(".btn-right").animate({
 		    	top: "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top))) +"px",
 		    	left: "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()))) +"px"
-		    })	
-		});
+		    })
+			$("#mid-block").css("display", "block")
+		    $("#mid-block").css("height", (
+		    		  parseInt($(window).height())
+		    		- parseInt($(".header-row").height())
+		    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
+		    $("#mid-block").css("top", 
+		    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
+				    		  parseInt($(window).height())
+					    		- parseInt($(".header-row").height())
+					    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
+		    ))
+		    $("#mid-block").css("width", $(window).width()- $(window).width()/5)
+		    $("#mid-block").css("left", $(window).width()/10)		});
 		
 		
 		$('.btn-right').on('click', function() {
