@@ -283,27 +283,29 @@ table td {
 
 .btn-diag:nth-child(1) {
 	width: 400px;
-	border-top: 30px solid gray;
-	border-right: 20px solid transparent;
+	height:80px;
+	border-top: 50px solid gray;
+	border-right: 80px solid transparent;
 	left: 0px;
 	z-index: 1;
 }
 
 .btn-diag:nth-child(1):hover, .btn-diag:nth-child(1).hovered {
-	border-top: 30px solid green;
+	border-top: 50px solid green;
 	color: #c74523;
 }
 
 .btn-diag:nth-child(2) {
 	width:400px;
-	border-left: 20px solid transparent;
-	border-bottom: 30px solid gray;
+	height:50px;
+	border-left: 80px solid transparent;
+	border-bottom: 50px solid gray;
 	right: 0px;
 	z-index: 2;
 }
 
 .btn-diag:nth-child(2):hover, .btn-diag:nth-child(2).hovered {
-	border-bottom: 30px solid #4286f4;
+	border-bottom: 50px solid #4286f4;
 	color: #c74523;
 }
 
@@ -320,7 +322,7 @@ table td {
 .btn-diag span {
 	position: relative;
 	float: left;
-	top: 7px;
+	top: 19px;
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -336,8 +338,36 @@ table td {
 }
 
 .btn-diag:nth-child(1) span {
-	top: -23px;
+	top: -34px;
 }
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
 </style>
 </head>
 <body style="height: 100%">
@@ -365,9 +395,25 @@ table td {
 	</div>
 	<!-- header -->
 
-	<div id="mid-block" style="height: 80%; display:none; position:absolute;" class="row">
+	<div id="mid-block-f" style="height: 80%; display:none; position:absolute;" class="row">
 		<div class="col-md-12"
-			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
+			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border:2px solid green; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
+		<a href="#" class="close"></a>
+		Favorites
+		
+		<button type="button" class="btn btn-default btn-apply-green">Apply</button> <!-- add css class -->
+		<button type="button" class="btn btn-default btn-cancel">Cancel</button>
+		</div>
+	</div>
+	
+	<div id="mid-block-s" style="height: 80%; display:none; position:absolute;" class="row">
+		<div class="col-md-12"
+			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border:2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
+		<a href="#" class="close"></a>
+		Settings
+		
+		<button type="button" class="btn btn-default btn-apply-blue">Apply</button> <!-- add css class -->
+		<button type="button" class="btn btn-default btn-cancel">Cancel</button>
 		</div>
 	</div>
 
@@ -381,7 +427,7 @@ table td {
 		</div>
 	</div>
 
-
+	
 
 
 
@@ -408,61 +454,119 @@ table td {
 
 
 	<script>
-	
+		
+		var rightExpanded;
+		const rightInitOffset = $(".btn-right").offset();
+		var leftExpanded;
+		const leftInitOffset = $(".btn-left").offset();
 
 		$('.btn-left').on('click', function() {
-		    $(this).toggleClass('clicked');
-		    $(this).toggleClass('hovered');
-		    $("#btn_cont").css("border", "none")
-		    $(".btn-right").hide();
-		    $(".btn-left").animate({
-		    	top: "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) +"px",
-		    	left: "-=" + (parseInt($(".btn-left").offset().left)) +"px"
-		    })	
-		    $("#mid-block").css("display", "block")
-		    $("#mid-block").css("height", (
-		    		  parseInt($(window).height())
-		    		- parseInt($(".header-row").height())
-		    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
-		    $("#mid-block").css("top", 
-		    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
-				    		  parseInt($(window).height())
-					    		- parseInt($(".header-row").height())
-					    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
-		    ))
-		    $("#mid-block").css("width", $(window).width()- $(window).width()/5)
-		    $("#mid-block").css("left", $(window).width()/10)
-		    $("#mid-block").children().css("border", "2px solid green")
+			if (!leftExpanded) {
+				leftExpanded = true;
+			    $('.btn-left').toggleClass('clicked');
+			    $('.btn-left').toggleClass('hovered');
+			    $("#btn_cont").css("border", "none")
+			    $(".btn-right").hide();
+			    $(".btn-left").animate({
+			    	top: "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) +"px",
+			    	left: "-=" + (parseInt($(".btn-left").offset().left)) +"px"
+			    })	
+			    $("#mid-block-f").css("display", "block")
+			    $("#mid-block-f").css("height", (
+			    		  parseInt($(window).height())
+			    		- parseInt($(".header-row").height())
+			    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
+			    $("#mid-block-f").css("top", 
+			    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
+					    		  parseInt($(window).height())
+						    		- parseInt($(".header-row").height())
+						    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
+			    ))  
+			    $("#mid-block-f").css("width", $(window).width()- $(window).width()/5)
+			    $("#mid-block-f").css("left", $(window).width()/10)
+
+			} else {
+				leftExpanded = false;
+				$('.btn-left').toggleClass('clicked');
+			    $('.btn-left').toggleClass('hovered');
+			    $("#btn_cont").css("border", "2px solid #fff")
+			    $(".btn-right").show();
+			    $("#mid-block-f").hide();
+			    $(".btn-left").animate({
+			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height())) +"px",
+			    	left: "+=" + (parseInt(leftInitOffset.left)) +"px"
+			    })	
+			}
+	
 		});
 		
 		$('.btn-right').on('click', function() {
-		    $(this).toggleClass('clicked');
-		    $(this).toggleClass('hovered');
-		    $("#btn_cont").css("border", "none")
-		    $(".btn-left").hide();
-		    $(".btn-right").animate({
-		    	top: "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top))) +"px",
-		    	left: "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()))) +"px"
-		    })
-			$("#mid-block").css("display", "block")
-		    $("#mid-block").css("height", (
-		    		  parseInt($(window).height())
-		    		- parseInt($(".header-row").height())
-		    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
-		    $("#mid-block").css("top", 
-		    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
-				    		  parseInt($(window).height())
-					    		- parseInt($(".header-row").height())
-					    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
-		    ))
-		    $("#mid-block").css("width", $(window).width()- $(window).width()/5)
-		    $("#mid-block").css("left", $(window).width()/10)		});
-		
-		
-		$('.btn-right').on('click', function() {
-		    $(this).toggleClass('clicked');
-		    $(".btn-left").hide();
+			if (!rightExpanded) {
+				rightExpanded = true;
+			    $(".btn-right").toggleClass('clicked');
+			    $(".btn-right").toggleClass('hovered');
+			    $("#btn_cont").css("border", "none")
+			    $(".btn-left").hide();
+			    $(".btn-right").animate({
+			    	top: "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top) + 20)) +"px",
+			    	left: "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()) - 80)) +"px"
+			    })
+				$("#mid-block-s").css("display", "block")
+			    $("#mid-block-s").css("height", (
+			    		  parseInt($(window).height())
+			    		- parseInt($(".header-row").height())
+			    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
+			    $("#mid-block-s").css("top", 
+			    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
+					    		  parseInt($(window).height())
+						    		- parseInt($(".header-row").height())
+						    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
+			    ))
+			    $("#mid-block-s").css("width", $(window).width()- $(window).width()/5)
+			    $("#mid-block-s").css("left", $(window).width()/10)
+
+			} else {
+				rightExpanded = false;
+				$(".btn-right").toggleClass('clicked');
+			    $(".btn-right").toggleClass('hovered');
+			    $("#btn_cont").css("border", "2px solid #fff");
+			    $(".btn-left").show();
+			    $("#mid-block-s").hide();
+			    $(".btn-right").animate({
+			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) ) +"px",
+			    	left: "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80 ) +"px"
+			    })	
+			}
 		});
+		
+		$('.close').on('click', function() {
+			if (leftExpanded) {
+				leftExpanded = false;
+				$('.btn-left').toggleClass('clicked');
+			    $('.btn-left').toggleClass('hovered');
+			    $("#btn_cont").css("border", "2px solid #fff")
+			    $(".btn-right").show();
+			    $("#mid-block-f").hide();
+			    $(".btn-left").animate({
+			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height())) +"px",
+			    	left: "+=" + (parseInt(leftInitOffset.left)) +"px"
+			    })	
+			}
+			if (rightExpanded) {
+				rightExpanded = false;
+				$(".btn-right").toggleClass('clicked');
+			    $(".btn-right").toggleClass('hovered');
+			    $("#btn_cont").css("border", "2px solid #fff");
+			    $(".btn-left").show();
+			    $("#mid-block-s").hide();
+			    $(".btn-right").animate({
+			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) ) +"px",
+			    	left: "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80 ) +"px"
+			    })	
+			}
+		});
+		
+	
 	
 		$(function() {
 		    $('#mytable').on('click', '.jtoggle', function () {
