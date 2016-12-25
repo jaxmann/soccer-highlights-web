@@ -358,21 +358,21 @@ table td {
   opacity: 0.3;
 }
 .close:hover {
-  opacity: 1;
+	opacity: 1;
 }
 .close:before, .close:after {
-  position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 2px;
-  background-color: #333;
+	 position: absolute;
+	 left: 15px;
+	 content: ' ';
+	 height: 33px;
+	 width: 2px;
+	 background-color: #333;
 }
 .close:before {
-  transform: rotate(45deg);
+ 	transform: rotate(45deg);
 }
 .close:after {
-  transform: rotate(-45deg);
+ 	transform: rotate(-45deg);
 }
  #tree-selector {
 	 overflow-y: auto;
@@ -381,36 +381,41 @@ table td {
 }
 
 #fav-header {
-text-align:center;
-font-size:20px;
-padding-top:30px;
-color:green;
-font-weight:bold;
-padding-bottom:10px;
+	text-align:center;
+	font-size:20px;
+	padding-top:30px;
+	color:green;
+	font-weight:bold;
+	padding-bottom:10px;
 }
 
 #fav-subheader {
-text-align:center;
-padding-bottom:30px;
+	text-align:center;
+	padding-bottom:30px;
 }
 
 #settings-header {
-text-align:center;
-font-size:20px;
-padding-top:30px;
-color:#4286f4;
-font-weight:bold;
-padding-bottom:10px;
+	text-align:center;
+	font-size:20px;
+	padding-top:30px;
+	color:#4286f4;
+	font-weight:bold;
+	padding-bottom:10px;
 }
 
 #settings-subheader {
-text-align:center;
-padding-bottom:30px;
+	text-align:center;
+	padding-bottom:30px;
+}
+
+.settings-options {
+	padding:10px
 }
 
 </style>
 </head>
 <body style="height: 100%">
+
 
 	<!-- header -->
 	<div class="main-nav row header header-row"
@@ -675,25 +680,26 @@ padding-bottom:30px;
 			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border:2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
 		<a href="#" class="close"></a>
 		<h1 id="settings-header">Settings</h1>
-		<h2 id="settings-subheader">Adjust notification and other settings</h2>
+		<h2 id="settings-subheader">Adjust notifications and other settings</h2>
 		
-		<ul>
-		<li><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
-		Receive notifications via email</li>
+		<div id="settings-content">
+			<ul>
+				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
+				<p style="display:inline-block; padding-left:10px">Receive notifications via email</p></li>
+				
+				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
+				<p style="display:inline-block; padding-left:10px">Receive notifications via SMS</p></li>
+				
+				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off"></li>
+				
+			</ul>
+		</div>
 		
-		<li><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
-		Receive notifications via SMS</li>
-		
-		<li><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off"></li>
 		
 		
 		
-		</ul>
-		
-		
-		
-		<button type="button" class="btn btn-default btn-apply-blue" style="margin-top:15px; width:70%;">Apply</button> <!-- add css class -->
-		<button type="button" class="btn btn-default btn-cancel" style="margin-top:15px; width:29%">Cancel</button>
+		<button type="button" class="btn btn-success btn-apply-blue" style="margin-top:15px; width:70%;">Apply</button> <!-- add css class -->
+		<button type="button" class="btn btn-warning btn-cancel" style="margin-top:15px; width:29%;">Cancel</button>
 		</div>
 	</div>
 
@@ -706,7 +712,8 @@ padding-bottom:30px;
 			<span>SETTINGS</span>
 		</div>
 	</div>
-
+	
+	
 	
 
 
@@ -743,9 +750,11 @@ padding-bottom:30px;
 
 		});
 		
-		var rightExpanded;
+		$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
+		
+		var rightExpanded = false;
 		const rightInitOffset = $(".btn-right").offset();
-		var leftExpanded;
+		var leftExpanded = false;
 		const leftInitOffset = $(".btn-left").offset();
 
 		$('.btn-left').on('click', function() {
@@ -781,9 +790,9 @@ padding-bottom:30px;
 			    $(".btn-right").show();
 			    $("#mid-block-f").hide();
 			    $(".btn-left").animate({
-			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height())) +"px",
-			    	left: "+=" + (parseInt(leftInitOffset.left)) +"px"
-			    })	
+			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) -2 ) +"px",
+			    	left: "+=" + (parseInt(leftInitOffset.left) -2 ) +"px"
+			    })
 			}
 	
 		});
@@ -821,13 +830,13 @@ padding-bottom:30px;
 			    $(".btn-left").show();
 			    $("#mid-block-s").hide();
 			    $(".btn-right").animate({
-			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) ) +"px",
+			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(window).width()) < 1641) ? 11 : -5)) +"px", 
 			    	left: "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80 ) +"px"
 			    })	
 			}
 		});
 		
-		$('.close').on('click', function() {
+		$('.close, .btn-cancel').on('click', function() {
 			if (leftExpanded) {
 				leftExpanded = false;
 				$('.btn-left').toggleClass('clicked');
