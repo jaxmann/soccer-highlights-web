@@ -1,4 +1,5 @@
-# pmr-web < 20
+#
+pmr-web < 20
 just the webapp though
 
 [pmr-server](https://github.com/kevinchesser/pmr-server)
@@ -12,6 +13,6 @@ just the webapp though
 
 `git clone https://github.com/jaxmann/pmr-web.git`
 
-`mv /WebApp/* .`
+`mv /pmr-web/* .`
 
 
