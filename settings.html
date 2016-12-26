@@ -3,26 +3,32 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>PMR</title>
+
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
-	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <link rel="icon" href="favicon.ico?" type="image/x-icon">
 
-<link rel="stylesheet" href="css/jquery.collapsibleCheckboxTree.css" type="text/css" />
+<link
+	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+	rel="stylesheet">
+<script
+	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<link rel="stylesheet" href="css/jquery.collapsibleCheckboxTree.css"
+	type="text/css" />
 <script src="js/modernizr.js"></script>
 
 
-	<script type="text/javascript" src="js/jquery.collapsibleCheckboxTree.js"></script>
-	
+<script type="text/javascript"
+	src="js/jquery.collapsibleCheckboxTree.js"></script>
+
 <script src="js/main.js"></script>
 <!-- will need to build a custom page for under 992 px width and 1450-1490 -->
 <style>
@@ -42,8 +48,8 @@
 	}
 }
 
-@media ( min-width: 1450px ) and (max-width : 1641px) {
-.header-button {
+@media ( min-width : 1450px ) and (max-width : 1641px) {
+	.header-button {
 		height: 60px;
 	}
 	.grad {
@@ -56,7 +62,6 @@
 		top: 50%;
 		transform: translateY(25%);
 	}
-
 }
 
 .header-row {
@@ -273,7 +278,7 @@ table td {
 #btn_cont {
 	position: relative;
 	margin: 0 auto;
-	margin-top: 10%;
+	margin-top: 5%;
 	/* NOT IMPORTANT */
 	width: 800px;
 	border: 2px solid #fff;
@@ -291,35 +296,36 @@ table td {
 
 .btn-diag:nth-child(1) {
 	width: 400px;
-	height:80px;
+	height: 80px;
 	border-top: 50px solid gray;
 	border-right: 80px solid transparent;
 	left: 0px;
 	z-index: 1;
 }
 
-.btn-diag:nth-child(1):hover, .btn-diag:nth-child(1).hovered {
+.btn-diag:nth-child(1):hover,.btn-diag:nth-child(1).hovered {
 	border-top: 50px solid green;
 	color: #c74523;
 }
 
 .btn-diag:nth-child(2) {
-	width:400px;
-	height:50px;
+	width: 400px;
+	height: 50px;
 	border-left: 80px solid transparent;
 	border-bottom: 50px solid gray;
 	right: 0px;
 	z-index: 2;
 }
 
-.btn-diag:nth-child(2):hover, .btn-diag:nth-child(2).hovered {
+.btn-diag:nth-child(2):hover,.btn-diag:nth-child(2).hovered {
 	border-bottom: 50px solid #4286f4;
 	color: #c74523;
 }
 
 .btn-diag:nth-child(2):before {
-/* 	border-right: 2px solid #fff;
- */	content: "";
+	/* 	border-right: 2px solid #fff;
+ */
+	content: "";
 	height: 40px;
 	position: absolute;
 	right: 150px;
@@ -350,101 +356,138 @@ table td {
 }
 
 .close {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
-  opacity: 0.3;
+	position: absolute;
+	right: 32px;
+	top: 32px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.3;
 }
+
 .close:hover {
 	opacity: 1;
 }
-.close:before, .close:after {
-	 position: absolute;
-	 left: 15px;
-	 content: ' ';
-	 height: 33px;
-	 width: 2px;
-	 background-color: #333;
+
+.close:before,.close:after {
+	position: absolute;
+	left: 15px;
+	content: ' ';
+	height: 33px;
+	width: 2px;
+	background-color: #333;
 }
+
 .close:before {
- 	transform: rotate(45deg);
+	transform: rotate(45deg);
 }
+
 .close:after {
- 	transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
- #tree-selector {
-	 overflow-y: auto;
-	 overflow-x: hidden;
-	 font-weight:bold;
-	 border-top:1px solid #ababab;
-	 border-bottom:1px solid #ababab;
+
+#tree-selector {
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-weight: bold;
+	border-top: 1px solid #ababab;
+	border-bottom: 1px solid #ababab;
 }
 
 #fav-header {
-	text-align:center;
-	font-size:20px;
-	padding-top:30px;
-	color:green;
-	font-weight:bold;
-	padding-bottom:10px;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 30px;
+	color: green;
+	font-weight: bold;
+	padding-bottom: 10px;
 }
 
 #fav-subheader {
-	text-align:center;
-	padding-bottom:30px;
+	text-align: center;
+	padding-bottom: 30px;
 }
 
 #settings-header {
-	text-align:center;
-	font-size:20px;
-	padding-top:30px;
-	color:#4286f4;
-	font-weight:bold;
-	padding-bottom:10px;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 30px;
+	color: #4286f4;
+	font-weight: bold;
+	padding-bottom: 10px;
 }
 
 #settings-subheader {
-	text-align:center;
-	padding-bottom:30px;
+	text-align: center;
+	padding-bottom: 30px;
 }
 
 .settings-options {
-	padding:10px
+	padding: 10px
 }
 
 .btn-cancel {
-border:1px solid #61605f;
-background-color:#e6e1db;
+	border: 1px solid #61605f;
+	background-color: #e6e1db;
 }
+
 .btn-cancel:hover {
-border:1px solid #61605f;
-background-color:#bbb8b3;
+	border: 1px solid #61605f;
+	background-color: #bbb8b3;
 }
- .btn-apply-green {
- background-color:#d4eae0;
- border-color:#09a010;
- }
- 
- 
- .btn-apply-green:hover {
- background-color:#c1ead8;
- border-color:#09a010;
- }
- 
- .btn-apply-blue {
- border:1px solid #4286f4;
- background-color:#c1d5f7;
- }
- 
- .btn-apply-blue:hover {
- border:1px solid #4286f4;
- background-color:#acc6f3;
- }}
 
+.btn-apply-green {
+	background-color: #d4eae0;
+	border-color: #09a010;
+}
 
+.btn-apply-green:hover {
+	background-color: #c1ead8;
+	border-color: #09a010;
+}
 
+.btn-apply-blue {
+	border: 1px solid #4286f4;
+	background-color: #c1d5f7;
+}
+
+.btn-apply-blue:hover {
+	border: 1px solid #4286f4;
+	background-color: #acc6f3;
+}
+
+.triangle-border {
+	position: relative;
+	padding: 15px;
+/* 	margin: 1em 0 3em;
+ */	border: 5px solid black;
+	color: #333;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.triangle-border:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: black transparent;
+    display: block;
+    width: 0;
+}
+.triangle-border:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 47px;
+    border-width: 13px 13px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+}
 </style>
 </head>
 <body style="height: 100%">
@@ -473,286 +516,212 @@ background-color:#bbb8b3;
 	</div>
 	<!-- header -->
 
-	<div id="mid-block-f" style="height: 80%; display:none; position:absolute;" class="row">
+	<div id="mid-block-f"
+		style="height: 80%; display: none; position: absolute;" class="row">
 		<div class="col-md-12"
-			style="height: 100%; position: relative; top: 50%; background-color:#f2f2f2; transform: translateY(-50%); border:2px solid green; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
-		<a href="#" class="close"></a>
-		<h1 id="fav-header">Favorites</h1>
-		<h2 id="fav-subheader">Customize your alerts for specific players, teams, or entire leagues!</h2>
-		<form id="tree-selector" action="" method="post">
-  <ul id="example">
-    <li>
-      <input type="checkbox" name="" />
-      Premier League
-      <ul>
-        <li>
-          <input type="checkbox" name="" checked="checked" />
-          Manchester United
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              Ryan Giggs</li>
-            <li>
-              <input type="checkbox" name="" />
-              Paul Scholes</li>
-            <li>
-              <input type="checkbox" name="" />
-              Wayne Rooney</li>
-          </ul>
-        </li>
-        <li>
-          <input type="checkbox" name="" />
-          Chelsea
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              Joe Cole</li>
-            <li>
-              <input type="checkbox" name="" />
-              Frank Lampard</li>
-            <li>
-              <input type="checkbox" name="" />
-              Didier Drogba</li>
-            <li>
-              <input type="checkbox" name="" />
-              John Terry</li>
-          </ul>
-        </li>
-        <li>
-          <input type="checkbox" name="" />
-          Liverpool
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              Fernando Torres</li>
-            <li>
-              <input type="checkbox" name="" />
-              Steven Gerrard</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <input type="checkbox" name="" />
-      Drinks
-      <ul>
-        <li>
-          <input type="checkbox" name="" />
-          Hot
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              Tea</li>
-            <li>
-              <input type="checkbox" name="" />
-              Coffee</li>
-          </ul>
-        </li>
-        <li>
-          <input type="checkbox" name="" />
-          Cold
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              Fruit Juice
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  Orange</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Apple</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Pineapple </li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" name="" />
-              Carbonated
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  Cola</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Sprite</li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" name="" checked="checked" />
-              Alcoholic
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  Jack Daniels</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Lager</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Wine
-                  <ul>
-                    <li>
-                      <input type="checkbox" name="" />
-                      Red</li>
-                    <li>
-                      <input type="checkbox" name="" />
-                      White</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <input type="checkbox" name="" />
-      Gadgets
-      <ul>
-        <li>
-          <input type="checkbox" name="" />
-          MP3 Players
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              iPod
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  Classic</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Nano</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  Touch</li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" name="" />
-              Zune
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  80</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  120</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  HD</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <input type="checkbox" name="" />
-          Mobile Phones
-          <ul>
-            <li>
-              <input type="checkbox" name="" />
-              iPhone
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  First Generation</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  3G</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  3GS</li>
-              </ul>
-            </li>
-            <li>
-              <input type="checkbox" name="" />
-              Nokia
-              <ul>
-                <li>
-                  <input type="checkbox" name="" />
-                  N95</li>
-                <li>
-                  <input type="checkbox" name="" />
-                  N97</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <input type="checkbox" name="" checked="checked" />
-      Cars
-      <ul>
-        <li>
-          <input type="checkbox" name="" />
-          Ferrari</li>
-        <li>
-          <input type="checkbox" name="" />
-          Porsche</li>
-        <li>
-          <input type="checkbox" name="" />
-          Rolls-Royce</li>
-        <li>
-          <input type="checkbox" name="" />
-          Ford</li>
-      </ul>
-    </li>
-  </ul>
-</form>
-		
-		<button type="button" class="btn btn-default btn-apply-green" style="margin-top:15px; width:100%;">APPLY</button> <!-- add css class -->
+			style="height: 100%; position: relative; top: 50%; background-color: #f2f2f2; transform: translateY(-50%); border: 2px solid green; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
+			<a href="#" class="close"></a>
+			<h1 id="fav-header">Favorites</h1>
+			<h2 id="fav-subheader">Customize your alerts for specific
+				players, teams, or entire leagues!</h2>
+			<form id="tree-selector" action="" method="post">
+				<ul id="example">
+					<li><input type="checkbox" name="" /> Premier League
+						<ul>
+							<li><input type="checkbox" name="" checked="checked" />
+								Manchester United
+								<ul>
+									<li><input type="checkbox" name="" /> Ryan Giggs</li>
+									<li><input type="checkbox" name="" /> Paul Scholes</li>
+									<li><input type="checkbox" name="" /> Wayne Rooney</li>
+								</ul></li>
+							<li><input type="checkbox" name="" /> Chelsea
+								<ul>
+									<li><input type="checkbox" name="" /> Joe Cole</li>
+									<li><input type="checkbox" name="" /> Frank Lampard</li>
+									<li><input type="checkbox" name="" /> Didier Drogba</li>
+									<li><input type="checkbox" name="" /> John Terry</li>
+								</ul></li>
+							<li><input type="checkbox" name="" /> Liverpool
+								<ul>
+									<li><input type="checkbox" name="" /> Fernando Torres</li>
+									<li><input type="checkbox" name="" /> Steven Gerrard</li>
+								</ul></li>
+						</ul></li>
+					<li><input type="checkbox" name="" /> Drinks
+						<ul>
+							<li><input type="checkbox" name="" /> Hot
+								<ul>
+									<li><input type="checkbox" name="" /> Tea</li>
+									<li><input type="checkbox" name="" /> Coffee</li>
+								</ul></li>
+							<li><input type="checkbox" name="" /> Cold
+								<ul>
+									<li><input type="checkbox" name="" /> Fruit Juice
+										<ul>
+											<li><input type="checkbox" name="" /> Orange</li>
+											<li><input type="checkbox" name="" /> Apple</li>
+											<li><input type="checkbox" name="" /> Pineapple</li>
+										</ul></li>
+									<li><input type="checkbox" name="" /> Carbonated
+										<ul>
+											<li><input type="checkbox" name="" /> Cola</li>
+											<li><input type="checkbox" name="" /> Sprite</li>
+										</ul></li>
+									<li><input type="checkbox" name="" checked="checked" />
+										Alcoholic
+										<ul>
+											<li><input type="checkbox" name="" /> Jack Daniels</li>
+											<li><input type="checkbox" name="" /> Lager</li>
+											<li><input type="checkbox" name="" /> Wine
+												<ul>
+													<li><input type="checkbox" name="" /> Red</li>
+													<li><input type="checkbox" name="" /> White</li>
+												</ul></li>
+										</ul></li>
+								</ul></li>
+						</ul></li>
+					<li><input type="checkbox" name="" /> Gadgets
+						<ul>
+							<li><input type="checkbox" name="" /> MP3 Players
+								<ul>
+									<li><input type="checkbox" name="" /> iPod
+										<ul>
+											<li><input type="checkbox" name="" /> Classic</li>
+											<li><input type="checkbox" name="" /> Nano</li>
+											<li><input type="checkbox" name="" /> Touch</li>
+										</ul></li>
+									<li><input type="checkbox" name="" /> Zune
+										<ul>
+											<li><input type="checkbox" name="" /> 80</li>
+											<li><input type="checkbox" name="" /> 120</li>
+											<li><input type="checkbox" name="" /> HD</li>
+										</ul></li>
+								</ul></li>
+							<li><input type="checkbox" name="" /> Mobile Phones
+								<ul>
+									<li><input type="checkbox" name="" /> iPhone
+										<ul>
+											<li><input type="checkbox" name="" /> First Generation</li>
+											<li><input type="checkbox" name="" /> 3G</li>
+											<li><input type="checkbox" name="" /> 3GS</li>
+										</ul></li>
+									<li><input type="checkbox" name="" /> Nokia
+										<ul>
+											<li><input type="checkbox" name="" /> N95</li>
+											<li><input type="checkbox" name="" /> N97</li>
+										</ul></li>
+								</ul></li>
+						</ul></li>
+					<li><input type="checkbox" name="" checked="checked" /> Cars
+						<ul>
+							<li><input type="checkbox" name="" /> Ferrari</li>
+							<li><input type="checkbox" name="" /> Porsche</li>
+							<li><input type="checkbox" name="" /> Rolls-Royce</li>
+							<li><input type="checkbox" name="" /> Ford</li>
+						</ul></li>
+				</ul>
+			</form>
+
+			<button type="button" class="btn btn-default btn-apply-green"
+				style="margin-top: 15px; width: 100%;">APPLY</button>
 		</div>
 	</div>
-	
-	<div id="mid-block-s" style="height: 80%; display:none; position:absolute;" class="row">
+
+	<div id="mid-block-s"
+		style="height: 80%; display: none; position: absolute;" class="row">
 		<div class="col-md-12"
-			style="height: 100%; position: relative; top: 50%; background-color:#f2f2f2;transform: translateY(-50%); border:2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">	
-		<a href="#" class="close"></a>
-		<h1 id="settings-header">Settings</h1>
-		<h2 id="settings-subheader">Adjust notifications and other settings</h2>
-		
-		<div id="settings-content">
-			<ul>
-				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
-				<p style="display:inline-block; padding-left:10px">Receive notifications via email</p></li>
-				
-				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
-				<p style="display:inline-block; padding-left:10px">Receive notifications via SMS</p></li>
-				
-				<li class="settings-options"><input type="checkbox" data-toggle="toggle" data-on="On" data-off="Off">
-				<p style="display:inline-block; padding-left:10px">Temporarily suspend all notifications for</p> <input type="text" class="form-control" id="usr" style="display:inline-block; width:50px "><p style="display:inline-block; padding-left:10px">hours</p></li>
-				
-				
-			</ul>
-		</div>
-		
-		
-		
-		
-		<button type="button" class="btn btn-default btn-apply-blue" style="margin-top:15px; width:100%; ">APPLY</button> <!-- add css class -->
+			style="height: 100%; position: relative; top: 50%; background-color: #f2f2f2; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
+			<a href="#" class="close"></a>
+			<h1 id="settings-header">Settings</h1>
+			<h2 id="settings-subheader">Adjust notifications and other
+				settings</h2>
+
+			<div id="settings-content">
+				<ul>
+					<li class="settings-options"><input type="checkbox"
+						data-toggle="toggle" data-on="On" data-off="Off">
+						<p style="display: inline-block; padding-left: 10px">Receive
+							notifications via email</p></li>
+
+					<li class="settings-options"><input type="checkbox"
+						data-toggle="toggle" data-on="On" data-off="Off">
+						<p style="display: inline-block; padding-left: 10px">Receive
+							notifications via SMS</p></li>
+
+					<li class="settings-options"><input type="checkbox"
+						data-toggle="toggle" data-on="On" data-off="Off">
+						<p style="display: inline-block; padding-left: 10px">Temporarily
+							suspend all notifications for</p> <input type="text"
+						class="form-control" id="usr"
+						style="display: inline-block; width: 50px">
+						<p style="display: inline-block; padding-left: 10px">hours</p></li>
+
+
+				</ul>
+			</div>
+
+			<button type="button" class="btn btn-default btn-apply-blue"
+				style="margin-top: 15px; width: 100%;">APPLY</button>
 		</div>
 	</div>
 
 
 	<div id="btn_cont">
 		<div class="btn-diag btn-left">
-			<span>FAVORITES</span>
+			<span>SET FAVORITES</span>
 		</div>
 		<div class="btn-diag btn-right">
 			<span>SETTINGS</span>
 		</div>
 	</div>
-	
-	
-	
+
+
+	<div class="row about-box"
+		style="width: 80%; margin-left: 10%; margin-top: 100px">
+		<div class="col-md-6">
+			<div id="about">
+				<h1 id="about-header"
+					style="text-align: center; padding-bottom: 40px; font-size: 25px; font-weight: bold; color: #4286f4">About</h1>
+
+				<p>
+					With PMR, you can select European soccer players, teams, or leagues
+					you are interested in following. When a highlight by one of your
+					selected players is posted on the internet, we'll send you an HD
+					video link - within minutes! <br> <br>We crawl a number
+					of sites regularly. For every play posted in a play-by-play feed
+					you might check on your phone, we cross-reference that play with
+					video clips posted online minutes later, and send these links
+					directly to you! <br> <br>If you don't have time to watch
+					your game, we'll keep you caught up on any big plays you might have
+					missed! <br> <br>Got the game recorded already and want
+					to avoid spoilers? No problem! Modify your settings to opt-out of
+					notifications for a number of hours.
+				</p>
+
+			</div>
+		</div>
+		<div class="col-md-6">
+			<p class="triangle-border">Goal! Real Madrid 2, Borussia Dortmund
+				2. Marco Reus (Borussia Dortmund) left footed shot from the centre
+				of the box to the high centre of the goal. Assisted by
+				Pierre-Emerick Aubameyang following a fast break.</p>
+			<div
+				style="width: 100%; height: 0px; position: relative; padding-bottom: 75.000%;">
+				<iframe src="https://streamable.com/e/kro7?r=p" frameborder="0"
+					allowfullscreen webkitallowfullscreen mozallowfullscreen
+					scrolling="no"
+					style="width: 100%; height: 100%; position: absolute;"></iframe>
+				<script async defer src="https://v.embedcdn.com/embed.js"></script>
+			</div>
+		</div>
+	</div>
 
 
 
 
-	
+
+
 
 
 	<!-- footer -->
@@ -765,142 +734,159 @@ background-color:#bbb8b3;
 
 
 	<script>
-		
-	
-		jQuery(document).ready(function(){
+		jQuery(document).ready(function() {
 			$('ul#example').collapsibleCheckboxTree({
-			checkParents : false, // When checking a box, all parents are checked (Default: true)
-			checkChildren : true, // When checking a box, all children are checked (Default: false)
-			shiftClickEffectChildren : true, // When shift-clicking a box, all children are checked or unchecked (Default: true)
-			uncheckChildren : true, // When unchecking a box, all children are unchecked (Default: true)
-			includeButtons : true, // Include buttons to expand or collapse all above list (Default: true)
-			initialState : 'default' // Options - 'expand' (fully expanded), 'collapse' (fully collapsed) or default
-		});
+				checkParents : false, // When checking a box, all parents are checked (Default: true)
+				checkChildren : true, // When checking a box, all children are checked (Default: false)
+				shiftClickEffectChildren : true, // When shift-clicking a box, all children are checked or unchecked (Default: true)
+				uncheckChildren : true, // When unchecking a box, all children are unchecked (Default: true)
+				includeButtons : true, // Include buttons to expand or collapse all above list (Default: true)
+				initialState : 'default' // Options - 'expand' (fully expanded), 'collapse' (fully collapsed) or default
+			});
 			$("#tree-selector").css("height", parseInt($("#mid-block-f").height()) - 270) /*   un-hardcode this*/
 			$("#expand").css("display", "none")
 			$("#collapse").css("display", "none")
 			$("#default").css("display", "none")
 
 		});
-		
+
 		$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
-		
+
 		var rightExpanded = false;
-		const rightInitOffset = $(".btn-right").offset();
+		const
+		rightInitOffset = $(".btn-right").offset();
 		var leftExpanded = false;
-		const leftInitOffset = $(".btn-left").offset();
+		const
+		leftInitOffset = $(".btn-left").offset();
 
-		$('.btn-left').on('click', function() {
-			if (!leftExpanded) {
-				leftExpanded = true;
-			    $('.btn-left').toggleClass('clicked');
-			    $('.btn-left').toggleClass('hovered');
-			    $("#btn_cont").css("border", "none")
-			    $(".btn-right").hide();
-			    $(".btn-left").animate({
-			    	top: "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) +"px",
-			    	left: "-=" + (parseInt($(".btn-left").offset().left)) +"px"
-			    })	
-			    $("#mid-block-f").css("display", "block")
-			    $("#mid-block-f").css("height", (
-			    		  parseInt($(window).height())
-			    		- parseInt($(".header-row").height())
-			    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
-			    $("#mid-block-f").css("top", 
-			    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
-					    		  parseInt($(window).height())
-						    		- parseInt($(".header-row").height())
-						    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
-			    ))  
-			    $("#mid-block-f").css("width", $(window).width()- $(window).width()/5)
-			    $("#mid-block-f").css("left", $(window).width()/10)
+		$('.btn-left')
+				.on(
+						'click',
+						function() {
+							if (!leftExpanded) {
+								leftExpanded = true;
+								$('.btn-left').toggleClass('clicked');
+								$('.btn-left').toggleClass('hovered');
+								$("#btn_cont").css("border", "none")
+								$(".btn-right").hide();
+								$(".about-box").hide();
 
-			} else {
-				leftExpanded = false;
-				$('.btn-left').toggleClass('clicked');
-			    $('.btn-left').toggleClass('hovered');
-			    $("#btn_cont").css("border", "2px solid #fff")
-			    $(".btn-right").show();
-			    $("#mid-block-f").hide();
-			    $(".btn-left").animate({
-			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) - 2 ) +"px",
-			    	left: "+=" + (parseInt(leftInitOffset.left) -2 ) +"px"
-			    })
-			}
-	
-		});
-		
-		$('.btn-right').on('click', function() {
-			if (!rightExpanded) {
-				rightExpanded = true;
-			    $(".btn-right").toggleClass('clicked');
-			    $(".btn-right").toggleClass('hovered');
-			    $("#btn_cont").css("border", "none")
-			    $(".btn-left").hide();
-			    $(".btn-right").animate({
-			    	top: "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top) + 20)) +"px",
-			    	left: "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()) - 80)) +"px"
-			    })
-				$("#mid-block-s").css("display", "block")
-			    $("#mid-block-s").css("height", (
-			    		  parseInt($(window).height())
-			    		- parseInt($(".header-row").height())
-			    		- parseInt($(".footer").height()))/2 + $(window).height()/4)
-			    $("#mid-block-s").css("top", 
-			    		parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((
-					    		  parseInt($(window).height())
-						    		- parseInt($(".header-row").height())
-						    		- parseInt($(".footer").height()))/2 + $(window).height()/4)))/2
-			    ))
-			    $("#mid-block-s").css("width", $(window).width()- $(window).width()/5)
-			    $("#mid-block-s").css("left", $(window).width()/10)
+								$(".btn-left").animate({
+									top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) + "px",
+									left : "-=" + (parseInt($(".btn-left").offset().left)) + "px"
+								})
+								$("#mid-block-f").css("display", "block")
+								$("#mid-block-f").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4)
+								$("#mid-block-f")
+										.css(
+												"top",
+												parseInt($(".header-row").height())
+														+ (parseInt($(window).height()
+																- (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((parseInt($(window).height())
+																		- parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4))) / 2))
+								$("#mid-block-f").css("width", $(window).width() - $(window).width() / 5)
+								$("#mid-block-f").css("left", $(window).width() / 10)
 
-			} else {
-				rightExpanded = false;
-				$(".btn-right").toggleClass('clicked');
-			    $(".btn-right").toggleClass('hovered');
-			    $("#btn_cont").css("border", "2px solid #fff");
-			    $(".btn-left").show();
-			    $("#mid-block-s").hide();
-			    $(".btn-right").animate({
-			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(window).width()) < 1641) ? 11 : -5)) +"px", 
-			    	left: "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80 ) +"px"
-			    })	
-			}
-		});
-		
-		$('.close, .btn-cancel').on('click', function() {
-			if (leftExpanded) {
-				leftExpanded = false;
-				$('.btn-left').toggleClass('clicked');
-			    $('.btn-left').toggleClass('hovered');
-			    $("#btn_cont").css("border", "2px solid #fff")
-			    $(".btn-right").show();
-			    $("#mid-block-f").hide();
-			    $(".btn-left").animate({
-			    	top: "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height())) +"px",
-			    	left: "+=" + (parseInt(leftInitOffset.left)) +"px"
-			    })	
-			}
-			if (rightExpanded) {
-				rightExpanded = false;
-				$(".btn-right").toggleClass('clicked');
-			    $(".btn-right").toggleClass('hovered');
-			    $("#btn_cont").css("border", "2px solid #fff");
-			    $(".btn-left").show();
-			    $("#mid-block-s").hide();
-			    $(".btn-right").animate({
-			    	top: "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(window).width()) < 1641) ? 11 : -5)) +"px", 
-			    	left: "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80 ) +"px"
-			    })	
-			}
-		});
-		
-	
-	
-		
-		
-		
+							} else {
+								leftExpanded = false;
+								$('.btn-left').toggleClass('clicked');
+								$('.btn-left').toggleClass('hovered');
+								$("#btn_cont").css("border", "2px solid #fff")
+								$(".btn-right").show();
+								$(".about-box").show();
+
+								$("#mid-block-f").hide();
+								$(".btn-left").animate({
+									top : "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) - 2) + "px",
+									left : "+=" + (parseInt(leftInitOffset.left) - 2) + "px"
+								})
+							}
+
+						});
+
+		$('.btn-right')
+				.on(
+						'click',
+						function() {
+							if (!rightExpanded) {
+								rightExpanded = true;
+								$(".btn-right").toggleClass('clicked');
+								$(".btn-right").toggleClass('hovered');
+								$("#btn_cont").css("border", "none")
+								$(".btn-left").hide();
+								$(".about-box").hide();
+
+								$(".btn-right").animate({
+									top : "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top) + 20)) + "px",
+									left : "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()) - 80)) + "px"
+								})
+								$("#mid-block-s").css("display", "block")
+								$("#mid-block-s").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4)
+								$("#mid-block-s")
+										.css(
+												"top",
+												parseInt($(".header-row").height())
+														+ (parseInt($(window).height()
+																- (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((parseInt($(window).height())
+																		- parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4))) / 2))
+								$("#mid-block-s").css("width", $(window).width() - $(window).width() / 5)
+								$("#mid-block-s").css("left", $(window).width() / 10)
+
+							} else {
+								rightExpanded = false;
+								$(".btn-right").toggleClass('clicked');
+								$(".btn-right").toggleClass('hovered');
+								$("#btn_cont").css("border", "2px solid #fff");
+								$(".btn-left").show();
+								$(".about-box").show();
+
+								$("#mid-block-s").hide();
+								$(".btn-right")
+										.animate(
+												{
+													top : "-="
+															+ (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
+																	window).width()) < 1641) ? 11 : -5)) + "px",
+													left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
+												})
+							}
+						});
+
+		$('.close, .btn-cancel').on(
+				'click',
+				function() {
+					if (leftExpanded) {
+						leftExpanded = false;
+						$('.btn-left').toggleClass('clicked');
+						$('.btn-left').toggleClass('hovered');
+						$("#btn_cont").css("border", "2px solid #fff")
+						$(".btn-right").show();
+						$(".about-box").show();
+
+						$("#mid-block-f").hide();
+						$(".btn-left").animate({
+							top : "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height())) + "px",
+							left : "+=" + (parseInt(leftInitOffset.left)) + "px"
+						})
+					}
+					if (rightExpanded) {
+						rightExpanded = false;
+						$(".btn-right").toggleClass('clicked');
+						$(".btn-right").toggleClass('hovered');
+						$("#btn_cont").css("border", "2px solid #fff");
+						$(".btn-left").show();
+						$(".about-box").show();
+
+						$("#mid-block-s").hide();
+						$(".btn-right").animate(
+								{
+									top : "-="
+											+ (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
+													window).width()) < 1641) ? 11 : -5)) + "px",
+									left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
+								})
+					}
+				});
 	</script>
 
 </body>
