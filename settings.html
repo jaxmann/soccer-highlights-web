@@ -698,14 +698,23 @@ table td {
 				includeButtons : true, // Include buttons to expand or collapse all above list (Default: true)
 				initialState : 'default' // Options - 'expand' (fully expanded), 'collapse' (fully collapsed) or default
 			});
-			$("#tree-selector").css("height", parseInt($("#mid-block-f").height()) - 270) /*   un-hardcode this*/
+			if ($(window).width() > 992) {
+				$("#tree-selector").css("height", parseInt($("#mid-block-f").height()) - 270) /*   un-hardcode this*/
+			} else {
+				$("#tree-selector").css("height", parseInt($("#mid-block-f").height()) - 320) /*   un-hardcode this*/
+			}
+				
 			$("#expand").css("display", "none")
 			$("#collapse").css("display", "none")
 			$("#default").css("display", "none")
 
 		});
-
-		$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
+		
+		if ($(window).width() > 992) {
+			$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
+		} else {
+			$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 320) /*   un-hardcode this*/
+		}
 
 		var rightExpanded = false;
 		const
