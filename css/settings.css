@@ -1,0 +1,422 @@
+@media ( max-width : 1450px) {
+	.header-button {
+		height: 60px;
+	}
+	.grad {
+		height: 60px
+	}
+	.title-button {
+		height: 100%;
+	}
+	.pmr-logo {
+		top: 50%;
+		transform: translateY(25%);
+	}
+}
+
+@media ( min-width : 1450px ) and (max-width : 1641px) {
+	.header-button {
+		height: 60px;
+	}
+	.grad {
+		height: 60px
+	}
+	.title-button {
+		height: 100%;
+	}
+	.pmr-logo {
+		top: 50%;
+		transform: translateY(25%);
+	}
+}
+
+.header-row {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.button-right {
+	float: right;
+}
+
+.button-left {
+	float: left;
+}
+
+.header-button a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+}
+
+/* cChange the link color to #111 (black) on hover */
+.header-button a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+.header-button a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+.title-button a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.title-button a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+.title-button a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 25px;
+	text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+	color: white;
+	background-color: #2e5daa;
+	text-decoration: none;
+}
+
+li a:focus {
+	background-color: #4286f4;
+	text-decoration: none;
+	color: white;
+}
+
+html,body {
+	max-width: 100%;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #727475;
+}
+
+.footer a:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #525454;
+}
+
+.footer a:focus {
+	background-color: #727475;
+	text-decoration: none;
+	color: white;
+}
+
+.bubble {
+	position: relative;
+	width: 250px;
+	height: 120px;
+	padding: 0px;
+	background: #b2b8c1;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 0 15px 15px;
+	border-color: #b2b8c1 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	top: -15px;
+	left: 110px;
+}
+
+.w3-display-left {
+	position: absolute;
+	top: 50%;
+	left: 2%;
+	transform: translate(0%, -50%);
+}
+
+.w3-display-right {
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	transform: translate(0%, -50%);
+}
+
+.w3-btn-floating {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	transition: background-color .25s, color .15s, box-shadow .15s, opacity
+		.25s, filter .25s, border .15s;
+	display: inline-block;
+	text-align: center;
+	color: #fff;
+	background-color: #000;
+	overflow: hidden;
+	z-index: 1;
+	padding: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.w3-btn-floating:hover {
+	text-decoration: none;
+}
+
+.slide-content {
+	text-align: center;
+	font-size: 20px;
+}
+
+.grad {
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #fff, #4286f4);
+	/* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #fff, #4286f4);
+	/* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #fff, #4286f4);
+	/* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #fff, #4286f4);
+	/* Standard syntax */
+}
+
+table td {
+	border: 1px solid #eee;
+}
+
+.jlevel1 td:first-child {
+	padding-left: 15px;
+}
+
+.jlevel2 td:first-child {
+	padding-left: 30px;
+}
+
+.jcollapse .jtoggle {
+	background:
+		url("http://mleibman.github.com/SlickGrid/images/collapse.gif");
+}
+
+.jexpand .jtoggle {
+	background:
+		url("http://mleibman.github.com/SlickGrid/images/expand.gif");
+}
+
+.jtoggle {
+	height: 9px;
+	width: 9px;
+	display: inline-block;
+}
+
+#btn_cont {
+	position: relative;
+	margin: 0 auto;
+	margin-top: 5%;
+	/* NOT IMPORTANT */
+	width: 800px;
+	border: 2px solid #fff;
+	height: 30px;
+}
+
+.btn-diag {
+	display: block;
+	position: absolute;
+	float: left;
+	width: 141px;
+	height: 0;
+	cursor: pointer;
+}
+
+.btn-diag:nth-child(1) {
+	width: 400px;
+	height: 80px;
+	border-top: 50px solid gray;
+	border-right: 80px solid transparent;
+	left: 0px;
+	z-index: 1;
+}
+
+.btn-diag:nth-child(1):hover,.btn-diag:nth-child(1).hovered {
+	border-top: 50px solid green;
+	color: #c74523;
+}
+
+.btn-diag:nth-child(2) {
+	width: 400px;
+	height: 50px;
+	border-left: 80px solid transparent;
+	border-bottom: 50px solid gray;
+	right: 0px;
+	z-index: 2;
+}
+
+.btn-diag:nth-child(2):hover,.btn-diag:nth-child(2).hovered {
+	border-bottom: 50px solid #4286f4;
+	color: #c74523;
+}
+
+.btn-diag:nth-child(2):before {
+	/* 	border-right: 2px solid #fff;
+ */
+	content: "";
+	height: 40px;
+	position: absolute;
+	right: 150px;
+	top: -35px;
+	transform: rotate(-34deg) translateZ(0px);
+}
+
+.btn-diag span {
+	position: relative;
+	float: left;
+	top: 19px;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+.btn-diag:hover span {
+	color: #fff;
+}
+
+.btn-diag:nth-child(1) span {
+	top: -34px;
+}
+
+.close {
+	position: absolute;
+	right: 32px;
+	top: 32px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.3;
+}
+
+.close:hover {
+	opacity: 1;
+}
+
+.close:before,.close:after {
+	position: absolute;
+	left: 15px;
+	content: ' ';
+	height: 33px;
+	width: 2px;
+	background-color: #333;
+}
+
+.close:before {
+	transform: rotate(45deg);
+}
+
+.close:after {
+	transform: rotate(-45deg);
+}
+
+#tree-selector {
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-weight: bold;
+	border-top: 1px solid #ababab;
+	border-bottom: 1px solid #ababab;
+}
+
+#fav-header {
+	text-align: center;
+	font-size: 20px;
+	padding-top: 30px;
+	color: green;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+#fav-subheader {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+#settings-header {
+	text-align: center;
+	font-size: 20px;
+	padding-top: 30px;
+	color: #4286f4;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+#settings-subheader {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.settings-options {
+	padding: 10px
+}
+
+.btn-cancel {
+	border: 1px solid #61605f;
+	background-color: #e6e1db;
+}
+
+.btn-cancel:hover {
+	border: 1px solid #61605f;
+	background-color: #bbb8b3;
+}
+
+.btn-apply-green {
+	background-color: #d4eae0;
+	border-color: #09a010;
+}
+
+.btn-apply-green:hover {
+	background-color: #c1ead8;
+	border-color: #09a010;
+}
+
+.btn-apply-blue {
+	border: 1px solid #4286f4;
+	background-color: #c1d5f7;
+}
+
+.btn-apply-blue:hover {
+	border: 1px solid #4286f4;
+	background-color: #acc6f3;
+}
