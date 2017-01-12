@@ -96,7 +96,7 @@ for league in json.loads(allReadResponse):
         leagueReadResponse = leagueResponse.read()
 
         print("sleeping")
-        time.sleep(60)
+        time.sleep(60) #api limit is 50 calls/min - each league has roughly 30 teams so do 1 per min (too many for 2/min)
         print("waking up")
 
         for team in json.loads(leagueReadResponse)['teams']:
