@@ -199,10 +199,29 @@
 	
 		
 	 	 function generateHTML(result) {
-			if ($("#example").children().length === 0) {
-				$("#example").append("<li id='" + result.list[0].league + "'><input type='checkbox' name='' />" + result.list[0].league + "<ul id='team'></ul></li>")
-				$("#example").children().find("#team").append("<li><input type='checkbox' name='' checked='checked' />" + result.list[0].team + "<ul id='player'></ul></li>")
-				$("#example").children().find("#team").find("#player").append("<li><input type='checkbox' name='' />" + result.list[0].player + "</li>")
+			/* if ($("#example").children().length === 0) {
+				$("#example").append("<li id='" + result.list[0].league.split(" ").join("").replace("/","") + "'><input type='checkbox' name='' />" + result.list[0].league + "<ul id='team'></ul></li>")
+				$("#example").children().find("#team").append("<li id='" + result.list[0].team.split(" ").join("") + "'><input type='checkbox' name='' checked='checked' />" + result.list[0].team + "<ul id='player'></ul></li>")
+				$("#example").children().find("#team").find("#player").append("<li id='" + result.list[0].player.split(" ").join("") + "'><input type='checkbox' name='' />" + result.list[0].player + "</li>")
+			} */
+			for (var i=0; i<result.list.length; i++) {
+				console.log(i)
+				if ($("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).length > 0) {
+					if ($("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").find("#" + result.list[i].team.split(" ").join("").replace("/","")).length > 0) {
+						if ($("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").find("#" + result.list[i].team.split(" ").join("").replace("/","")).find("#player").find("#" + result.list[i].player.split(" ").join("").replace("/","").replace("'", "")).length > 0) {
+							//do nothing
+						} else {
+							$("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").find("#" + result.list[i].team.split(" ").join("").replace("/","")).find("#player").append("<li id='" + result.list[i].player.split(" ").join("").replace("'", "") + "'><input type='checkbox' name='' />" + result.list[i].player + "</li>")
+						}
+					} else {
+						$("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").append("<li id='" + result.list[i].team.split(" ").join("") + "'><input type='checkbox' name='' checked='checked' />" + result.list[i].team + "<ul id='player'></ul></li>")
+						$("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").find("#" + result.list[i].team.split(" ").join("").replace("/","")).find("#player").append("<li id='" + result.list[i].player.split(" ").join("") + "'><input type='checkbox' name='' />" + result.list[i].player + "</li>")
+					}
+				} else {
+					$("#example").append("<li id='" + result.list[i].league.split(" ").join("").replace("/","").replace(".","") + "'><input type='checkbox' name='' />" + result.list[i].league + "<ul id='team'></ul></li>")
+					$("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").append("<li id='" + result.list[i].team.split(" ").join("") + "'><input type='checkbox' name='' checked='checked' />" + result.list[i].team + "<ul id='player'></ul></li>")
+					$("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).find("#team").find("#player").append("<li id='" + result.list[i].player.split(" ").join("") + "'><input type='checkbox' name='' />" + result.list[i].player + "</li>")
+				}
 			}
 		}  
 		
