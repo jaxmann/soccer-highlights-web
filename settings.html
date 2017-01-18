@@ -272,11 +272,11 @@
 	 	 }
 	 	 
 	 	 function checkBoxes(favorites) {
-	 		 var favs = Set(favorites.list)
+	 		 var favs = new Set(favorites.list)
 	 		 var allBoxes = $("#example").find("[type='checkbox']")
 	 		 for (var i=0; i<allBoxes.length; i++) {
 	 			 if (allBoxes[i] && allBoxes[i].parentElement && allBoxes[i].parentElement.textContent) {
-	 				 if (allBoxes[i].trim() in favs) {
+	 				 if (allBoxes[i].trim in favs) {
 	 					console.info($(checkedboes[i]).prop('checked',"'checked'"))
 	 				 }
 	 			 }
