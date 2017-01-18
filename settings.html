@@ -193,16 +193,20 @@
 				url : serverUrl + "/retrievePlayers",
 				success : function(result) {
 					//console.log(JSON.parse(result).list)
-					generateHTML(JSON.parse(result))
+					generateHTML(JSON.parse(result), function() {
+						retrieveFavorites()
+					})
+					
 				}
 			});
 			
 			//send back updated list of checked players
 			$(".btn-apply-green").click(function() {
-				var favorites = []
+				var favorites = {}
+				var list = []
 				var checkedElts = $("#example").find("[checked='checked']")
 				for (var i=0; i<checkedElts.length;i++) {
-					favorites.push(checkedElts[i].parentElement.textContent)
+					favorites.list.push(checkedElts[i].parentElement.textContent)
 				}
 				console.log(JSON.stringify(favorites))
 				$.ajax({
@@ -221,7 +225,7 @@
 		 });
 	
 		
-	 	 function generateHTML(result) {
+	 	 function generateHTML(result, callback) {
 	 		 
 	 		var timerStart = Date.now();
 			for (var i=0; i<result.list.length; i++) {
@@ -255,9 +259,7 @@
 			$("button#default").css("display", "none")
 			console.log("table generated in", Date.now() - timerStart)
 			
-			var boxTimer = Date.now();
-			retrieveFavorites()
-			console.log("boxes checked in", Date.now() - boxTimer)
+			callback();
 		}  
 	 	 
 	 	 function retrieveFavorites() {
@@ -266,21 +268,33 @@
 				url : serverUrl + "/retrieveFavorites",
 				success : function(result) {
 					console.log(JSON.parse(result))
-					checkBoxes(JSON.parse(result))
+					checkBoxes(JSON.parse(result).list)
 				}
 			});
 	 	 }
 	 	 
 	 	 function checkBoxes(favorites) {
-	 		 var favs = new Set(favorites.list)
+				var boxTimer = Date.now();
+
+	 		 
+	 		 var favs = []
+	 		 favorites.forEach(function(f) {
+	 			 favs.push(f.player)
+	 		 })
+	 		 
+	 		 
+	 		 console.log(favs)
+	 		 window.$log = favs
 	 		 var allBoxes = $("#example").find("[type='checkbox']")
 	 		 for (var i=0; i<allBoxes.length; i++) {
-	 			 if (allBoxes[i] && allBoxes[i].parentElement && allBoxes[i].parentElement.textContent) {
-	 				 if (allBoxes[i].trim in favs) {
-	 					console.info($(checkedboes[i]).prop('checked',"'checked'"))
-	 				 }
-	 			 }
+ 				 if (favs.indexOf(allBoxes[i].parentElement.textContent.trim()) > -1) {
+ 					console.log("found a match" + allBoxes[i].parentElement.textContent.trim())
+ 					console.info($(allBoxes[i]).prop('checked',"'checked'"))
+ 				 }
 	 		 }
+	 		 
+				console.log("boxes checked in", Date.now() - boxTimer)
+
 	 	 }
 		
 		
