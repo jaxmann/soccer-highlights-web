@@ -186,7 +186,7 @@
 	var serverUrl = "http://localhost:8080"
 	players = {}
 	
-		$(document).ready(function(){
+		 $(document).ready(function(){
 			$.ajax({
 				type : "GET",
 				url : serverUrl + "/retrievePlayers",
@@ -195,15 +195,10 @@
 					generateHTML(JSON.parse(result))
 				}
 			});
-		});
+		 });
 	
 		
 	 	 function generateHTML(result) {
-			/* if ($("#example").children().length === 0) {
-				$("#example").append("<li id='" + result.list[0].league.split(" ").join("").replace("/","") + "'><input type='checkbox' name='' />" + result.list[0].league + "<ul id='team'></ul></li>")
-				$("#example").children().find("#team").append("<li id='" + result.list[0].team.split(" ").join("") + "'><input type='checkbox' name='' checked='checked' />" + result.list[0].team + "<ul id='player'></ul></li>")
-				$("#example").children().find("#team").find("#player").append("<li id='" + result.list[0].player.split(" ").join("") + "'><input type='checkbox' name='' />" + result.list[0].player + "</li>")
-			} */
 			for (var i=0; i<result.list.length; i++) {
 				console.log(i)
 				if ($("#example").find("#" + result.list[i].league.split(" ").join("").replace("/","").replace(".","")).length > 0) {
@@ -241,8 +236,6 @@
 
 		jQuery(document).ready(
 				
-				
-					
 				function() {
 					$('ul#example').collapsibleCheckboxTree({
 						checkParents : false, // When checking a box, all parents are checked (Default: true)
