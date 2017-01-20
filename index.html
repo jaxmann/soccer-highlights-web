@@ -7,6 +7,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="icon" href="favicon.ico?" type="image/x-icon">
 
 <script src="js/modernizr.js"></script>
@@ -16,261 +17,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/index.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/libsodium-wrappers/0.4.2/sodium.min.js"></script>
 <!-- will need to build a custom page for under 992 px width and 1450-1490 -->
 <style>
-@media ( max-width : 1450px) {
-	.header-button {
-		height: 60px;
-	}
-	.grad {
-		height: 60px
-	}
-	.title-button {
-		height: 100%;
-	}
-	.pmr-logo {
-		top: 50%;
-		transform: translateY(25%);
-	}
-}
-
-@media ( min-width : 1450px ) and (max-width : 1641px) {
-	.header-button {
-		height: 60px;
-	}
-	.grad {
-		height: 60px
-	}
-	.title-button {
-		height: 100%;
-	}
-	.pmr-logo {
-		top: 50%;
-		transform: translateY(25%);
-	}
-}
-
-.header-row {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
-.button-right {
-	float: right;
-}
-
-.button-left {
-	float: left;
-}
-
-.header-button a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 25px;
-	text-decoration: none;
-}
-
-/* cChange the link color to #111 (black) on hover */
-.header-button a:hover {
-	color: white;
-	background-color: #2e5daa;
-	text-decoration: none;
-}
-
-.header-button a:focus {
-	background-color: #4286f4;
-	text-decoration: none;
-	color: white;
-}
-
-.title-button a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 25px;
-	text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-.title-button a:hover {
-	color: white;
-	background-color: #2e5daa;
-	text-decoration: none;
-}
-
-.title-button a:focus {
-	background-color: #4286f4;
-	text-decoration: none;
-	color: white;
-}
-
-li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 25px;
-	text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-	color: white;
-	background-color: #2e5daa;
-	text-decoration: none;
-}
-
-li a:focus {
-	background-color: #4286f4;
-	text-decoration: none;
-	color: white;
-}
-
-html,body {
-	max-width: 100%;
-	overflow-x: hidden;
-	padding: 0;
-	margin: 0;
-	height: 100%;
-}
-
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background-color: #727475;
-}
-
-.footer a:hover {
-	color: white;
-	text-decoration: none;
-	background-color: #525454;
-}
-
-.footer a:focus {
-	background-color: #727475;
-	text-decoration: none;
-	color: white;
-}
-
-.bubble {
-	position: relative;
-	width: 250px;
-	height: 120px;
-	padding: 0px;
-	background: #b2b8c1;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-}
-
-.bubble:after {
-	content: '';
-	position: absolute;
-	border-style: solid;
-	border-width: 0 15px 15px;
-	border-color: #b2b8c1 transparent;
-	display: block;
-	width: 0;
-	z-index: 1;
-	top: -15px;
-	left: 110px;
-}
-
-.w3-display-left {
-	position: absolute;
-	top: 50%;
-	left: 2%;
-	transform: translate(0%, -50%);
-}
-
-.w3-display-right {
-	position: absolute;
-	top: 50%;
-	right: 2%;
-	transform: translate(0%, -50%);
-}
-
-.w3-btn-floating {
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	transition: background-color .25s, color .15s, box-shadow .15s, opacity
-		.25s, filter .25s, border .15s;
-	display: inline-block;
-	text-align: center;
-	color: #fff;
-	background-color: #000;
-	overflow: hidden;
-	z-index: 1;
-	padding: 0;
-	border-radius: 50%;
-	cursor: pointer;
-	font-size: 24px;
-	text-decoration: none;
-}
-
-.w3-btn-floating:hover {
-	text-decoration: none;
-}
-
-.slide-content {
-	text-align: center;
-	font-size: 20px;
-}
-
-.grad {
-	background: red; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left, #fff, #4286f4);
-	/* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(right, #fff, #4286f4);
-	/* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(right, #fff, #4286f4);
-	/* For Firefox 3.6 to 15 */
-	background: linear-gradient(to right, #fff, #4286f4);
-	/* Standard syntax */
-}
-
-.triangle-border {
-	position: relative;
-	padding: 11px;
-	/* 	margin: 1em 0 3em;
- */
-	border: 3px solid black;
-	color: #333;
-	background: #fff;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	font-size:14px;
-	margin-top:40px;
-}
-
-.triangle-border:before {
-	content: "";
-	position: absolute;
-	bottom: -20px;
-	left: 40px;
-	border-width: 20px 20px 0;
-	border-style: solid;
-	border-color: black transparent;
-	display: block;
-	width: 0;
-}
-
-.triangle-border:after {
-	content: "";
-	position: absolute;
-	bottom: -13px;
-	left: 47px;
-	border-width: 13px 13px 0;
-	border-style: solid;
-	border-color: #fff transparent;
-	display: block;
-	width: 0;
-}
 </style>
 </head>
 <body style="height: 100%">
@@ -509,155 +260,42 @@ html,body {
 		<li class="button-right"><a href="#">Terms</a></li>
 		<li class="button-right"><a href="#">Contact Us</a></li>
 	</ul>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/libsodium-wrappers/0.4.2/sodium.min.js"></script>
-	<script>
-	
-		
-		
-		var serverUrl = "https://localhost:8080"
-		
-		function makeId() {
-		    var text = "";
-		    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
-		
-		    for( var i=0; i < 32; i++ )
-		        text += possible.charAt(Math.floor(Math.random() * possible.length));
-		
-		    return text;
-		}
-		
-		console.log(sodium.to_hex(sodium.crypto_generichash(32, makeId())));
-		
-		$(document).ready(function() {
-		
-			//signup
-			$("#create").click(function(e) {
-				console.log("create account clicked")
-				e.preventDefault();
-				$.ajax({
-					type : "GET",
-					data : {
-						userName : $("#signup-username").val(),
-						email : $("#signup-email").val(),
-						phoneNumber : $("#signup-phone").val()
-					},
-					url : serverUrl + "/checkavailable",
-					success : function(result) {
-						if (result === true) {
-							console.log("account params available")
-							e.preventDefault();
-							var salt = makeId();
-							$.ajax({
-								type : "POST",
-								data : {
-									userName : $("#signup-username").val(),
-									email : $("#signup-email").val(),
-									passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
-									passSalt : salt,
-									phoneNumber : $("#signup-phone").val()
-								},
-								url : serverUrl + "/signup",
-								success : function(result) {
-									//proceed with logged in page
-								}
-							});
-						} else {
-						console.log("username/email/phone already exists");
-					}
-				}
-				});
-			});
-			//reset
-			$("#reset").click(function(e) {
-				console.log("reset password clicked")
-				e.preventDefault();
-				$.ajax({
-					type : "GET",
-					data : {
-						email : $("#signup-email").val(),
-					},
-					url : serverUrl + "/reset",
-					success : function(result) {
-						console.log("a password recovery email has been sent")
-						//we also need a way for users to validate their email addresses to they can't spam people by entering their emails
-						//or only send 1 email ever, on login? 
-					}
-				});
-			});
-			//login
-			$("#login").click(function(e) {
-				console.log("login clicked")
-				e.preventDefault();
-				$.ajax({
-					type : "GET",
-					data : {
-						userName : $("#signup-username").val(),
-					},
-					url : serverUrl + "/checkUser",
-					success : function(result) {
-						if (result === true) { //if user exists
-							$.ajax({
-								type : "GET",
-								data : {
-									passHash : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
-								},
-								url : serverUrl + "/login",
-								success : function(result) {
-									if (result.valid === true) {
-										//allow entry
-									}
-								}
-							});
 
-							
-						}
-					}
-				});
-			});
+
+
+
+	<script>
+
+	var serverUrl = "https://localhost:8080"
+	var slideIndex = 1;
+	
+	console.log(sodium.to_hex(sodium.crypto_generichash(32, makeId())));
+	
+	$(document).ready(function() {
+	
+		//signup
+		$("#create").click(function(e) {
+			e.preventDefault();
+			createAccountClicked()
+		});
+		//reset
+		$("#reset").click(function(e) {
+			e.preventDefault();
+			resetClicked()
+		});
+		//login
+		$("#login").click(function(e) {
+			e.preventDefault();
+			loginClicked()
 		});
 		
-		
-
-		var slideIndex = 1;
-		showDivs(slideIndex);
-
-		function plusDivs(n) {
-			showDivs(slideIndex += n);
-		}
-
-		function showDivs(n) {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			if (n > x.length) {
-				slideIndex = 1
-			}
-			if (n < 1) {
-				slideIndex = x.length
-			}
-			;
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			x[slideIndex - 1].style.display = "block";
-		}
-
-		var slideIndex = 0;
 		carousel();
+		
+		showDivs(slideIndex);
+	});
+	
+	
 
-		function carousel() {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			slideIndex++;
-			if (slideIndex > x.length) {
-				slideIndex = 1
-			}
-			x[slideIndex - 1].style.display = "block";
-/* 			setTimeout(carousel, 10000); // Change image every 2 seconds
- */		}
 	</script>
 
 </body>

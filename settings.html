@@ -67,7 +67,7 @@
 				players, teams, or entire leagues!</h2>
 			<form id="tree-selector" action="" method="post">
 				<ul id="example">
-					 <!-- <li id="premier_league"><input type="checkbox" name="" />
+					<!-- <li id="premier_league"><input type="checkbox" name="" />
 						Pasdfasdfasdfasdf
 						<ul id="team">
 							<li><input type="checkbox" name="" checked="checked" />
@@ -340,10 +340,7 @@
 		const
 		leftInitOffset = $(".btn-left").offset();
 
-		$('.btn-left')
-				.on(
-						'click',
-						function() {
+		$('.btn-left').on('click', function() {
 							if (!leftExpanded) {
 								leftExpanded = true;
 								$('.btn-left').toggleClass('clicked');
@@ -351,14 +348,8 @@
 								$("#btn_cont").css("border", "none")
 								$(".btn-right").hide();
 								$(".about-box").hide();
-
-								$(".btn-left")
-										.animate(
-												{
-													top : "-="
-															+ (parseInt($(
-																	".btn-left")
-																	.offset().top) - parseInt($(
+								$(".btn-left").animate({
+													top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(
 																	".header-row")
 																	.height()))
 															+ "px",
