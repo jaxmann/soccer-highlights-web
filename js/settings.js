@@ -172,14 +172,14 @@ function btnLeftClicked() {
 										+ (parseInt($(window)
 												.height()
 												- (parseInt($(
-														".header")
+												".header")
+												.height())
+												+ parseInt($(
+												".footer")
+												.height()) + ((parseInt($(
+														window)
 														.height())
-														+ parseInt($(
-														".footer")
-														.height()) + ((parseInt($(
-																window)
-																.height())
-																- parseInt($(
+														- parseInt($(
 																".header-row")
 																.height()) - parseInt($(
 																".footer")
