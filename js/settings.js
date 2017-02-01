@@ -39,7 +39,7 @@ function retrievePlayersRequest() {
 function applyButtonClicked() {
 	console.log("apply button clicked")
 	var favorites = {}
-	var list = []
+	favorites.list = []
 	var checkedElts = $("#example").find("[checked='checked']")
 	for (var i=0; i<checkedElts.length;i++) {
 		favorites.list.push(checkedElts[i].parentElement.textContent)
@@ -48,11 +48,16 @@ function applyButtonClicked() {
 	$.ajax({
 		type : "POST",
 		url : serverUrl + "/sendFavorites",
-		data: favorites,
+		data: {
+				favorites: favorites,
+				username: "" //username from somewhere 
+			  
+		},
 		success : function() {
 			console.log("post favorites success")
 		}
 	});
+	
 }
 
 function generateHTML(result, callback) {
