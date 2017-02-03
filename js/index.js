@@ -24,10 +24,17 @@ function createAccountClicked() {
 		url : serverUrl + "/signup",
 		success : function(result) {
 			if (result === 'true') {
-				window.location.href = "localhost:8081/settings"
+				console.log("attempting redirect...")
+				window.location.replace("http://localhost:8081/settings");
 			} 
 			if (result === 'false') {
 				console.log("username/email/phone already exists");
+				setTimeout(function() {
+					$("#create").css("background-color","#f27a6a");
+					$("#create").val("One of these login details is already in use");
+					}, 4000)
+				})
+				
 			}
 		}, 
 		error: function() {
@@ -40,9 +47,10 @@ function resetClicked() {
 	console.log("reset password clicked")
 	$.ajax({
 		type : "GET",
-		data : {
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		data : jQuery.param({
 			email : $("#signup-email").val(),
-		},
+		}),
 		url : serverUrl + "/reset",
 		success : function(result) {
 			console.log("a password recovery email has been sent")
@@ -56,26 +64,32 @@ function loginClicked() {
 	console.log("login clicked")
 	$.ajax({
 		type : "GET",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		data : {
 			userName : $("#signup-username").val(),
 		},
 		url : serverUrl + "/checkUser",
 		success : function(result) {
-			if (result === true) { //if user exists
+			if (result) { //if user exists
 				$.ajax({
 					type : "GET",
-					data : {
-						"passHash" : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
-					},
+					data : jQuery.param({
+						userName : $("#signup-username").val(),
+						passHash : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
+					}),
 					url : serverUrl + "/login",
 					success : function(result) {
-						if (result.valid === true) {
-							//allow entry
+						if (result.valid === 'true') {
+							console.log("attempting redirect...")
+							window.location.replace("http://localhost:8081/settings");
+						} 
+						if (result.valid === 'false') {
+							console.log("invalid");
 						}
 					}
 				});
-
-
+			} else {
+				console.log("user did not exist - no salt found");
 			}
 		}
 	});

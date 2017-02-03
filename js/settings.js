@@ -25,6 +25,7 @@ function retrievePlayersRequest() {
 	console.log("retrievePlayersRequest called")
 	$.ajax({
 		type : "GET",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		url : serverUrl + "/retrievePlayers",
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
@@ -47,11 +48,11 @@ function applyButtonClicked() {
 	console.log(JSON.stringify(favorites))
 	$.ajax({
 		type : "POST",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		url : serverUrl + "/sendFavorites",
 		data: {
 				favorites: favorites,
-				username: "" //username from somewhere 
-			  
+				username: "" //username from somewhere   
 		},
 		success : function() {
 			console.log("post favorites success")
@@ -103,6 +104,10 @@ function retrieveFavorites() {
 	console.log("retrieve favorites called")
 	$.ajax({
 		type : "GET",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		data: jQuery.param({
+			userName: "example"
+		}),
 		url : serverUrl + "/retrieveFavorites",
 		success : function(result) {
 			console.log(JSON.parse(result))
