@@ -1,47 +1,39 @@
 function makeId() {
 	var text = "";
 	var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
-	
+
 	for( var i=0; i < 32; i++ )
-	    text += possible.charAt(Math.floor(Math.random() * possible.length));
-	
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
 	return text;
 }
 
 function createAccountClicked() {
 	console.log("create account clicked")
+	var salt = makeId();
 	$.ajax({
-		type : "GET",
-		data : {
+		type : "POST",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		data : jQuery.param({
 			userName : $("#signup-username").val(),
 			email : $("#signup-email").val(),
+			passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
+			passSalt : salt,
 			phoneNumber : $("#signup-phone").val()
-		},
-		url : serverUrl + "/checkavailable",
+		}),
+		url : serverUrl + "/signup",
 		success : function(result) {
-			if (result === true) {
-				console.log("account params available")
-				e.preventDefault();
-				var salt = makeId();
-				$.ajax({
-					type : "POST",
-					data : {
-						userName : $("#signup-username").val(),
-						email : $("#signup-email").val(),
-						passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
-						passSalt : salt,
-						phoneNumber : $("#signup-phone").val()
-					},
-					url : serverUrl + "/signup",
-					success : function(result) {
-						//proceed with logged in page
-					}
-				});
-			} else {
-			console.log("username/email/phone already exists");
+			if (result === 'true') {
+				window.location.href = "localhost:8081/settings"
+			} 
+			if (result === 'false') {
+				console.log("username/email/phone already exists");
+			}
+		}, 
+		error: function() {
+			console.log("error with ajax request");
 		}
-	}
-	});
+	})
 };
 
 function resetClicked() {
@@ -73,7 +65,7 @@ function loginClicked() {
 				$.ajax({
 					type : "GET",
 					data : {
-						passHash : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
+						"passHash" : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
 					},
 					url : serverUrl + "/login",
 					success : function(result) {
@@ -83,7 +75,7 @@ function loginClicked() {
 					}
 				});
 
-				
+
 			}
 		}
 	});
@@ -116,11 +108,10 @@ function carousel() {
 		slideIndex = 1
 	}
 	x[slideIndex - 1].style.display = "block";
-			setTimeout(carousel, 10000); // Change image every 2 seconds
+	setTimeout(carousel, 10000); // Change image every 2 seconds
 }
 
 function plusDivs(n) {
 	showDivs(slideIndex += n);
 }
 
-	
