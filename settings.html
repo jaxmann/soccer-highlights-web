@@ -48,12 +48,14 @@
 				</a>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-6 col-xs-6 header-button "
+		<div class="col-md-4 col-sm-4 col-xs-4 header-button "
 			style="background-color: #4286f4; padding: 22px"></div>
-		<div class="col-md-2 col-sm-2 col-xs-2"
+		<div class="col-md-4 col-sm-4 col-xs-4"
 			style="background-color: #4286f4">
 			<div class="header-button button-right">
-				<a class="cd-signup" id="welcome-box" href="#0" style="height: 100%">Welcome back </a>
+				<a class="cd-signup"  href="#0" style="height: 100%">
+					<span style="display:block" id="welcome-box">Welcome Back</span>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -190,7 +192,9 @@
 		thisUsername = location.search.split('username')[1].replace("=","")
 		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
 		$("#welcome-box").text('Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1));
-		
+		if ($(window).width() > 1094) {
+			$("#welcome-box").css('transform', 'translateY(50%)') 
+		}
 		$(document).ready(function() {
 			retrievePlayersRequest()
 			//send back updated list of checked players
