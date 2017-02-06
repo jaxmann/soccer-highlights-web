@@ -8,13 +8,13 @@
 	.title-button {
 		height: 100%;
 	}
-	.pmr-logo {
+	/* .pmr-logo {
 		top: 50%;
 		transform: translateY(25%);
-	}
+	} */
 }
 
-@media ( min-width : 1450px ) and (max-width : 1641px) {
+@media ( min-width : 1450px ) and (max-width : 2041px) {
 	.header-button {
 		height: 60px;
 	}
@@ -24,10 +24,10 @@
 	.title-button {
 		height: 100%;
 	}
-	.pmr-logo {
+	/* .pmr-logo {
 		top: 50%;
 		transform: translateY(25%);
-	}
+	} */
 }
 
 .header-row {
@@ -77,12 +77,10 @@
 /* Change the link color to #111 (black) on hover */
 .title-button a:hover {
 	color: white;
-	background-color: #2e5daa;
 	text-decoration: none;
 }
 
 .title-button a:focus {
-	background-color: #4286f4;
 	text-decoration: none;
 	color: white;
 }
