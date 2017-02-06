@@ -56,12 +56,10 @@
 /* cChange the link color to #111 (black) on hover */
 .header-button a:hover {
 	color: white;
-	background-color: #2e5daa;
 	text-decoration: none;
 }
 
 .header-button a:focus {
-	background-color: #4286f4;
 	text-decoration: none;
 	color: white;
 }
