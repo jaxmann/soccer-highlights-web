@@ -29,19 +29,18 @@ function createAccountClicked() {
 			} 
 			if (result === 'false') {
 				console.log("username/email/phone already exists");
+				$("#create").css("background-color","#f27a6a");
+				$("#create").val("One of these login details is already in use");
 				setTimeout(function() {
-					$("#create").css("background-color","#f27a6a");
-					$("#create").val("One of these login details is already in use");
+					$("#create").css("background-color","#4286f4");
+					$("#create").val("Create account");
 					}, 4000)
-				})
-				
 			}
-		}, 
-		error: function() {
-			console.log("error with ajax request");
+				
 		}
-	})
-};
+	});
+}
+
 
 function resetClicked() {
 	console.log("reset password clicked")
@@ -70,26 +69,39 @@ function loginClicked() {
 		},
 		url : serverUrl + "/checkUser",
 		success : function(result) {
-			if (result) { //if user exists
+			if (result !== 'false') { //if user exists
+				console.log(sodium.to_hex(sodium.crypto_generichash(32, result + $("#signup-password").val())));
 				$.ajax({
 					type : "GET",
 					data : jQuery.param({
 						userName : $("#signup-username").val(),
-						passHash : sodium.to_hex(sodium.crypto_generichash(32, result.salt + $("#signup-password").val())),
+						passHash : sodium.to_hex(sodium.crypto_generichash(32, result + $("#signup-password").val())),
 					}),
 					url : serverUrl + "/login",
 					success : function(result) {
-						if (result.valid === 'true') {
+						if (result === 'true') {
 							console.log("attempting redirect...")
-							window.location.replace("http://localhost:8081/settings");
+							window.location.replace("/settings");
 						} 
-						if (result.valid === 'false') {
-							console.log("invalid");
+						if (result === 'false') {
+							console.log("invalid password");
+							$("#login").css("background-color","#f27a6a");
+							$("#login").val("Incorrect username or password");
+							setTimeout(function() {
+								$("#login").css("background-color","#4286f4");
+								$("#login").val("Login");
+								}, 4000)
 						}
 					}
 				});
 			} else {
 				console.log("user did not exist - no salt found");
+				$("#login").css("background-color","#f27a6a");
+				$("#login").val("Incorrect username or password");
+				setTimeout(function() {
+					$("#login").css("background-color","#4286f4");
+					$("#login").val("Login");
+					}, 4000)
 			}
 		}
 	});
