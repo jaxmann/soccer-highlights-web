@@ -11,6 +11,7 @@ function makeId() {
 function createAccountClicked() {
 	console.log("create account clicked")
 	var salt = makeId();
+	thisUsername = $("#signup-username").val();
 	$.ajax({
 		type : "POST",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -25,7 +26,7 @@ function createAccountClicked() {
 		success : function(result) {
 			if (result === 'true') {
 				console.log("attempting redirect...")
-				window.location.replace("http://localhost:8081/settings");
+				window.location.replace("/settings?username=" + thisUsername);
 			} 
 			if (result === 'false') {
 				console.log("username/email/phone already exists");
@@ -61,6 +62,7 @@ function resetClicked() {
 
 function loginClicked() {
 	console.log("login clicked")
+	thisUsername = $("#signup-username").val();
 	$.ajax({
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -81,7 +83,7 @@ function loginClicked() {
 					success : function(result) {
 						if (result === 'true') {
 							console.log("attempting redirect...")
-							window.location.replace("/settings");
+							window.location.replace("/settings?username=" + thisUsername );
 						} 
 						if (result === 'false') {
 							console.log("invalid password");

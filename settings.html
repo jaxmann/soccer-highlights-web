@@ -53,7 +53,7 @@
 		<div class="col-md-2 col-sm-2 col-xs-2"
 			style="background-color: #4286f4">
 			<div class="header-button button-right">
-				<a class="cd-signup" href="#0" style="height: 100%">Welcome back </a>
+				<a class="cd-signup" id="welcome-box" href="#0" style="height: 100%">Welcome back </a>
 			</div>
 		</div>
 	</div>
@@ -187,7 +187,10 @@
 	<script>
 		var serverUrl = "http://localhost:8080"
 		players = {}
-
+		thisUsername = location.search.split('username')[1].replace("=","")
+		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
+		$("#welcome-box").text('Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1));
+		
 		$(document).ready(function() {
 			retrievePlayersRequest()
 			//send back updated list of checked players
@@ -198,6 +201,7 @@
 			$("#pmr-logo").click(function(e) {
 				window.location.replace("/");
 			});
+			
 		});
 
 		jQuery(document).ready(collapsibleCheckboxTree());
