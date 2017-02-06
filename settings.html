@@ -43,7 +43,7 @@
 		<div class="col-md-4 col-sm-4 col-xs-4 grad"
 			style="background-color: #4286f4">
 			<div class="title-button button-left">
-				<a class="pmr-logo" style="color: blue" href="#">PMR</a>
+				<a class="pmr-logo" id = "pmr-logo" style="color: blue" href="#">PMR</a>
 			</div>
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-6 header-button "
@@ -191,6 +191,10 @@
 			//send back updated list of checked players
 			$(".btn-apply-green").click(function() {
 				applyButtonClicked()
+			});
+			//home
+			$("#pmr-logo").click(function(e) {
+				window.location.replace("/");
 			});
 		});
 
