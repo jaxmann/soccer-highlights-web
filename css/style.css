@@ -282,9 +282,9 @@ xsigin/signup popup
 	outline: none;
 }
 
-.cd-form input.has-error {
+/* .cd-form input.has-error {
 	border: 1px solid #d76666;
-}
+} */
 
 .cd-form input[type=password] {
 	/* space left for the HIDE button */
@@ -330,7 +330,7 @@ xsigin/signup popup
 	color: #343642;
 }
 
-.cd-form .cd-error-message {
+/* .cd-form .cd-error-message {
 	display: inline-block;
 	position: absolute;
 	left: -5px;
@@ -342,17 +342,17 @@ xsigin/signup popup
 	font-size: 13px;
 	font-size: 0.8125rem;
 	border-radius: 0.25em;
-	/* prevent click and touch events */
+	prevent click and touch events
 	pointer-events: none;
 	visibility: hidden;
 	opacity: 0;
 	-webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
 	-moz-transition: opacity 0.2s 0, visibility 0 0.2s;
 	transition: opacity 0.2s 0, visibility 0 0.2s;
-}
+} */
 
-.cd-form .cd-error-message::after {
-	/* triangle */
+/* .cd-form .cd-error-message::after {
+	triangle
 	content: '';
 	position: absolute;
 	left: 22px;
@@ -370,7 +370,7 @@ xsigin/signup popup
 	-webkit-transition: opacity 0.2s 0, visibility 0 0;
 	-moz-transition: opacity 0.2s 0, visibility 0 0;
 	transition: opacity 0.2s 0, visibility 0 0;
-}
+} */
 
 @media only screen and (min-width: 600px) {
 	.cd-form {

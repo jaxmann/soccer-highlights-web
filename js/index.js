@@ -12,34 +12,74 @@ function createAccountClicked() {
 	console.log("create account clicked")
 	var salt = makeId();
 	thisUsername = $("#signup-username").val();
-	$.ajax({
-		type : "POST",
-		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-		data : jQuery.param({
-			userName : $("#signup-username").val(),
-			email : $("#signup-email").val(),
-			passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
-			passSalt : salt,
-			phoneNumber : $("#signup-phone").val()
-		}),
-		url : serverUrl + "/signup",
-		success : function(result) {
-			if (result === 'true') {
-				console.log("attempting redirect...")
-				window.location.replace("/settings?username=" + thisUsername);
-			} 
-			if (result === 'false') {
-				console.log("username/email/phone already exists");
-				$("#create").css("background-color","#f27a6a");
-				$("#create").val("One of these login details is already in use");
-				setTimeout(function() {
-					$("#create").css("background-color","#4286f4");
-					$("#create").val("Create account");
+	thisPhoneNum = $("#signup-phone").val();
+	thisEmail = $("#signup-email").val();
+	thisPass = $("#signup-password").val();
+	var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
+	
+	if (thisUsername.length < 5) {
+		console.log(thisUsername)
+		console.log(thisUsername.length)
+		$("#create").css("background-color","#f27a6a");
+		$("#create").val("Username Must be at Least 5 Characters Long");
+		setTimeout(function() {
+			$("#create").css("background-color","#4286f4");
+			$("#create").val("Create account");
+		}, 4000)
+	} else if (!emailRe.test(thisEmail)) {
+		$("#create").css("background-color","#f27a6a");
+		$("#create").val("Please Enter a Valid Email Address");
+		setTimeout(function() {
+			$("#create").css("background-color","#4286f4");
+			$("#create").val("Create account");
+		}, 4000)
+	} else if (!thisPhoneNum.match(phoneno)) {
+		$("#create").css("background-color","#f27a6a");
+		$("#create").val("Please Enter a Valid Phone Number");
+		setTimeout(function() {
+			$("#create").css("background-color","#4286f4");
+			$("#create").val("Create account");
+		}, 4000)
+	} else if (thisPass.length < 1) {
+		$("#create").css("background-color","#f27a6a");
+		$("#create").val("Please Enter a Longer Password");
+		setTimeout(function() {
+			$("#create").css("background-color","#4286f4");
+			$("#create").val("Create account");
+		}, 4000)
+	} else {
+		$.ajax({
+			type : "POST",
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			data : jQuery.param({
+				userName : $("#signup-username").val(),
+				email : $("#signup-email").val(),
+				passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
+				passSalt : salt,
+				phoneNumber : $("#signup-phone").val()
+			}),
+			url : serverUrl + "/signup",
+			success : function(result) {
+				if (result === 'true') {
+					console.log("attempting redirect...")
+					window.location.replace("/settings?username=" + thisUsername);
+				} 
+				if (result === 'false') {
+					console.log("username/email/phone already exists");
+					$("#create").css("background-color","#f27a6a");
+					$("#create").val("One of these login details is already in use");
+					setTimeout(function() {
+						$("#create").css("background-color","#4286f4");
+						$("#create").val("Create account");
 					}, 4000)
+				}
+
 			}
-				
-		}
-	});
+		});
+	}
+
+
 }
 
 
@@ -62,12 +102,12 @@ function resetClicked() {
 
 function loginClicked() {
 	console.log("login clicked")
-	thisUsername = $("#signup-username").val();
+	thisUsername = $("#signin-username").val();
 	$.ajax({
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		data : {
-			userName : $("#signup-username").val(),
+			userName : $("#signin-username").val(),
 		},
 		url : serverUrl + "/checkUser",
 		success : function(result) {
@@ -76,7 +116,7 @@ function loginClicked() {
 				$.ajax({
 					type : "GET",
 					data : jQuery.param({
-						userName : $("#signup-username").val(),
+						userName : $("#signin-username").val(),
 						passHash : sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())),
 					}),
 					url : serverUrl + "/login",
@@ -92,7 +132,7 @@ function loginClicked() {
 							setTimeout(function() {
 								$("#login").css("background-color","#4286f4");
 								$("#login").val("Login");
-								}, 4000)
+							}, 4000)
 						}
 					}
 				});
@@ -103,7 +143,7 @@ function loginClicked() {
 				setTimeout(function() {
 					$("#login").css("background-color","#4286f4");
 					$("#login").val("Login");
-					}, 4000)
+				}, 4000)
 			}
 		}
 	});
