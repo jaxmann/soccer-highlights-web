@@ -72,12 +72,12 @@ function loginClicked() {
 		url : serverUrl + "/checkUser",
 		success : function(result) {
 			if (result !== 'false') { //if user exists
-				console.log(sodium.to_hex(sodium.crypto_generichash(32, result + $("#signup-password").val())));
+				console.log(sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())));
 				$.ajax({
 					type : "GET",
 					data : jQuery.param({
 						userName : $("#signup-username").val(),
-						passHash : sodium.to_hex(sodium.crypto_generichash(32, result + $("#signup-password").val())),
+						passHash : sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())),
 					}),
 					url : serverUrl + "/login",
 					success : function(result) {
