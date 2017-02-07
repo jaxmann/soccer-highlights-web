@@ -26,15 +26,52 @@
 <link rel="stylesheet" href="css/settings.css" type="text/css" />
 <script src="js/modernizr.js"></script>
 
-
 <script type="text/javascript"
 	src="js/jquery.collapsibleCheckboxTree.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/settings.js"></script>
 
+
+
+<script src="js/main-loader.js"></script>
+<!-- <link rel="stylesheet" href="css/normalize.css">
+ -->
+<link rel="stylesheet" href="css/main.css">
+<style type="text/css">
+.back-link a {
+	color: #4ca340;
+	text-decoration: none;
+	border-bottom: 1px #4ca340 solid;
+}
+
+.back-link a:hover, .back-link a:focus {
+	color: #408536;
+	text-decoration: none;
+	border-bottom: 1px #408536 solid;
+}
+/* h1 {
+		height: 100%;
+		margin: 0;
+		font-size: 14px;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 32px;
+		margin-bottom: 3px;
+	} */
+.entry-header {
+	text-align: left;
+	margin: 0 auto 50px auto;
+	width: 80%;
+	max-width: 978px;
+	position: relative;
+	z-index: 10001;
+}
+/* #demo-content {
+		padding-top: 100px;
+	} */
+</style>
 </head>
-<body style="height: 100%">
+<body style="height: 100%; z-index: 2; background-color: white">
 
 
 	<!-- header large -->
@@ -43,8 +80,9 @@
 		<div class="col-md-4 col-sm-4 col-xs-4 grad"
 			style="background-color: #4286f4">
 			<div class="title-button button-left">
-				<a class="pmr-logo" id = "pmr-logo" style="color: blue; height:100%" href="#">
-					<img src="assets/dankLogo.png" alt="PMR" style="height:100%">
+				<a class="pmr-logo" id="pmr-logo" style="color: blue; height: 100%"
+					href="#"> <img src="assets/dankLogo.png" alt="PMR"
+					style="height: 100%">
 				</a>
 			</div>
 		</div>
@@ -53,14 +91,13 @@
 		<div class="col-md-4 col-sm-4 col-xs-4"
 			style="background-color: #4286f4">
 			<div class="header-button button-right">
-				<a class="cd-signup"  href="#0" style="height: 100%">
-					<span style="display:block" id="welcome-box">Welcome Back</span>
+				<a class="cd-signup" href="#0" style="height: 100%"> <span
+					style="display: block" id="welcome-box">Welcome Back</span>
 				</a>
 			</div>
 		</div>
 	</div>
 	<!-- header large-->
-
 
 	<div id="mid-block-f"
 		style="height: 80%; display: none; position: absolute;" class="row">
@@ -141,7 +178,7 @@
 	</div>
 
 
-	<div id="btn_cont">
+	<div id="btn_cont" style="z-index: 1">
 		<div class="btn-diag btn-left">
 			<span>SET FAVORITES</span>
 		</div>
@@ -152,31 +189,38 @@
 
 
 	<div class="row about-box"
-		style="width: 80%; margin-left: 10%; margin-top: 100px">
+		style="width: 80%; margin-left: 10%; margin-top: 100px;">
 		<div class="col-md-12">
 			<div id="about">
-				<h1 id="about-header"
-					style="text-align: center; padding-bottom: 40px; font-size: 25px; font-weight: bold; color: #4286f4">About</h1>
 
-				<p>
-					With PMR, you can select European soccer players, teams, or leagues
-					you are interested in following. When a highlight by one of your
-					selected players is posted on the internet, we'll send you an HD
-					video link - within minutes! <br> <br>We crawl a number
-					of sites regularly. For every play posted in a play-by-play feed
-					you might check on your phone, we cross-reference that play with
-					video clips posted online minutes later, and send these links
-					directly to you! <br> <br>If you don't have time to watch
-					your game, we'll keep you caught up on any big plays you might have
-					missed! <br> <br>Got the game recorded already and want
-					to avoid spoilers? No problem! Modify your settings to opt-out of
-					notifications for a number of hours.
-				</p>
+				<div id="loader-wrapper" style="z-index: 0">
+					<div id="loader"></div>
+				</div>
 
+				<div id="about-text-area" style="display: none">
+
+					<h1 id="about-header"
+						style="text-align: center; padding-bottom: 40px; font-size: 25px; font-weight: bold; color: #4286f4">About</h1>
+
+					<p>
+						With PMR, you can select European soccer players, teams, or
+						leagues you are interested in following. When a highlight by one
+						of your selected players is posted on the internet, we'll send you
+						an HD video link - within minutes! <br> <br>We crawl a
+						number of sites regularly. For every play posted in a play-by-play
+						feed you might check on your phone, we cross-reference that play
+						with video clips posted online minutes later, and send these links
+						directly to you! <br> <br>If you don't have time to
+						watch your game, we'll keep you caught up on any big plays you
+						might have missed! <br> <br>Got the game recorded
+						already and want to avoid spoilers? No problem! Modify your
+						settings to opt-out of notifications for a number of hours.
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
 
+	</div>
 	<!-- footer -->
 	<ul class="footer"
 		style="box-shadow: 0px 6px 31px 5px rgba(4, 40, 111, 0.4);">
@@ -188,15 +232,24 @@
 
 	<script>
 		var serverUrl = "http://localhost:8080"
+
 		players = {}
-		thisUsername = location.search.split('username')[1].replace("=","")
+		thisUsername = location.search.split('username')[1].replace("=", "")
 		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
-		$("#welcome-box").text('Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1));
+		$("#welcome-box").text(
+				'Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase()
+						+ thisUsername.slice(1));
 		if ($(window).width() > 1094) {
-			$("#welcome-box").css('transform', 'translateY(50%)') 
+			$("welcome-box").css('transform', 'translateY(50%)')
 		}
+		var pageLoaded = false;
 		$(document).ready(function() {
-			retrievePlayersRequest()
+			retrievePlayersRequest(function() {
+				console.log('all done loading players')
+				$("#loader-wrapper").css('display','none')
+				$("#about-text-area").css('display', 'block')
+				pageLoaded = true;
+			})
 			//send back updated list of checked players
 			$(".btn-apply-green").click(function() {
 				applyButtonClicked()
@@ -205,15 +258,17 @@
 			$("#pmr-logo").click(function(e) {
 				window.location.replace("/");
 			});
-			
+
 		});
 
 		jQuery(document).ready(collapsibleCheckboxTree());
 
 		if ($(window).width() > 992) {
-			$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
+			$("#settings-content").css("height",
+					parseInt($("#mid-block-s").height()) - 270) /*   un-hardcode this*/
 		} else {
-			$("#settings-content").css("height", parseInt($("#mid-block-s").height()) - 320) /*   un-hardcode this*/
+			$("#settings-content").css("height",
+					parseInt($("#mid-block-s").height()) - 320) /*   un-hardcode this*/
 		}
 
 		var rightExpanded = false;
@@ -222,18 +277,21 @@
 		var leftExpanded = false;
 		const
 		leftInitOffset = $(".btn-left").offset();
+		
+		if (pageLoaded) {
+			$('.btn-left').on('click', function() {
+				btnLeftClicked()
+			});
 
-		$('.btn-left').on('click', function() {
-			btnLeftClicked()
-		});
+			$('.btn-right').on('click', function() {
+				btnRightClicked()
+			});
 
-		$('.btn-right').on('click', function() {
-			btnRightClicked()
-		});
-
-		$('.close, .btn-cancel').on('click', function() {
-			btnCancelClicked()
-		});
+			$('.close, .btn-cancel').on('click', function() {
+				btnCancelClicked()
+			});
+		}
+		
 	</script>
 
 </body>

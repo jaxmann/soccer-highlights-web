@@ -21,7 +21,7 @@ function collapsibleCheckboxTree() {
 
 }
 
-function retrievePlayersRequest() {
+function retrievePlayersRequest(callback) {
 	console.log("retrievePlayersRequest called")
 	$.ajax({
 		type : "GET",
@@ -30,7 +30,8 @@ function retrievePlayersRequest() {
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
 			generateHTML(JSON.parse(result), function() {
-				retrieveFavorites()
+				retrieveFavorites();
+				callback();
 			})
 
 		}
