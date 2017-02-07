@@ -237,6 +237,10 @@ xsigin/signup popup
 	background-position: 50% 0;
 }
 
+.cd-form label.cd-phone {
+	background-image: url("../assets/cd-phone.svg");
+}
+
 .cd-form label.cd-username {
 	background-image: url("../assets/cd-icon-username.svg");
 }
