@@ -239,10 +239,13 @@
 				'Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase()
 						+ thisUsername.slice(1));
 		if ($(window).width() > 1094) {
-			$("welcome-box").css('transform', 'translateY(50%)')
+			$("#welcome-box").css('transform', 'translateY(50%)')
 		}
 		var pageLoaded = false;
+		
+		
 		$(document).ready(function() {
+		
 			retrievePlayersRequest(function() {
 				console.log('all done loading players')
 				$("#loader-wrapper").css('display','none')
