@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="css/jquery.collapsibleCheckboxTree.css"
 	type="text/css" />
 <link rel="stylesheet" href="css/settings.css" type="text/css" />
+
+
 <script src="js/modernizr.js"></script>
 
 <script type="text/javascript"
@@ -49,14 +51,7 @@
 	text-decoration: none;
 	border-bottom: 1px #408536 solid;
 }
-/* h1 {
-		height: 100%;
-		margin: 0;
-		font-size: 14px;
-		font-family: 'Open Sans', sans-serif;
-		font-size: 32px;
-		margin-bottom: 3px;
-	} */
+
 .entry-header {
 	text-align: left;
 	margin: 0 auto 50px auto;
@@ -241,17 +236,33 @@
 		if ($(window).width() > 1094) {
 			$("#welcome-box").css('transform', 'translateY(50%)')
 		}
-		var pageLoaded = false;
-		
-		
+
 		$(document).ready(function() {
-		
+			var pageLoaded = false;
+
 			retrievePlayersRequest(function() {
 				console.log('all done loading players')
-				$("#loader-wrapper").css('display','none')
+				$("#loader-wrapper").css('display', 'none')
 				$("#about-text-area").css('display', 'block')
 				pageLoaded = true;
 			})
+
+			$('.btn-left').on('click', function() {
+				if (pageLoaded) {
+					btnLeftClicked()
+				}
+			});
+
+			$('.btn-right').on('click', function() {
+				if (pageLoaded) {
+					btnRightClicked()
+				}
+			});
+
+			$('.close, .btn-cancel').on('click', function() {
+				btnCancelClicked()
+			});
+
 			//send back updated list of checked players
 			$(".btn-apply-green").click(function() {
 				applyButtonClicked()
@@ -279,21 +290,6 @@
 		var leftExpanded = false;
 		const
 		leftInitOffset = $(".btn-left").offset();
-		
-		if (pageLoaded) {
-			$('.btn-left').on('click', function() {
-				btnLeftClicked()
-			});
-
-			$('.btn-right').on('click', function() {
-				btnRightClicked()
-			});
-
-			$('.close, .btn-cancel').on('click', function() {
-				btnCancelClicked()
-			});
-		}
-		
 	</script>
 
 </body>

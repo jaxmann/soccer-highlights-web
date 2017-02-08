@@ -107,7 +107,7 @@ function retrieveFavorites() {
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		data: jQuery.param({
-			userName: "example"
+			username: "example"
 		}),
 		url : serverUrl + "/retrieveFavorites",
 		success : function(result) {
