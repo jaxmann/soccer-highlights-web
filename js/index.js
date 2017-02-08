@@ -25,28 +25,28 @@ function createAccountClicked() {
 		$("#create").val("Username Must be at Least 5 Characters Long");
 		setTimeout(function() {
 			$("#create").css("background-color","#4286f4");
-			$("#create").val("Create account");
+			$("#create").val("Create Account");
 		}, 4000)
 	} else if (!emailRe.test(thisEmail)) {
 		$("#create").css("background-color","#f27a6a");
 		$("#create").val("Please Enter a Valid Email Address");
 		setTimeout(function() {
 			$("#create").css("background-color","#4286f4");
-			$("#create").val("Create account");
+			$("#create").val("Create Account");
 		}, 4000)
 	} else if (!thisPhoneNum.match(phoneno)) {
 		$("#create").css("background-color","#f27a6a");
 		$("#create").val("Please Enter a Valid Phone Number");
 		setTimeout(function() {
 			$("#create").css("background-color","#4286f4");
-			$("#create").val("Create account");
+			$("#create").val("Create Account");
 		}, 4000)
 	} else if (thisPass.length < 1) {
 		$("#create").css("background-color","#f27a6a");
 		$("#create").val("Please Enter a Longer Password");
 		setTimeout(function() {
 			$("#create").css("background-color","#4286f4");
-			$("#create").val("Create account");
+			$("#create").val("Create Account");
 		}, 4000)
 	} else {
 		$.ajax({
@@ -71,7 +71,7 @@ function createAccountClicked() {
 					$("#create").val("One of these login details is already in use");
 					setTimeout(function() {
 						$("#create").css("background-color","#4286f4");
-						$("#create").val("Create account");
+						$("#create").val("Create Account");
 					}, 4000)
 				}
 
@@ -131,7 +131,7 @@ function loginClicked() {
 							$("#login").val("Incorrect username or password");
 							setTimeout(function() {
 								$("#login").css("background-color","#4286f4");
-								$("#login").val("Login");
+								$("#login").val("Log In");
 							}, 4000)
 						}
 					}
@@ -142,7 +142,7 @@ function loginClicked() {
 				$("#login").val("Incorrect username or password");
 				setTimeout(function() {
 					$("#login").css("background-color","#4286f4");
-					$("#login").val("Login");
+					$("#login").val("Log In");
 				}, 4000)
 			}
 		}

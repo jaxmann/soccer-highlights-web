@@ -82,7 +82,6 @@
 }
 
 .title-button a:focus {
-	background-color: white;
 	text-decoration: none;
 	color: white;
 }
