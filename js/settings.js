@@ -136,7 +136,6 @@ function checkBoxes(favorites) {
 	for (var i=0; i<allBoxes.length; i++) {
 		if (favs.indexOf(allBoxes[i].parentElement.textContent.trim()) > -1) {
 			console.log("found a match " + allBoxes[i].parentElement.textContent.trim())
-			console.info($(allBoxes[i]).prop('checked',true))
 			$(allBoxes[i]).attr('checked','checked')
 		}
 	}
