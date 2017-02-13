@@ -53,7 +53,7 @@ function applyButtonClicked() {
 		url : serverUrl + "/sendFavorites",
 		data: {
 				favorites: favorites,
-				username: "" //username from somewhere   
+				username: QueryString.username  
 		},
 		success : function() {
 			console.log("post favorites success")
@@ -132,10 +132,12 @@ function checkBoxes(favorites) {
 	console.log(favs)
 	window.$log = favs
 	var allBoxes = $("#example").find("[type='checkbox']")
+	console.log('size is ' + allBoxes.length)
 	for (var i=0; i<allBoxes.length; i++) {
 		if (favs.indexOf(allBoxes[i].parentElement.textContent.trim()) > -1) {
-			console.log("found a match" + allBoxes[i].parentElement.textContent.trim())
-			console.info($(allBoxes[i]).prop('checked',"'checked'"))
+			console.log("found a match " + allBoxes[i].parentElement.textContent.trim())
+			console.info($(allBoxes[i]).prop('checked',true))
+			$(allBoxes[i]).attr('checked','checked')
 		}
 	}
 
