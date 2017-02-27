@@ -43,13 +43,13 @@ function retrievePlayersRequest(callback) {
 
 function applyButtonClicked() {
 	console.log("apply button clicked")
-	var favorites = {}
-	favorites.list = []
+	var favorites = []
 	var checkedElts = $("#example").find("[checked='checked']")
 	for (var i=0; i<checkedElts.length;i++) {
-		favorites.list.push(checkedElts[i].parentElement.textContent)
+		favorites.push(checkedElts[i].parentElement.textContent.replace(/^\s+/,""))
 	}
-	console.log(JSON.stringify(favorites))
+	favorites = favorites.join("&")
+	console.log(favorites)
 	$.ajax({
 		type : "POST",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
