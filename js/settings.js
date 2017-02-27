@@ -51,7 +51,8 @@ function applyButtonClicked() {
 		}
 		
 	}
-	favorites = favorites.join("|")
+	favorites = favorites.join("|") //encodeURI or encodeURIcomponent if necessary
+	favorites = favorites.replace("'", "''") 
 	console.log(favorites)
 	$.ajax({
 		type : "POST",
