@@ -27,6 +27,9 @@ function retrievePlayersRequest(callback) {
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		url : serverUrl + "/retrievePlayers",
+		data: {
+			userName: QueryString.username  
+		},
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
 			generateHTML(JSON.parse(result), function() {
@@ -106,9 +109,9 @@ function retrieveFavorites() {
 	$.ajax({
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-		data: jQuery.param({
-			username: "example"
-		}),
+		data: {
+			userName: QueryString.username  
+		},
 		url : serverUrl + "/retrieveFavorites",
 		success : function(result) {
 			console.log(JSON.parse(result))
