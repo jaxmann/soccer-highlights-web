@@ -48,7 +48,7 @@ function applyButtonClicked() {
 	for (var i=0; i<checkedElts.length;i++) {
 		favorites.push(checkedElts[i].parentElement.textContent.replace(/^\s+/,""))
 	}
-	favorites = favorites.join("&")
+	favorites = favorites.join("|")
 	console.log(favorites)
 	$.ajax({
 		type : "POST",
