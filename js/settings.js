@@ -46,7 +46,10 @@ function applyButtonClicked() {
 	var favorites = []
 	var checkedElts = $("#example").find("[checked='checked']")
 	for (var i=0; i<checkedElts.length;i++) {
-		favorites.push(checkedElts[i].parentElement.textContent.replace(/^\s+/,""))
+		if (checkedElts[i].parentElement.childElementCount < 3) {
+			favorites.push(checkedElts[i].parentElement.textContent.replace(/^\s+/,""))
+		}
+		
 	}
 	favorites = favorites.join("|")
 	console.log(favorites)
