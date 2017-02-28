@@ -28,7 +28,8 @@ function retrievePlayersRequest(callback) {
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		url : serverUrl + "/retrievePlayers",
 		data: {
-			userName: QueryString.username  
+			userName: QueryString.username,
+			loginKey: QueryString.loginKey
 		},
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
@@ -60,7 +61,8 @@ function applyButtonClicked() {
 		url : serverUrl + "/sendFavorites",
 		data: {
 				favorites: favorites,
-				username: QueryString.username  
+				username: QueryString.username,
+				loginKey: QueryString.loginKey
 		},
 		success : function() {
 			console.log("post favorites success")
@@ -114,7 +116,8 @@ function retrieveFavorites() {
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		data: {
-			userName: QueryString.username  
+			userName: QueryString.username,
+			loginKey: QueryString.loginKey
 		},
 		url : serverUrl + "/retrieveFavorites",
 		success : function(result) {

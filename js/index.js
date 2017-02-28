@@ -11,6 +11,7 @@ function makeId() {
 function createAccountClicked() {
 	console.log("create account clicked")
 	var salt = makeId();
+	var loginKey = makeId();
 	thisUsername = $("#signup-username").val();
 	thisPhoneNum = $("#signup-phone").val();
 	thisEmail = $("#signup-email").val();
@@ -57,13 +58,14 @@ function createAccountClicked() {
 				email : $("#signup-email").val(),
 				passHash : sodium.to_hex(sodium.crypto_generichash(32, salt + $("#signup-password").val())),
 				passSalt : salt,
-				phoneNumber : $("#signup-phone").val()
+				phoneNumber : $("#signup-phone").val(),
+				loginKey: loginKey
 			}),
 			url : serverUrl + "/signup",
 			success : function(result) {
 				if (result === 'true') {
 					console.log("attempting redirect...")
-					window.location.replace("/settings?username=" + thisUsername);
+					window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
 				} 
 				if (result === 'false') {
 					console.log("username/email/phone already exists");
@@ -101,6 +103,7 @@ function resetClicked() {
 }
 
 function loginClicked() {
+	var loginKey = makeId();
 	console.log("login clicked")
 	thisUsername = $("#signin-username").val();
 	$.ajax({
@@ -118,12 +121,13 @@ function loginClicked() {
 					data : jQuery.param({
 						userName : $("#signin-username").val(),
 						passHash : sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())),
+						loginKey: loginKey
 					}),
 					url : serverUrl + "/login",
 					success : function(result) {
 						if (result === 'true') {
 							console.log("attempting redirect...")
-							window.location.replace("/settings?username=" + thisUsername );
+							window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
 						} 
 						if (result === 'false') {
 							console.log("invalid password");
