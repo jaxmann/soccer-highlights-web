@@ -260,7 +260,7 @@
 		document.title = 'Settings - ' + QueryString.username
 		
 		players = {}
-		thisUsername = location.search.split('username')[1].replace("=", "")
+		thisUsername = QueryString.username
 		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
 		$("#welcome-box").text(
 				'Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase()
