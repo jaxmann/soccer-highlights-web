@@ -48,7 +48,7 @@
 	border-bottom: 1px #4ca340 solid;
 }
 
-#welcome-box {
+#logout-box {
 	font-family: 'Palanquin', sans-serif;
 }
 
@@ -93,7 +93,7 @@
 			style="background-color: #4286f4">
 			<div class="header-button button-right">
 				<a class="cd-signup" href="#0" style="height: 100%"> <span
-					style="display: block" id="welcome-box">Welcome Back</span>
+					style="display: block" id="logout-box">Log Out</span>
 				</a>
 			</div>
 		</div>
@@ -262,12 +262,12 @@
 		players = {}
 		thisUsername = QueryString.username
 		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
-		$("#welcome-box").text(
-				'Welcome Back' + ' ' + thisUsername.charAt(0).toUpperCase()
-						+ thisUsername.slice(1));
-		if ($(window).width() > 1094) {
-			$("#welcome-box").css('transform', 'translateY(50%)')
-		}
+		$("#logout-box").text(
+				'Log Out' + ' (' + thisUsername.charAt(0).toUpperCase()
+						+ thisUsername.slice(1) + ')') ;
+		//if ($(window).width() > 1094) {
+		$("#logout-box").css('transform', 'translateY(50%)')
+		//}
 
 		$(document).ready(function() {
 			var pageLoaded = false;
@@ -284,6 +284,12 @@
 					btnLeftClicked()
 				}
 			});
+			
+			$('#logout-box').on('click', function() {
+				if (pageLoaded) {
+					logoutClicked()
+				}
+			})
 
 			$('.btn-right').on('click', function() {
 				if (pageLoaded) {

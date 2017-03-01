@@ -42,6 +42,24 @@ function retrievePlayersRequest(callback) {
 	});
 }
 
+function logoutClicked() {
+	console.log("logout called")
+	$.ajax({
+		type : "POST",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		url : serverUrl + "/logout",
+		data: {
+			userName: QueryString.username,
+			loginKey: QueryString.loginKey
+		},
+		success : function(result) {
+			console.log('logged out successfully')
+
+		}
+	});
+}
+
+
 function applyButtonClicked() {
 	console.log("apply button clicked")
 	var favorites = []
@@ -126,6 +144,8 @@ function retrieveFavorites() {
 		}
 	});
 }
+
+
 
 function checkBoxes(favorites) {
 
