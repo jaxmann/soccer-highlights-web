@@ -42,6 +42,29 @@ function retrievePlayersRequest(callback) {
 	});
 }
 
+function retrieveUserSettings(callback) {
+	console.log("retrieveUserSettings called")
+	$.ajax({
+		type : "GET",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		url : serverUrl + "/sendSettings",
+		data: {
+			userName: QueryString.username,
+			loginKey: QueryString.loginKey
+		},
+		success : function(result) {
+			//populate the correct fields with the data received
+//			$('.email-notifs')
+//			$('.text-notifs')
+//			if ($('.disable-n').find('.off').length) {
+//				suspendNotifs = 0
+//			} else {
+//				suspendNotifs = parseInt($('.disable-time').val())
+//			}
+		}
+	});
+}
+
 function logoutClicked() {
 	console.log("logout called")
 	$.ajax({

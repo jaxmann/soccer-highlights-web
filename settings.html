@@ -278,6 +278,10 @@
 				$("#about-text-area").css('display', 'block')
 				pageLoaded = true;
 			})
+			
+			retrieveUserSettings(function() {
+				console.log('all done loading settings')
+			})
 
 			$('.btn-left').on('click', function() {
 				if (pageLoaded) {
@@ -294,6 +298,9 @@
 			$('.btn-right').on('click', function() {
 				if (pageLoaded) {
 					btnRightClicked()
+					retrieveUserSettings(function() {
+						console.log('all done loading settings')
+					})
 				}
 			});
 
