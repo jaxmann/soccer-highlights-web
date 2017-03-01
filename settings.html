@@ -152,21 +152,21 @@
 
 			<div id="settings-content">
 				<ul>
-					<li class="settings-options"><input type="checkbox"
+					<li class="settings-options email-notifs"><input type="checkbox"
 						data-toggle="toggle" data-on="On" data-off="Off">
 						<p style="display: inline-block; padding-left: 10px">Receive
 							notifications via email</p></li>
 
-					<li class="settings-options"><input type="checkbox"
+					<li class="settings-options text-notifs"><input type="checkbox"
 						data-toggle="toggle" data-on="On" disabled='disabled' data-off="Off">
 						<p style="display: inline-block; padding-left: 10px">Receive
 							notifications via SMS (coming soon!)</p></li> 
 
-					<li class="settings-options"><input type="checkbox"
+					<li class="settings-options disable-n"><input type="checkbox"
 						data-toggle="toggle" data-on="On" data-off="Off">
 						<p style="display: inline-block; padding-left: 10px">Temporarily
 							suspend all notifications for</p> <input type="text"
-						class="form-control" id="usr"
+						class="form-control disable-time" id="usr"
 						style="display: inline-block; width: 50px">
 						<p style="display: inline-block; padding-left: 10px">hours</p></li>
 
@@ -303,7 +303,10 @@
 
 			//send back updated list of checked players
 			$(".btn-apply-green").click(function() {
-				applyButtonClicked()
+				applyFavsButtonClicked()
+			});
+			$(".btn-apply-blue").click(function() {
+				applySettingsButtonClicked()
 			});
 			//home
 			$("#pmr-logo").click(function(e) {

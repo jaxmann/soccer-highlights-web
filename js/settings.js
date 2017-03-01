@@ -59,13 +59,37 @@ function logoutClicked() {
 	});
 }
 
-
-function applyButtonClicked() {
-	console.log("apply button clicked")
+function applySettingsButtonClicked() {
+	console.log("apply settings clicked")
+	var receiveEmails = $('.email-notifs').find('.off').length ^ 1
+	var receiveTexts = $('.text-notifs').find('.off').length ^ 1
+	var suspendNotifs = 0
+	if ($('.disable-n').find('.off').length) {
+		suspendNotifs = 0
+	} else {
+		suspendNotifs = parseInt($('.disable-time').val())
+	}
+	$.ajax({
+		type : "POST",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		data : jQuery.param({
+			receiveEmails : receiveEmails,
+			receiveTexts : receiveTexts,
+			suspendNotifs : suspendNotifs
+		}),
+		url : serverUrl + "/updateSettings",
+		success : function(result) {
+			console.log("settings have been updated")
+		}
+	});
+}
+	
+function applyFavsButtonClicked() {
+	console.log("apply favs button clicked")
 	var favorites = []
 	var checkedElts = $("#example").find("[checked='checked']")
 	for (var i=0; i<checkedElts.length;i++) {
-		if (checkedElts[i].parentElement.childElementCount < 3) {
+		if (checkedElts[i].parentElement.childElementCount < 3) { //if it is NOT a team or league (players only have 2 children, not 3)
 			favorites.push(checkedElts[i].parentElement.textContent.replace(/^\s+/,""))
 		}
 		
