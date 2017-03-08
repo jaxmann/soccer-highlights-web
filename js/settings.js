@@ -53,6 +53,19 @@ function retrieveUserSettings(callback) {
 			loginKey: QueryString.loginKey
 		},
 		success : function(result) {
+			console.log(result)
+			//emails
+			if (result['receiveEmails'] == 1) {
+				$('.email-notifs').children()[0].classList.remove('off')
+			} if (result['receiveEmails'] == 0) {
+				$('.email-notifs').children()[0].className += " off"
+			}
+			//texts
+			if (result['receiveEmails'] == 1) {
+				$('.text-notifs').children()[0].classList.remove('off')
+			} if (result['receiveEmails'] == 0) {
+				$('.text-notifs').children()[0].className += " off"
+			}
 			//populate the correct fields with the data received
 //			$('.email-notifs')
 //			$('.text-notifs')

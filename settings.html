@@ -158,7 +158,7 @@
 							notifications via email</p></li>
 
 					<li class="settings-options text-notifs"><input type="checkbox"
-						data-toggle="toggle" data-on="On" disabled='disabled' data-off="Off">
+						data-toggle="toggle" data-on="On"  data-off="Off"> <!-- disabled='disabled' -->
 						<p style="display: inline-block; padding-left: 10px">Receive
 							notifications via SMS (coming soon!)</p></li> 
 
@@ -279,9 +279,9 @@
 				pageLoaded = true;
 			})
 			
-			retrieveUserSettings(function() {
+			/* retrieveUserSettings(function() {
 				console.log('all done loading settings')
-			})
+			}) */
 
 			$('.btn-left').on('click', function() {
 				if (pageLoaded) {
