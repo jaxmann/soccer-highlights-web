@@ -54,6 +54,7 @@ function retrieveUserSettings(callback) {
 		},
 		success : function(result) {
 			console.log(result)
+			result = JSON.parse(result)
 			//emails
 			if (result['receiveEmails'] == 1) {
 				$('.email-notifs').children()[0].classList.remove('off')
@@ -61,9 +62,9 @@ function retrieveUserSettings(callback) {
 				$('.email-notifs').children()[0].className += " off"
 			}
 			//texts
-			if (result['receiveEmails'] == 1) {
+			if (result['receiveTexts'] == 1) {
 				$('.text-notifs').children()[0].classList.remove('off')
-			} if (result['receiveEmails'] == 0) {
+			} if (result['receiveTexts'] == 0) {
 				$('.text-notifs').children()[0].className += " off"
 			}
 			//populate the correct fields with the data received
