@@ -111,7 +111,9 @@ function applySettingsButtonClicked() {
 		data : jQuery.param({
 			receiveEmails : receiveEmails,
 			receiveTexts : receiveTexts,
-			suspendNotifs : suspendNotifs
+			suspendNotifs : suspendNotifs,
+			userName: QueryString.username,
+			loginKey: QueryString.loginKey
 		}),
 		url : serverUrl + "/updateSettings",
 		success : function(result) {
