@@ -77,7 +77,7 @@ function logoutClicked() {
 		},
 		success : function(result) {
 			console.log('logged out successfully')
-
+			window.location.replace("/");
 		}
 	});
 }

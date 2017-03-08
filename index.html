@@ -24,6 +24,26 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/libsodium-wrappers/0.4.2/sodium.min.js"></script>
 <!-- will need to build a custom page for under 992 px width and 1450-1490 -->
 <style>
+
+.home-container {  position: relative; }
+
+.home-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: url(/assets/uefa-champions.jpg);
+   opacity: 0.5;
+}
+
+.home-content {
+    position: relative; 
+    z-index: 2;
+}
+
 </style>
 </head>
 <body style="height: 100%">
@@ -184,72 +204,77 @@
 	<div style="height: 5%"></div>
 	<div style="height: 80%;" class="row">
 		<div class="col-md-1"></div>
-		<div class="col-md-10"
-			style="height: 100%; position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
+		<div class="col-md-10 home-container"
+			style="height: 100%;  position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
 
-			<div class="row" style="padding-top: 40px; font-size: 30px">
-				<div class="col-md-1"></div>
-				<div class="col-md-10"">
-					<p style="text-align: center">GET YOUR SPORTS HIGHLIGHTS FIRST</p>
-				</div>
-				<div class="col-md-1"></div>
-			</div>
+				<div class="home-content">	
 
-			<div class="row" style="padding-top: 50px; height: 80%;">
-				<div class="col-md-1"></div>
-
-				<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
-				<a class="w3-btn-floating w3-display-right" onclick="plusDivs(+1)">&#10095;</a>
-
-				<div class="mySlides">
-					<div class="col-md-10 slide-content">
-						<p>Gone are the days of staring at your sports app for vague
-							play-by-play updates - now you can receive customized video
-							highlights within minutes of live action!</p>
-						<!-- <div
-							style="width: 60%; height: 0px; position: relative; padding-bottom: 37.000%;">
-							<iframe src="https://streamable.com/e/kro7?r=p" frameborder="0"
-								allowfullscreen webkitallowfullscreen mozallowfullscreen
-								scrolling="no"
-								style="width: 100%; height: 100%; position: absolute;"></iframe>
-							<script async defer src="https://v.embedcdn.com/embed.js"></script>
-						</div> -->
+					<div class="row" style="padding-top: 40px; font-size: 30px">
+						<div class="col-md-1"></div>
+						<div class="col-md-10"">
+							<p style="text-align: center">GET YOUR SPORTS HIGHLIGHTS FIRST</p>
+						</div>
+						<div class="col-md-1"></div>
+					</div>
+		
+					<div class="row" style="padding-top: 50px; height: 80%;">
+						<div class="col-md-1"></div>
+		
+						<a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+						<a class="w3-btn-floating w3-display-right" onclick="plusDivs(+1)">&#10095;</a>
+		
+						<div class="mySlides">
+							<div class="col-md-10 slide-content">
+								<p>Gone are the days of staring at your sports app for vague
+									play-by-play updates - now you can receive customized video
+									highlights within minutes of live action!</p>
+								<!-- <div
+									style="width: 60%; height: 0px; position: relative; padding-bottom: 37.000%;">
+									<iframe src="https://streamable.com/e/kro7?r=p" frameborder="0"
+										allowfullscreen webkitallowfullscreen mozallowfullscreen
+										scrolling="no"
+										style="width: 100%; height: 100%; position: absolute;"></iframe>
+									<script async defer src="https://v.embedcdn.com/embed.js"></script>
+								</div> -->
+							</div>
+						</div>
+						<div class="mySlides">
+							<div class="col-md-10 slide-content">
+								<p>Subscribe to updates from any player, team, or league!</p>
+								<!-- <img src='/assets/player-list.PNG'> -->
+								<!-- <p class="triangle-border">Goal! Real Madrid 2, Borussia
+									Dortmund 2. Marco Reus (Borussia Dortmund) left footed shot from
+									the centre of the box to the high centre of the goal. Assisted by
+									Pierre-Emerick Aubameyang following a fast break.</p> -->
+								<!--  -->
+							</div>
+						</div>
+						<div class="mySlides">
+							<div class="col-md-10 slide-content">
+								<p>Enjoy simple, hassle-free sign-up and notification
+									customization!</p>
+		<!-- 						<img src='/assets/signup.PNG'>
+		 -->					</div>
+						</div>
+						<div class="mySlides">
+							<div class="col-md-10 slide-content">
+								<p>Receive video links within twenty minutes of live action!</p>
+								<!-- <img src='/assets/iphone-alert.png'> -->
+							</div>
+						</div>
+		
+						<div class="col-md-1"></div>
+					</div>
+		
+					<div class="main-nav">
+						<button
+							style="position: relative; left: 50%; transform: translateX(-50%); background-color: #4286f4"
+							type="button" class="btn btn-success cd-signup">Sign Up
+							Now!</button>
 					</div>
 				</div>
-				<div class="mySlides">
-					<div class="col-md-10 slide-content">
-						<p>Subscribe to updates from any player, team, or league!</p>
-						<!-- <img src='/assets/player-list.PNG'> -->
-						<!-- <p class="triangle-border">Goal! Real Madrid 2, Borussia
-							Dortmund 2. Marco Reus (Borussia Dortmund) left footed shot from
-							the centre of the box to the high centre of the goal. Assisted by
-							Pierre-Emerick Aubameyang following a fast break.</p> -->
-						<!--  -->
-					</div>
-				</div>
-				<div class="mySlides">
-					<div class="col-md-10 slide-content">
-						<p>Enjoy simple, hassle-free sign-up and notification
-							customization!</p>
-<!-- 						<img src='/assets/signup.PNG'>
- -->					</div>
-				</div>
-				<div class="mySlides">
-					<div class="col-md-10 slide-content">
-						<p>Receive video links within twenty minutes of live action!</p>
-						<!-- <img src='/assets/iphone-alert.png'> -->
-					</div>
-				</div>
-
-				<div class="col-md-1"></div>
-			</div>
-
-			<div class="main-nav">
-				<button
-					style="position: relative; left: 50%; transform: translateX(-50%); background-color: #4286f4"
-					type="button" class="btn btn-success cd-signup">Sign Up
-					Now!</button>
-			</div>
+					
+			
 		</div>
 		<div class="col-md-1"></div>
 
