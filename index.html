@@ -52,7 +52,7 @@ body {
   overflow: hidden;
 }
 .hoja {
-  color: #dcdce2;
+  color: #55555f;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -144,7 +144,16 @@ body {
             transform: rotateZ(-360deg) scaleX(1) scaleY(1);
   }
 }
-
+.wpframe {
+background: #fff;
+border-radius: 2px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+padding: 8px;
+-webkit-box-shadow: 1px 2px 1px #d1d1d1;
+-moz-box-shadow: 1px 2px 1px #d1d1d1;
+box-shadow: 1px 2px 1px #d1d1d1;
+}
 
 </style>
 </head>
@@ -307,8 +316,8 @@ body {
 	<div style="height: 5%"></div>
 	<div style="height: 80%;" class="row">
 		<div class="col-md-1 col-xs-1"></div>
-		<div class="col-md-10 col-xs-10 home-container"
-			style="height: 100%;  position: relative; top: 50%; transform: translateY(-50%); border: 2px solid #4286f4; border-radius: 10px; -webkit-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 3px 13px 3px rgba(4, 40, 111, 0.4);">
+		<div class="col-md-10 col-xs-10 home-container wpframe"
+			style="height: 100%;  position: relative; top: 50%; transform: translateY(-50%); border: 0px solid #4286f4; border-radius: 0px; -webkit-box-shadow: 0px 2px 13px 3px rgba(4, 40, 111, 0.4); -moz-box-shadow: 0px 2px 13px 3px rgba(4, 40, 111, 0.4); box-shadow: 0px 2px 13px 3px rgba(4, 40, 111, 0.4);">
 
 				<div class="home-content">	
 
@@ -406,12 +415,15 @@ body {
 	
 	console.log(sodium.to_hex(sodium.crypto_generichash(32, makeId())));
 	
-	/* if ($(window).width() > 1494) {
-		$(".cd-signin").css('transform', 'translateY(15%)')
-	} */
 	
 	$(document).ready(function() {
 	
+		$('.header-button').click(function(e) {
+			setTimeout(function() { $('#signup-username').focus() }, 100);
+			setTimeout(function() { $('#signin-username').focus() }, 100);
+
+		})
+		
 		//signup
 		$("#create").click(function(e) {
 			e.preventDefault();
