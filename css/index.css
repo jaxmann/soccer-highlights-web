@@ -1,3 +1,16 @@
+@media ( max-width : 370px) {
+	#sign-up-now {
+		visibility:hidden;
+	}
+	
+}
+
+@media ( min-width : 371px ) and (max-width : 780px) {
+	.hoja:before, .hoja:after {
+		visibility:hidden;
+	}
+}
+
 @media ( max-width : 1450px) {
 	.header-button {
 		height: 60px;
