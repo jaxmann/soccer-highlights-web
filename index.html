@@ -162,6 +162,72 @@ padding: 8px;
 box-shadow: 1px 2px 1px #d1d1d1;
 }
 
+.circle-container {
+	position: relative;
+	width: 24em;
+	height: 24em;
+	padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
+	border-radius: 50%;
+	margin: 1.75em auto 0;
+	background-color:white;
+}
+.circle-container a {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	top: 50%; left: 50%;
+	width: 96px; height: 96px;
+	margin: -2em; /* 2em = 4em/2 */ /* half the width */
+	
+}
+.circle-container img { display: block; width: 100%; }
+.deg270  { transform: rotate(270deg) translate(8em) rotate(-270deg); }
+.deg342 { transform: rotate(342deg) translate(8em) rotate(-342deg); }
+.deg54 { transform: rotate(54deg) translate(8em) rotate(-54deg); }
+.deg126 { transform: rotate(126deg) translate(8em) rotate(-126deg); }
+.deg198 { transform: rotate(198deg) translate(8em) rotate(-198deg); }
+
+
+.circle-container a:not(.center):before {
+	position: absolute;
+	width: 4em;
+	color: white;
+	opacity: 0;
+	background: rgba(0,0,0,.5);
+	font: 1.25em/3.45 Courier, monospace;
+	letter-spacing: 2px;
+	text-decoration: none;
+	text-indent: -2em;
+	text-shadow: 0 0 .1em deeppink;
+	transition: .7s; /* only works in Firefox */
+}
+.circle-container a:hover:before { opacity: 1; }
+
+/* this is for showing the circle on which the images are placed */
+.circle-container:after {
+	position: absolute;
+	top: 2.8em; left: 2.8em;
+	width: 24em; height: 24em;
+	border-radius: 50%;
+	opacity: .3;
+	pointer-events: none;
+	content: '';
+}
+.circle-container:hover:after { opacity: 1; }
+.circle-container a:not(.center):after {
+	position: absolute;
+	top: 50%; left: 50%;
+	width: 4px; height: 4px;
+	border-radius: 50%;
+	box-shadow: 0 0 .5em .5em white;
+	margin: -2px;
+	background: deeppink;
+	opacity: .3;
+}
+.circle-container:hover a:after { opacity: 1; }
+.circle-container a:hover:after { opacity: .3; }
+
+
 </style>
 </head>
 <body style="height: 100%">
@@ -347,6 +413,19 @@ box-shadow: 1px 2px 1px #d1d1d1;
 								<p>Gone are the days of staring at your sports app for vague
 									play-by-play updates - now you can receive customized video
 									highlights within minutes of live action!</p>
+								<div class='circle-container'>
+									<a href='#' class='deg270'><canvas id="canvas1" style="background-color:white;  display:none; width:300px"></canvas><img id="source1" style="" src='./assets/premleague.png'></a>
+									<a href='#' class='deg342'><canvas id="canvas2" style="background-color:white; display:none;width:300px"></canvas><img id="source2" style="" src='./assets/laliga2.png'></a>
+									<a href='#' class='deg54'><canvas id="canvas3" style="background-color:white; display:none;width:300px"></canvas><img id="source3" style="" src='./assets/ligue12.png'></a>
+									<a href='#' class='deg126'><canvas id="canvas4" style="background-color:white;  display:none;width:300px"></canvas><img id="source4" style="" src='./assets/bundesliga2.png'/></a>
+									<a href='#' class='deg198'><canvas id="canvas5" style="background-color:white;  display:none;width:300px"></canvas><img id="source5" style="" src='./assets/seriea2.jpg'></a>
+								</div>
+							
+								<!--<canvas id="canvas1" style="background-color:white"></canvas>-->
+								<canvas id="canvas2"></canvas>
+								<canvas id="canvas3"></canvas>
+								<canvas id="canvas4"></canvas>
+								<canvas id="canvas5"></canvas>
 								<!-- <div
 									style="width: 60%; height: 0px; position: relative; padding-bottom: 37.000%;">
 									<iframe src="https://streamable.com/e/kro7?r=p" frameborder="0"
@@ -409,7 +488,7 @@ box-shadow: 1px 2px 1px #d1d1d1;
 		style="box-shadow: 0px 6px 31px 5px rgba(4, 40, 111, 0.4);">
 		<li class="button-right"><a href="mailto:pmridontcareifyourespond@gmail.com?Bug%20Report">Report a Bug</a></li>
 		<li class="button-right"><a href="mailto:pmridontcareifyourespond@gmail.com">Contact Us</a></li>
-		<li class="button-right"><a href="https://github.com/jaxmann/pmr-web/">Github</a></li>
+		<li class="button-right"><a href="https://github.com/jaxmann/pmr-web/" target="_blank">Github</a></li>
 	</ul>
 
 
@@ -421,6 +500,83 @@ box-shadow: 1px 2px 1px #d1d1d1;
 	var slideIndex = 1;
 	
 	console.log(sodium.to_hex(sodium.crypto_generichash(32, makeId())));
+	
+	greyscale("canvas1", "source1")
+	greyscale("canvas2", "source2")
+	greyscale("canvas3", "source3")
+	greyscale("canvas4", "source4")
+	greyscale("canvas5", "source5")
+
+	$('#source1').mouseover(function() {
+		console.log('hovering over source1')
+		$('#canvas1').css('display','block')
+	});
+	$('#source2').mouseover(function() {
+		console.log('hovering over source2')
+		$('#canvas2').css('display','block')
+	});
+	$('#source3').mouseover(function() {
+		console.log('hovering over source3')
+		$('#canvas3').css('display','block')
+	});
+	$('#source4').mouseover(function() {
+		console.log('hovering over source4')
+		$('#canvas4').css('display','block')
+	});
+	$('#source5').mouseover(function() {
+		console.log('hovering over source5')
+		$('#canvas5').css('display','block')
+	});
+	
+
+	function greyscale(myCanvas, imageSource) {
+		var canvas = document.getElementById(myCanvas);
+		var ctx = canvas.getContext('2d');
+		var image = document.getElementById(imageSource);
+
+		ctx.drawImage(image, 0, 0);
+		//console.log(ctx.getImageData(0,0,96,72))
+
+		image.crossOrigin = "Anonymous"; //prevents some cross-origin errors
+		var imgd;
+		if (imageSource !== 'source2') {
+			imgd = ctx.getImageData(0, 0, 96, 96);
+		} else {
+			imgd = ctx.getImageData(0, 0, 96, 72);
+		}
+		
+		//console.log(imgd)
+		var pix = imgd.data;
+		var blackpixel = 110; //set to desired level of grey (0-255)
+		for (var i = 0, n = pix.length; i < n; i += 4) {
+
+			//console.log(pix[i], pix[i+1], pix[i+2]); 
+			var p=255;
+			if (pix[i] < 255 && pix[i+1] < 255 && pix[i+2] < 255) {
+				
+				if (pix[i] > pix[i+1] && pix[i] > pix[i+2]) {
+					p = pix[i]
+				}
+				if (pix[i+1] > pix[i] && pix[i+1] > pix[i+2]) {
+					p = pix[i+1]
+				}
+				if (pix[i+2] > pix[i] && pix[i+2] > pix[i+1]) {
+					p = pix[i+2]
+				}
+				
+			}
+			else {
+				//console.log(pix[i], pix[i+1], pix[i+2]); 
+			}
+			pix[i] = p;  
+				pix[i+1] = p;  
+				pix[i+2] = p;
+			pix[i+3] = 255;
+		
+
+		}
+	   ctx.putImageData(imgd, 0, 0);   
+	}
 	
 	
 	$(document).ready(function() {
@@ -453,7 +609,7 @@ box-shadow: 1px 2px 1px #d1d1d1;
 			window.location.replace("/");
 		});
 		
-		carousel();
+		//carousel();
 		
 		showDivs(slideIndex);
 	});
