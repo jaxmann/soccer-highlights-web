@@ -78,10 +78,10 @@
 		<a href='#' class='deg198'><img src='./assets/seriea.jpg'></a>
 		
 	</div>
-
+<!-- https://mdn.mozillademos.org/files/5397/rhino.jpg        ./assets/rhino.jpg-->
 	<canvas id="canvas"></canvas>
 	<div style="display:none;">
-	<img id="source" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"
+	<img id="source" src="./assets/premierleague.png"
 		width="300" height="227">
 	</div>
 	
@@ -94,7 +94,8 @@
 	var ctx = canvas.getContext('2d');
 	var image = document.getElementById('source');
 
-	ctx.drawImage(image, 100, 100);
+	ctx.drawImage(image, 0, 0);
+	console.log(ctx.getImageData(0,0,300,227))
 
 	// function initContext(canvasID, contextType) {
 	// 	var canvas = document.getElementById(canvasID);
