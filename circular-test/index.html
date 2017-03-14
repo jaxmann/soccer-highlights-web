@@ -81,8 +81,8 @@
 <!-- https://mdn.mozillademos.org/files/5397/rhino.jpg        ./assets/rhino.jpg-->
 	<canvas id="canvas"></canvas>
 	<div style="display:none;">
-	<img id="source" src="./assets/premierleague.png"
-		width="300" height="227">
+	<img id="source" src="./assets/laliga.png"
+		width="96" height="96"> <!-- need to resize actual image to 96x96 -->
 	</div>
 	
 </body>
@@ -95,7 +95,7 @@
 	var image = document.getElementById('source');
 
 	ctx.drawImage(image, 0, 0);
-	console.log(ctx.getImageData(0,0,300,227))
+	console.log(ctx.getImageData(0,0,96,96))
 
 	image.crossOrigin = "Anonymous";
 	var imgd = ctx.getImageData(0, 0, image.width, image.height);
