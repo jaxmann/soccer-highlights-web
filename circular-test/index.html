@@ -97,6 +97,39 @@
 	ctx.drawImage(image, 0, 0);
 	console.log(ctx.getImageData(0,0,300,227))
 
+	image.crossOrigin = "Anonymous";
+	var imgd = ctx.getImageData(0, 0, image.width, image.height);
+	console.log(imgd)
+	var pix = imgd.data;
+	var blackpixel = 21;
+	for (var i = 0, n = pix.length; i < n; i += 4) {
+
+	//console.log(pix[i], pix[i+1], pix[i+2]); 
+	if (i > 3) {
+	   if ((Math.abs(pix[i-3] - pix[i]) > 10) &&
+	       (Math.abs(pix[i-2] - pix[i+1]) > 10) &&
+	       (Math.abs(pix[i-1] - pix[i+2]) > 10)
+	    ) {
+
+	       pix[i  ] = blackpixel;  
+	       pix[i+1] = blackpixel;  
+	       pix[i+2] = blackpixel;
+
+	   }
+	}
+	else {
+	   if (pix[i] < 250 && pix[i+1] < 250 && pix[i+2] < 250) {
+	      pix[i  ] = blackpixel;  
+	      pix[i+1] = blackpixel;  
+	      pix[i+2] = blackpixel;
+	   }
+	}
+
+	}
+   ctx.putImageData(imgd, 0, 0);   
+
+
+
 	// function initContext(canvasID, contextType) {
 	// 	var canvas = document.getElementById(canvasID);
 	// 	var context = canvas.getContext(contextType);
