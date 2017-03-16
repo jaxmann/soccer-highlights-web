@@ -32,24 +32,6 @@ p {
 font-family: 'Roboto', sans-serif;
 }
 
-.home-container {  position: relative; }
-
-.home-container:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    /*background-image: url(/assets/uefa-champions.jpg); */
-   opacity: 0.5;
-}
-
-.home-content {
-    position: relative; 
-    z-index: 2;
-}
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 html,
 body {
@@ -126,6 +108,42 @@ body {
 @-webkit-keyframes rotarIz {
   0% {
     -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+    }
+ }   
+
+
+
+@-webkit-keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@-webkit-keyframes rotarIz {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
             transform: rotateZ(0deg) scaleX(1) scaleY(1);
   }
   50% {
@@ -151,6 +169,7 @@ body {
             transform: rotateZ(-360deg) scaleX(1) scaleY(1);
   }
 }
+
 .wpframe {
 background: #fff;
 border-radius: 2px;
@@ -614,6 +633,7 @@ box-shadow: 1px 2px 1px #d1d1d1;
 		
 		$('#sign-up-now').css('visibility','hidden') //hide it for now - can be added later
 		
+
 		showDivs(slideIndex);
 	});
 	
