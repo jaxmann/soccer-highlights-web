@@ -1,6 +1,9 @@
 # pmr-web < 20
 just the webapp though
 
+
+
+
 ### PMR Services
 
 [pmr-server](https://github.com/jaxmann/pmr-server)
@@ -11,7 +14,7 @@ just the webapp though
 
 ## Usage
 
- - Run pmr-rest first - it needs to run on port 8080, this can run on 8081. Start with npm package [http-server](https://www.npmjs.com/package/http-server).
+Run pmr-rest first - it needs to run on port 8080, this can run on 8081. Start with npm package [http-server](https://www.npmjs.com/package/http-server).
 
 `cd /var/www/html`
 
