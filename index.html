@@ -15,6 +15,11 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 
+
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style-swatch.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 <script src="js/modernizr.js"></script>
 
 <script
@@ -189,6 +194,7 @@ box-shadow: 1px 2px 1px #d1d1d1;
 	border-radius: 50%;
 	margin: 1.75em auto 0;
 	background-color:white;
+	border:2px solid black;
 }
 .circle-container a {
 	display: block;
@@ -428,11 +434,81 @@ box-shadow: 1px 2px 1px #d1d1d1;
 						<a class="w3-btn-floating w3-display-right" onclick="plusDivs(+1)">&#10095;</a>
 		
 						<div class="mySlides firstSlide">
-							<div class="col-md-10 col-xs-10 slide-content">
+							<div class="col-md-10 col-xs-10 slide-content" style="height:100%">
 								<p>Gone are the days of staring at your sports app for vague
 									play-by-play updates - now you can receive customized video
 									highlights within minutes of live action!</p>
+								 
+							<section class="main" style="height:100%; padding-top:30px">
+			
+								<div id="sb-container" class="sb-container">
 								
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/bayern.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/dortmund.png"></></span>
+									</div>
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/leicester.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:55px" src="assets/teams/atletico.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/chelsea.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/bayern.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/manchester_city.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/manchester_united.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:50px" src="assets/teams/acmilan.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/inter.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:60px" src="assets/teams/roma.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:80px" src="assets/teams/lazio.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/psg.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:50px" src="assets/teams/marseille.png"></></span>										
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/arsenal.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:52px" src="assets/teams/tottenham.png"></></span>
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/barcelona.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/realmadrid.png"></></span>									
+									</div>	
+									<div>
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/manchester_united.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:52px" src="assets/teams/liverpool.png"></></span>										
+									</div>
+									<div> 
+										<span class="sb-icon-top icon-camera"><img style="height:70px; width:70px" src="assets/teams/dortmund.png"></></span>
+										<h4 class="card"><span>VS</span></h4>
+										<span class="sb-icon-bottom icon-camera"><img style="height:70px; width:70px" src="assets/teams/schalke.png"></></span>
+									</div>
+									<div>
+										<h4 class="card"><span>Tickets</span></h4>
+										<h5 class="card"><span>PMR</span></h5>											
+									</div>
+									
+									
+								</div><!-- sb-container -->
+								
+							</section>	 
+								 
+								 
 							</div>
 						</div>
 						<div class="mySlides">
@@ -513,7 +589,8 @@ box-shadow: 1px 2px 1px #d1d1d1;
 
 
 
-
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.swatchbook.js"></script>
 	<script>
 
 	var serverUrl = "http://localhost:8080"
@@ -547,6 +624,12 @@ box-shadow: 1px 2px 1px #d1d1d1;
 		console.log('hovering over source5')
 		$('#canvas5').css('display','block')
 	}); */
+	
+	$(function() {
+		
+		$( '#sb-container' ).swatchbook();
+	
+	});
 	
 
 	function greyscale(myCanvas, imageSource) {
