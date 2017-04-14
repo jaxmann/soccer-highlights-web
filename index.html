@@ -440,8 +440,11 @@ box-shadow: 1px 2px 1px #d1d1d1;
 								<p>Gone are the days of staring at your sports app for vague
 									play-by-play updates - now you can receive customized video
 									highlights within minutes of live action!</p>
-								 
-							<section class="main card-main" style="height:100%; padding-top:30px; width:100%">
+									
+									
+<!-- 							<img class="fake-card" style="padding-top:65px;display:none "src="assets/capture.jpg"></>
+ -->								 
+							<section class="main card-main" style="height:100%; padding-top:30px; width:100%; padding-left:60px">
 			
 								<div id="sb-container" class="sb-container">
 								
@@ -685,6 +688,12 @@ box-shadow: 1px 2px 1px #d1d1d1;
 	
 	
 	$(document).ready(function() {
+		
+		if ($(".slide-content").height() < 500) {
+			$(".card-main").css("padding-top", 0)
+		}
+		
+		
 	
 		$('.header-button').click(function(e) {
 			setTimeout(function() { $('#signup-username').focus() }, 100);

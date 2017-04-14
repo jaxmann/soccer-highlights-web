@@ -5,6 +5,10 @@
 	.circle-container {
 		visibility: hidden
 	}
+	.card-main {
+		visibility: hidden;
+	}
+	
 	
 }
 
@@ -15,7 +19,20 @@
 	.circle-container {
 		visibility: hidden;
 	}
+	.card-main {
+		visibility: hidden;
+	}
+	
 }
+
+@media ( min-width : 781px ) and (max-width : 1150px) {
+	.card-main {
+		visibility: hidden;
+	}
+	
+}
+
+
 
 @media ( max-width : 1450px) {
 	.header-button {
@@ -31,9 +48,10 @@
 		top: 50%;
 		transform: translateY(25%);
 	} */
+	
 }
 
-@media ( min-width : 1450px ) and (max-width : 2041px) {
+@media ( min-width : 1450px ) and (max-width : 4097px) {
 	.header-button {
 		height: 60px;
 	}
