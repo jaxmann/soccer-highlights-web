@@ -23,11 +23,18 @@ just the webapp though
 
 Run pmr-rest first - it needs to run on port 8080, this can run on 8081. Start with npm package [http-server](https://www.npmjs.com/package/http-server).
 
-`cd /var/www/html`
+`cd ~`
 
 `git clone https://github.com/jaxmann/pmr-web.git`
 
-`mv pmr-web/* .`
+`cd pmr-web`
+
+`http-server` (open new window)
+
+`lt -p 8081 -s <name-of-site>` (creates tunnel for site at https://<name-of-site>.localtunnel.me)
+
+
+
 
 ## About
 
