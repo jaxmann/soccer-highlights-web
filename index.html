@@ -694,8 +694,12 @@ box-shadow: 1px 2px 1px #d1d1d1;
 	   ctx.putImageData(imgd, 0, 0);   
 	}
 	
+	$(".circle-container").css("margin-top", ($(".slide-content").height() - 60 - $(".circle-container").height())/2 ); 
+
+	
 	
 	$(document).ready(function() {
+		
 		
 		if ($(".slide-content").height() < 500) {
 			$(".card-main").css("padding-top", 0)
