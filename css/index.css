@@ -3,7 +3,7 @@
 		visibility:hidden;
 	}
 	.circle-container {
-		visibility: hidden
+		;
 	}
 	.card-main {
 		visibility: hidden;
@@ -17,7 +17,7 @@
 		visibility:hidden;
 	}
 	.circle-container {
-		visibility: hidden;
+		
 	}
 	.card-main {
 		visibility: hidden;
@@ -28,6 +28,9 @@
 @media ( min-width : 781px ) and (max-width : 1150px) {
 	.card-main {
 		visibility: hidden;
+	}
+	.circle-container {
+		display:block !important;
 	}
 	
 }
