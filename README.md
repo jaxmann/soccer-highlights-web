@@ -31,7 +31,7 @@ Run pmr-rest first - it needs to run on port 8080, this can run on 8081. Start w
 
 `http-server` (open new window)
 
-`lt -p 8081 -s <name-of-site>` (creates tunnel for site at https://<name-of-site>.localtunnel.me)
+`lt -p 8081 -s <name-of-site>` (creates tunnel for site at https://name-of-site.localtunnel.me)
 
 
 
