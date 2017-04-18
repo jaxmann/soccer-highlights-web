@@ -20,8 +20,8 @@ function createAccountClicked() {
 	var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 	
 	if (thisUsername.length < 5) {
-		console.log(thisUsername)
-		console.log(thisUsername.length)
+		//console.log(thisUsername)
+		//console.log(thisUsername.length)
 		$("#create").css("background-color","#f27a6a");
 		$("#create").val("Username Must be at Least 5 Characters Long");
 		setTimeout(function() {
@@ -115,7 +115,7 @@ function loginClicked() {
 		url : serverUrl + "/checkUser",
 		success : function(result) {
 			if (result !== 'false') { //if user exists
-				console.log(sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())));
+				//console.log(sodium.to_hex(sodium.crypto_generichash(32, result + $("#signin-password").val())));
 				$.ajax({
 					type : "GET",
 					data : jQuery.param({

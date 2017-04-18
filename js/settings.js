@@ -53,7 +53,7 @@ function retrieveUserSettings(callback) {
 			loginKey: QueryString.loginKey
 		},
 		success : function(result) {
-			console.log(result)
+			//console.log(result)
 			result = JSON.parse(result)
 			//emails
 			if (result['receiveEmails'] == 1) {
@@ -135,7 +135,7 @@ function applyFavsButtonClicked() {
 	}
 	favorites = favorites.join("|") //encodeURI or encodeURIcomponent if necessary
 	favorites = favorites.replace("'", "''") 
-	console.log(favorites)
+	//console.log(favorites)
 	$.ajax({
 		type : "POST",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -202,7 +202,7 @@ function retrieveFavorites() {
 		},
 		url : serverUrl + "/retrieveFavorites",
 		success : function(result) {
-			console.log(JSON.parse(result))
+			//console.log(JSON.parse(result))
 			checkBoxes(JSON.parse(result).list)
 		}
 	});
@@ -222,13 +222,13 @@ function checkBoxes(favorites) {
 	})
 
 
-	console.log(favs)
+	//console.log(favs)
 	window.$log = favs
 	var allBoxes = $("#example").find("[type='checkbox']")
 	console.log('size is ' + allBoxes.length)
 	for (var i=0; i<allBoxes.length; i++) {
 		if (favs.indexOf(allBoxes[i].parentElement.textContent.trim()) > -1) {
-			console.log("found a match " + allBoxes[i].parentElement.textContent.trim())
+			//console.log("found a match " + allBoxes[i].parentElement.textContent.trim())
 			$(allBoxes[i]).attr('checked','checked')
 		}
 	}
