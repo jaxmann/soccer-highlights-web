@@ -65,7 +65,7 @@ function createAccountClicked() {
 			success : function(result) {
 				if (result === 'true') {
 					console.log("attempting redirect...")
-					window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
+					//window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
 				} 
 				if (result === 'false') {
 					console.log("username/email/phone already exists");
