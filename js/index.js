@@ -64,8 +64,14 @@ function createAccountClicked() {
 			url : serverUrl + "/signup",
 			success : function(result) {
 				if (result === 'true') {
-					console.log("attempting redirect...")
-					//window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
+					$("#create").css("background-color","#f27a6a");
+					$("#create").val("Please Check Your Email for a Confirmation Email");
+					setTimeout(function() {
+						$("#create").css("background-color","#4286f4");
+						$("#create").val("Create Account");
+					}, 4000)
+//					console.log("attempting redirect...")
+//					window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
 				} 
 				if (result === 'false') {
 					console.log("username/email/phone already exists");
@@ -128,8 +134,7 @@ function loginClicked() {
 						if (result === 'true') {
 							console.log("attempting redirect...")
 							window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
-						} 
-						if (result === 'false') {
+						} else if (result === 'credentials') {
 							console.log("invalid password");
 							$("#login").css("background-color","#f27a6a");
 							$("#login").val("Incorrect username or password");
@@ -137,6 +142,16 @@ function loginClicked() {
 								$("#login").css("background-color","#4286f4");
 								$("#login").val("Log In");
 							}, 4000)
+						} else if (result == 'confirmation') {
+							console.log("unconfirmed account");
+							$("#login").css("background-color","#f27a6a");
+							$("#login").val("Please Confirm Your Account Before Logging in");
+							setTimeout(function() {
+								$("#login").css("background-color","#4286f4");
+								$("#login").val("Log In");
+							}, 4000) 
+						} else {
+							console.log("this should never happen");
 						}
 					}
 				});
