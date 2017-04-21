@@ -97,7 +97,7 @@ function resetClicked() {
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		data : jQuery.param({
-			email : $("#signup-email").val(),
+			email : $("#reset-email").val(),
 		}),
 		url : serverUrl + "/reset",
 		success : function(result) {
