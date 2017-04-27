@@ -403,8 +403,23 @@ table td {
 }
 
 .btn-apply-green:hover {
-	background-color: #c1ead8;
+	background-color: #c1ead8 !important;
 	border-color: #09a010;
+}
+
+.btn-apply-green:active {
+	background-color: #c1ead8 !important;
+	border-color: #09a010;
+}
+
+.btn-apply-green:visited {
+	background-color: #c1ead8 !important;
+	border-color: #09a010;
+}
+
+.btn-apply-green:focus {
+	background-color: #c1ead8; !important
+	border-color: #09a010 !important;
 }
 
 .btn-apply-blue {
@@ -414,6 +429,21 @@ table td {
 
 .btn-apply-blue:hover {
 	border: 1px solid #4286f4;
-	background-color: #acc6f3;
+	background-color: #acc6f3 !important;
+}
+
+.btn-apply-blue:focus {
+	border: 1px solid #4286f4;
+	background-color: #acc6f3 !important;
+}
+
+.btn-apply-blue:visited {
+	border: 1px solid #4286f4;
+	background-color: #acc6f3 !important;
+}
+
+.btn-apply-blue:active {
+	border: 1px solid #4286f4;
+	background-color: #acc6f3 !important;
 }
 
