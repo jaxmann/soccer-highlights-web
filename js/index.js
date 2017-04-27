@@ -92,20 +92,40 @@ function createAccountClicked() {
 
 
 function resetClicked() {
+	var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
+	
 	console.log("reset password clicked")
-	$.ajax({
-		type : "GET",
-		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-		data : jQuery.param({
-			email : $("#reset-email").val(),
-		}),
-		url : serverUrl + "/reset",
-		success : function(result) {
-			console.log("a password recovery email has been sent")
-			//we also need a way for users to validate their email addresses to they can't spam people by entering their emails
-			//or only send 1 email ever, on login? 
-		}
-	});
+	var thisEmail = $("#reset-email").val(); 
+	
+	if (!emailRe.test(thisEmail)) {
+		$("#reset").css("background-color","#f27a6a");
+		$("#reset").val("Please Enter a Valid Email Address");
+		setTimeout(function() {
+			$("#reset").css("background-color","#4286f4");
+			$("#reset").val("Reset password");
+		}, 4000)
+	} else {
+		$.ajax({
+			type : "GET",
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			data : jQuery.param({
+				email : $("#reset-email").val(),
+			}),
+			url : serverUrl + "/reset",
+			success : function(result) {
+				console.log("a password recovery email has been sent")
+				$("#reset").css("background-color","#60ad0c");
+				$("#reset").val("Check your email for a reset link");
+				setTimeout(function() {
+					$("#reset").css("background-color","#4286f4");
+					$("#reset").val("Reset password");
+				}, 4000)
+				
+			}
+		});
+	}
+	
+	
 }
 
 function loginClicked() {
