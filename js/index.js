@@ -50,6 +50,8 @@ function createAccountClicked() {
 			$("#create").val("Create Account");
 		}, 4000)
 	} else {
+		$("#create").css("background-color","#4286f4");
+		$("#create").val("Processing...");
 		$.ajax({
 			type : "POST",
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
