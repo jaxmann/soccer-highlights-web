@@ -27,10 +27,10 @@ function retrievePlayersRequest(callback) {
 		type : "GET",
 		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 		url : serverUrl + "/retrievePlayers",
-		data: {
+		/*data: {
 			userName: QueryString.username,
 			loginKey: QueryString.loginKey
-		},
+		},*/
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
 			generateHTML(JSON.parse(result), function() {
