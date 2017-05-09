@@ -369,10 +369,15 @@ body {
 			  return query_string;
 			}();
 			
+		
+			
 		document.title = 'Settings - ' + QueryString.username
 		
 		players = {}
-		thisUsername = QueryString.username
+		thisUsername = "none";
+		if (QueryString.username) {
+			thisUsername = QueryString.username
+		}
 		thisUsername.charAt(0).toUpperCase() + thisUsername.slice(1)
 		$("#logout-box").text(
 				'Log Out' + ' (' + thisUsername.charAt(0).toUpperCase()
@@ -383,13 +388,24 @@ body {
 
 		$(document).ready(function() {
 			var pageLoaded = false;
-
-			retrievePlayersRequest(function() {
-				console.log('all done loading players')
+			
+			//visit 127.0.0.1;8080/settings?test=test to see a dummy page
+					
+			if (QueryString.test == 'test') {
+				console.log(QueryString.test);
 				$("#loader-wrapper").css('display', 'none')
 				$("#about-text-area").css('display', 'block')
 				pageLoaded = true;
-			})
+				
+			} else {
+				retrievePlayersRequest(function() {
+					console.log('all done loading players')
+					$("#loader-wrapper").css('display', 'none')
+					$("#about-text-area").css('display', 'block')
+					pageLoaded = true;
+				})
+			}
+			
 			
 			/* retrieveUserSettings(function() {
 				console.log('all done loading settings')

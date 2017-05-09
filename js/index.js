@@ -68,10 +68,7 @@ function createAccountClicked() {
 				if (result === 'true') {
 					$("#create").css("background-color","#f27a6a");
 					$("#create").val("Please Check Your Email for a Confirmation Email");
-					setTimeout(function() {
-						$("#create").css("background-color","#4286f4");
-						$("#create").val("Create Account");
-					}, 4000)
+					
 //					console.log("attempting redirect...")
 //					window.location.replace("/settings?username=" + thisUsername + "&loginKey=" + loginKey);
 				} 
@@ -118,10 +115,7 @@ function resetClicked() {
 				console.log("a password recovery email has been sent")
 				$("#reset").css("background-color","#60ad0c");
 				$("#reset").val("Check your email for a reset link");
-				setTimeout(function() {
-					$("#reset").css("background-color","#4286f4");
-					$("#reset").val("Reset password");
-				}, 4000)
+				
 				
 			}
 		});
