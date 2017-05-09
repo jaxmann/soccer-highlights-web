@@ -246,58 +246,13 @@ function btnLeftClicked() {
 		$("#btn_cont").css("border", "none")
 		$(".btn-right").hide();
 		$(".about-box").hide();
-		$(".btn-left").animate({
-			top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(
-			".header-row")
-			.height()))
-			+ "px",
-			left : "-="
-				+ (parseInt($(
-				".btn-left")
-				.offset().left))
-				+ "px"
-		})
+		$(".btn-left").animate({top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) + "px", left : "-=" + (parseInt($(".btn-left").offset().left)) + "px"})
 		$("#mid-block-f").css("display", "block")
-		$("#mid-block-f")
-		.css(
-				"height",
-				(parseInt($(window).height())
-						- parseInt($(
-						".header-row")
-						.height()) - parseInt($(
-						".footer").height()))
-						/ 2
-						+ $(window).height()
-						/ 4)
-						$("#mid-block-f")
-						.css(
-								"top",
-								parseInt($(".header-row")
-										.height())
-										+ (parseInt($(window)
-												.height()
-												- (parseInt($(
-												".header")
-												.height())
-												+ parseInt($(
-												".footer")
-												.height()) + ((parseInt($(
-														window)
-														.height())
-														- parseInt($(
-																".header-row")
-																.height()) - parseInt($(
-																".footer")
-																.height())) / 2 + $(
-																		window)
-																		.height() / 4))) / 2))
-																		$("#mid-block-f").css(
-																				"width",
-																				$(window).width() - $(window).width()
-																				/ 5)
-																				$("#mid-block-f").css("left",
-																						$(window).width() / 10)
-
+		$("#mid-block-f").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height()))/ 2 + $(window).height()/ 4)
+			$("#mid-block-f").css("top", parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer")
+					.height()) + ((parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4))) / 2))
+							$("#mid-block-f").css("width", $(window).width() - $(window).width()/ 5)
+		$("#mid-block-f").css("left", $(window).width() / 10)
 	} else {
 		leftExpanded = false;
 		$('.btn-left').toggleClass('clicked');
@@ -307,19 +262,7 @@ function btnLeftClicked() {
 		$(".about-box").show();
 
 		$("#mid-block-f").hide();
-		$(".btn-left")
-		.animate(
-				{
-					top : "+="
-						+ (parseInt(leftInitOffset.top)
-								- parseInt($(
-								".header-row")
-								.height()) - 2)
-								+ "px",
-								left : "+="
-									+ (parseInt(leftInitOffset.left) - 2)
-									+ "px"
-				})
+		$(".btn-left").animate({top : "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) - 2) + "px", left : "+=" + (parseInt(leftInitOffset.left) - 2) + "px"})
 	}
 
 }
@@ -340,16 +283,10 @@ function btnRightClicked() {
 		})
 		$("#mid-block-s").css("display", "block")
 		$("#mid-block-s").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4)
-		$("#mid-block-s")
-		.css(
-				"top",
-				parseInt($(".header-row").height())
-				+ (parseInt($(window).height()
-						- (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((parseInt($(window).height())
-								- parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4))) / 2))
-								$("#mid-block-s").css("width", $(window).width() - $(window).width() / 5)
-								$("#mid-block-s").css("left", $(window).width() / 10)
-
+		$("#mid-block-s").css("top", parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((parseInt($(window).height())
+				- parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4))) / 2))
+				$("#mid-block-s").css("width", $(window).width() - $(window).width() / 5)
+				$("#mid-block-s").css("left", $(window).width() / 10)
 	} else {
 		rightExpanded = false;
 		$(".btn-right").toggleClass('clicked');
@@ -360,13 +297,10 @@ function btnRightClicked() {
 
 		$("#mid-block-s").hide();
 		$(".btn-right")
-		.animate(
-				{
-					top : "-="
-						+ (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
-								window).width()) < 1641) ? 11 : -5)) + "px",
-								left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
-				})
+		.animate({top : "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
+				window).width()) < 1641) ? 11 : -5)) + "px",
+				left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
+			})
 	}
 }
 
@@ -395,12 +329,8 @@ function btnCancelClicked() {
 		$(".about-box").show();
 
 		$("#mid-block-s").hide();
-		$(".btn-right").animate(
-				{
-					top : "-="
-						+ (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
-								window).width()) < 1641) ? 11 : -5)) + "px",
-								left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
-				})
+		$(".btn-right").animate({top : "-="+ (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
+				window).width()) < 1641) ? 11 : -5)) + "px", left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
+			})
 	}
 }
