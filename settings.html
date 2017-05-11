@@ -25,6 +25,13 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
+
+<link rel="stylesheet" href="css/awesomplete.css" />
+
+
+<script src="js/awesomplete.js" async></script>
+
+
 <link rel="stylesheet" href="css/jquery.collapsibleCheckboxTree.css"
 	type="text/css" />
 <link rel="stylesheet" href="css/settings.css" type="text/css" />
@@ -45,6 +52,10 @@
  -->
 <link rel="stylesheet" href="css/main.css">
 <style type="text/css">
+#example li {
+	padding:5px;
+}
+
 p {
 font-family: 'Roboto', sans-serif;
 }
@@ -218,34 +229,42 @@ body {
 			<h1 id="fav-header">Favorites</h1>
 			<h2 id="fav-subheader">Customize your alerts for specific
 				players, teams, or entire leagues!</h2>
-			<form id="tree-selector" action="" method="post">
-				<ul id="example">
-					<!-- <li id="premier_league"><input type="checkbox" name="" />
-						Pasdfasdfasdfasdf
-						<ul id="team">
-							<li><input type="checkbox" name="" checked="checked" />
-								asdfasdf
-								<ul id="player">
-									<li><input type="checkbox" name="" /> Ryan Giggs</li>
-									<li><input type="checkbox" name="" /> Paul Scholes</li>
-									<li><input type="checkbox" name="" /> Wayne Rooney</li>
-								</ul></li>
-							<li><input type="checkbox" name="" /> Chelsea
-								<ul>
-									<li><input type="checkbox" name="" /> Joe Cole</li>
-									<li><input type="checkbox" name="" /> Frank Lampard</li>
-									<li><input type="checkbox" name="" /> Didier Drogba</li>
-									<li><input type="checkbox" name="" /> John Terry</li>
-								</ul></li>
-							<li><input type="checkbox" name="" /> Liverpool
-								<ul>
-									<li><input type="checkbox" name="" /> Fernando Torres</li>
-									<li><input type="checkbox" name="" /> Steven Gerrard</li>
-								</ul></li>
-						</ul></li>   -->
-				</ul>
-			</form>
-
+			<div class="col-md-12 col-lg-12 col-sm-12 tree-selector-container">
+				<div class="col-md-6 col-lg-6 col-sm-6">
+					<form id="tree-selector" action="" method="post">
+						<ul id="example">
+							<!-- <li id="premier_league"><input type="checkbox" name="" />
+								Pasdfasdfasdfasdf
+								<ul id="team">
+									<li><input type="checkbox" name="" checked="checked" />
+										asdfasdf
+										<ul id="player">
+											<li><input type="checkbox" name="" /> Ryan Giggs</li>
+											<li><input type="checkbox" name="" /> Paul Scholes</li>
+											<li><input type="checkbox" name="" /> Wayne Rooney</li>
+										</ul></li>
+									<li><input type="checkbox" name="" /> Chelsea
+										<ul>
+											<li><input type="checkbox" name="" /> Joe Cole</li>
+											<li><input type="checkbox" name="" /> Frank Lampard</li>
+											<li><input type="checkbox" name="" /> Didier Drogba</li>
+											<li><input type="checkbox" name="" /> John Terry</li>
+										</ul></li>
+									<li><input type="checkbox" name="" /> Liverpool
+										<ul>
+											<li><input type="checkbox" name="" /> Fernando Torres</li>
+											<li><input type="checkbox" name="" /> Steven Gerrard</li>
+										</ul></li>
+								</ul></li>   -->
+						</ul>
+					</form>
+				</div>
+				<div class="col-md-6 col-lg-6 col-sm-6">
+					<input type="text"
+						class="form-control disable-time"
+						style="display: inline-block; width: 200px" class="search-player awesomplete"/>
+				</div>
+			</div>
 			<button type="button" class="btn btn-default btn-apply-green"
 				style="margin-top: 15px; width: 100%;">APPLY</button>
 		</div>

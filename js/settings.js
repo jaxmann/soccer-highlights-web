@@ -33,6 +33,19 @@ function retrievePlayersRequest(callback) {
 		},*/
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
+			var list = JSON.parse(result).list.map(function(i) { return i.player.replace(/^\s+/,"");}); //ltrim the left space
+			console.log(list)
+			new Awesomplete(document.querySelector("input"),{ 
+				list: list,
+				filter: function (text, input) { //accept regex entry
+					var regex = new RegExp(input, 'i')
+					if (text.match(regex)) {
+						return true
+					} else {
+						return false;
+					}
+				}
+			});
 			generateHTML(JSON.parse(result), function() {
 				retrieveFavorites();
 				callback();

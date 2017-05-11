@@ -351,10 +351,15 @@ table td {
 	overflow-y: auto;
 	overflow-x: hidden;
 	font-weight: bold;
+	
+}
+
+
+.tree-selector-container {
+	
 	border-top: 1px solid #ababab;
 	border-bottom: 1px solid #ababab;
 }
-
 #fav-header {
 	text-align: center;
 	font-size: 20px;
