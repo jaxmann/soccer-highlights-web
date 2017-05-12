@@ -9,10 +9,10 @@ function collapsibleCheckboxTree() {
 	});
 	if ($(window).width() > 992) {
 		$("#tree-selector").css("height",
-				parseInt($("#mid-block-f").height()) - 270) /*   un-hardcode this*/
+				parseInt($("#mid-block-f").height()) - 300) /*   un-hardcode this*/
 	} else {
 		$("#tree-selector").css("height",
-				parseInt($("#mid-block-f").height()) - 320) /*   un-hardcode this*/
+				parseInt($("#mid-block-f").height()) - 350) /*   un-hardcode this*/
 	}
 
 	$("#expand").css("display", "none")
@@ -34,7 +34,6 @@ function retrievePlayersRequest(callback) {
 		success : function(result) {
 			//console.log(JSON.parse(result).list)
 			var list = JSON.parse(result).list.map(function(i) { return i.player.replace(/^\s+/,"");}); //ltrim the left space
-			console.log(list)
 			new Awesomplete(document.querySelector("input"),{ 
 				list: list,
 				filter: function (text, input) { //accept regex entry
