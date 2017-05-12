@@ -245,7 +245,7 @@ body {
 					</div>
 					<div style="border-top: 1px solid #ababab; padding-top: 10px;">
 						
-						<input type="text"
+						<input id="awesomplete-input" type="text"
 						class="form-control disable-time"
 						style="display: inline-block; width: 200px;" class="search-player awesomplete"/>
 					</div>
@@ -391,6 +391,11 @@ body {
 		//if ($(window).width() > 1094) {
 		$("#logout-box").css('transform', 'translateY(50%)')
 		//}
+		
+		////
+		document.getElementById('awesomplete-input').addEventListener("awesomplete-select", function(event) {
+		    console.log( event.text.label, event.text.value );
+		});
 
 		$(document).ready(function() {
 			var pageLoaded = false;
