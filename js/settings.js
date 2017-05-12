@@ -224,7 +224,6 @@ function retrieveFavorites() {
 
 function checkBoxes(favorites) {
 	
-	console.log(favorites)
 	console.log("checkboxes called")
 	var boxTimer = Date.now();
 

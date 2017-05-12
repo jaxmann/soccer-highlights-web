@@ -244,10 +244,13 @@ body {
 						<div class="col-md-12""><p style="color:green">SEARCH</p></div>
 					</div>
 					<div style="border-top: 1px solid #ababab; padding-top: 10px;">
+						<div class="row">
+							<div class="col-md-6"><input id="awesomplete-input" type="text"
+							class="form-control disable-time"
+							style="display: inline-block; width: 200px;" class="search-player awesomplete"/></div>
+							<div class="col-md-6"><p style="color:light-green" id="search-response"></p></div>
+						</div>
 						
-						<input id="awesomplete-input" type="text"
-						class="form-control disable-time"
-						style="display: inline-block; width: 200px;" class="search-player awesomplete"/>
 					</div>
 					
 				</div>
@@ -396,6 +399,10 @@ body {
 		document.getElementById('awesomplete-input').addEventListener("awesomplete-select", function(event) {
 		    console.log( event.text.label, event.text.value );
 		    checkBoxes([{"player": event.text.value}]);
+		    document.getElementById("search-response").innerHTML = "Added " + event.text.value + "..."
+		    setTimeout(function() {
+		    	document.getElementById("search-response").innerHTML = ""
+			}, 3000)
 		});
 
 		$(document).ready(function() {
