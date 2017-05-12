@@ -395,6 +395,7 @@ body {
 		////
 		document.getElementById('awesomplete-input').addEventListener("awesomplete-select", function(event) {
 		    console.log( event.text.label, event.text.value );
+		    checkBoxes([{"player": event.text.value}]);
 		});
 
 		$(document).ready(function() {
