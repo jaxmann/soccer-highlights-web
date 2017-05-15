@@ -318,27 +318,37 @@ body {
 				</div>
 
 				<div id="about-text-area" style="display: none">
+					
+					<div class="row">
+						<div class="col-md-6">
+							<h1 id="about-header"
+							style="text-align: center; padding-bottom: 40px; font-size: 25px; font-weight: bold; color: #4286f4;font-family: 'Palanquin', sans-serif;">About</h1>
 
-					<h1 id="about-header"
-						style="text-align: center; padding-bottom: 40px; font-size: 25px; font-weight: bold; color: #4286f4;font-family: 'Palanquin', sans-serif;">About</h1>
-
-					<p>
-						With PMR, you can select European soccer players, teams, or
-						leagues you are interested in following. When a highlight by one
-						of your selected players is posted on the internet, we'll send you
-						an HD video link - within a minute or two (usually)! <br> <br>We crawl a
-						number of sites regularly. For every play posted in a play-by-play
-						feed you might check on your phone, we cross-reference that play
-						with video clips posted online minutes later, and send these links
-						directly to you! <br> <br>If you don't have time to
-						watch your game, we'll keep you caught up on any big plays you
-						might have missed! <br> <br>Got the game recorded
-						already and want to avoid spoilers? No problem! Modify your
-						settings to opt-out of notifications for a number of hours.<br><br>
-						Check out a live feed of every highlight we track <a href="https://twitter.com/pmr_notifier">here!</a>
-						 - you'll get a subset of these, depending on who you subscribe to. 
-					</p>
+							<p>
+								With PMR, you can select European soccer players, teams, or
+								leagues you are interested in following. When a highlight by one
+								of your selected players is posted on the internet, we'll send you
+								an HD video link - within a minute or two (usually)! <br> <br>We crawl a
+								number of sites regularly. For every play posted in a play-by-play
+								feed you might check on your phone, we cross-reference that play
+								with video clips posted online minutes later, and send these links
+								directly to you! <br> <br>If you don't have time to
+								watch your game, we'll keep you caught up on any big plays you
+								might have missed! <br> <br>Got the game recorded
+								already and want to avoid spoilers? No problem! Modify your
+								settings to opt-out of notifications for a number of hours.<br><br>
+								Check out a live feed of every highlight we track <a href="https://twitter.com/pmr_notifier">here!</a>
+								 - you'll get a subset of these, depending on who you subscribe to. 
+							</p>
+						</div>
+						
+						<div class="col-md-6" style="border:1px solid gray; border-radius:20px; margin-top:40px">
+							<a class="twitter-timeline" data-lang="en" data-width="100%" data-height="55%" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/pmr_notifier">Tweets by pmr_notifier</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						</div>
+					</div>
+					
 				</div>
+				
 			</div>
 		</div>
 
@@ -404,6 +414,8 @@ body {
 		    	document.getElementById("search-response").innerHTML = ""
 			}, 3000)
 		});
+		
+		
 
 		$(document).ready(function() {
 			var pageLoaded = false;
@@ -427,6 +439,7 @@ body {
 					pageLoaded = true;
 				})
 			}
+			
 			
 			
 			/* retrieveUserSettings(function() {
