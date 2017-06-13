@@ -257,8 +257,9 @@ function btnLeftClicked() {
 		$('.btn-left').toggleClass('hovered');
 		$("#btn_cont").css("border", "none")
 		$(".btn-right").hide();
+		$(".btn-left").hide();
 		$(".about-box").hide();
-		$(".btn-left").animate({top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) + "px", left : "-=" + (parseInt($(".btn-left").offset().left)) + "px"})
+		//$(".btn-left").animate({top : "-=" + (parseInt($(".btn-left").offset().top) - parseInt($(".header-row").height())) + "px", left : "-=" + (parseInt($(".btn-left").offset().left)) + "px"})
 		$("#mid-block-f").css("display", "block")
 		$("#mid-block-f").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height()))/ 2 + $(window).height()/ 4)
 			$("#mid-block-f").css("top", parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer")
@@ -271,10 +272,11 @@ function btnLeftClicked() {
 		$('.btn-left').toggleClass('hovered');
 		$("#btn_cont").css("border", "2px solid #fff")
 		$(".btn-right").show();
+		$(".btn-left").show();
 		$(".about-box").show();
 
 		$("#mid-block-f").hide();
-		$(".btn-left").animate({top : "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) - 2) + "px", left : "+=" + (parseInt(leftInitOffset.left) - 2) + "px"})
+		//$(".btn-left").animate({top : "+=" + (parseInt(leftInitOffset.top) - parseInt($(".header-row").height()) - 2) + "px", left : "+=" + (parseInt(leftInitOffset.left) - 2) + "px"})
 	}
 
 }
@@ -287,12 +289,13 @@ function btnRightClicked() {
 		$(".btn-right").toggleClass('hovered');
 		$("#btn_cont").css("border", "none")
 		$(".btn-left").hide();
+		$(".btn-right").hide();
 		$(".about-box").hide();
 
-		$(".btn-right").animate({
+		/*$(".btn-right").animate({
 			top : "-=" + (parseInt($(".btn-right").offset().top + parseInt($("#btn_cont").height()) - parseInt($(".footer").offset().top) + 20)) + "px",
 			left : "+=" + (parseInt($(window).width() - parseInt($(".btn-right").offset().left) - parseInt($(".btn-right").width()) - 80)) + "px"
-		})
+		})*/
 		$("#mid-block-s").css("display", "block")
 		$("#mid-block-s").css("height", (parseInt($(window).height()) - parseInt($(".header-row").height()) - parseInt($(".footer").height())) / 2 + $(window).height() / 4)
 		$("#mid-block-s").css("top", parseInt($(".header-row").height()) + (parseInt($(window).height() - (parseInt($(".header").height()) + parseInt($(".footer").height()) + ((parseInt($(window).height())
@@ -305,14 +308,14 @@ function btnRightClicked() {
 		$(".btn-right").toggleClass('hovered');
 		$("#btn_cont").css("border", "2px solid #fff");
 		$(".btn-left").show();
+		$(".btn-right").show();
 		$(".about-box").show();
 
 		$("#mid-block-s").hide();
-		$(".btn-right")
-		.animate({top : "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
+		/*$(".btn-right").animate({top : "-=" + (parseInt($(window).height()) - parseInt(rightInitOffset.top) - parseInt($(".footer").height()) - parseInt($(".header-row").height()) + ((parseInt($(
 				window).width()) < 1641) ? 11 : -5)) + "px",
 				left : "-=" + (parseInt(rightInitOffset.left) - parseInt($(".btn-right").width()) - 80) + "px"
-			})
+			})*/
 	}
 }
 
@@ -324,6 +327,7 @@ function btnCancelClicked() {
 		$('.btn-left').toggleClass('hovered');
 		$("#btn_cont").css("border", "2px solid #fff")
 		$(".btn-right").show();
+		$(".btn-left").show();
 		$(".about-box").show();
 
 		$("#mid-block-f").hide();
@@ -338,6 +342,7 @@ function btnCancelClicked() {
 		$(".btn-right").toggleClass('hovered');
 		$("#btn_cont").css("border", "2px solid #fff");
 		$(".btn-left").show();
+		$(".btn-right").show();
 		$(".about-box").show();
 
 		$("#mid-block-s").hide();
