@@ -456,8 +456,8 @@ table td {
 
 .btn-settings {
 	border: 1px solid #4286f4;
- 	background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
-    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+ 	background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #d4d9dc  90%);
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #d4d9dc  90%);
 }
 
 .btn-settings:active, .btn-settings:selected {
@@ -477,8 +477,8 @@ table td {
 
 .btn-favorites {
 	border: 1px solid green;
- 	background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
-    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+ 	background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #d4d9dc  90%);
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #d4d9dc  90%);
 }
 
 .btn-favorites:active, .btn-favorites:selected {
