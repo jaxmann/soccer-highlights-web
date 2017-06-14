@@ -25,7 +25,6 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-
 <link rel="stylesheet" href="css/awesomplete.css" />
 
 
@@ -220,7 +219,7 @@ body {
 		</div>
 	</div>
 	<!-- header large-->
-
+	
 	<div id="mid-block-f"
 		style="height: 80%; display: none; position: absolute;" class="row">
 		<div class="col-md-12 blurry-block"
@@ -404,6 +403,8 @@ body {
 			
 		document.title = 'Settings - ' + QueryString.username
 		
+		
+		
 		players = {}
 		thisUsername = "none";
 		if (QueryString.username) {
@@ -457,6 +458,8 @@ body {
 			/* retrieveUserSettings(function() {
 				console.log('all done loading settings')
 			}) */
+			
+			
 
 			$('.btn-left').on('click', function() {
 				if (pageLoaded) {
