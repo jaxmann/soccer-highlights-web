@@ -16,7 +16,7 @@ function createAccountClicked() {
 	thisPhoneNum = $("#signup-phone").val();
 	thisEmail = $("#signup-email").val();
 	thisPass = $("#signup-password").val();
-	var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	var phoneno = ".*"; //  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 	var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
 	
 	if (thisUsername.length < 5) {
