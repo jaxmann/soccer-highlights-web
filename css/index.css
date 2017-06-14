@@ -25,12 +25,48 @@
 	
 }
 
-@media ( min-width : 781px ) and (max-width : 1150px) {
+@media ( min-width : 781px ) and (max-width : 940px) {
 	.card-main {
 		visibility: hidden;
 	}
 	.circle-container {
 		display:block !important;
+	}
+	
+	#main-subtitle {
+		font-size:16px;
+	}
+	
+}
+
+@media ( min-width : 941px ) and (max-width : 1150px) {
+	.card-main {
+		visibility: hidden;
+	}
+	.circle-container {
+		display:block !important;
+		margin-top:3% !important;
+	}
+	
+	#main-subtitle {
+		font-size:16px;
+	}
+	
+}
+
+@media ( min-width : 1151px ) and (max-width : 1449px) {
+	.header-button {
+		height: 60px;
+	}
+	.grad {
+		height: 60px
+	}
+	.title-button {
+		height: 100%;
+	}
+	
+	#main-subtitle {
+		font-size:16px;
 	}
 	
 }
@@ -51,6 +87,8 @@
 		top: 50%;
 		transform: translateY(25%);
 	} */
+	
+	
 	
 }
 
