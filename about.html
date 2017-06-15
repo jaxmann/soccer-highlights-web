@@ -89,11 +89,11 @@ label:before {
 }
 
 label[for*='1']:before {
-    content: '\f1cb';
+    content: '\f05a';
 }
 
 label[for*='2']:before {
-    content: '\f17d';
+    content: '\f109';
 }
 
 label[for*='3']:before {
@@ -112,7 +112,7 @@ label:hover {
 input:checked + label {
     color: #555;
     border: 1px solid #ddd;
-    border-top: 2px solid orange;
+    border-top: 2px solid #4286f4;
     border-bottom: 1px solid #fff;
 }
 
@@ -243,17 +243,24 @@ input:checked + label {
 			to avoid spoilers? No problem! Modify your settings to opt-out of
 			notifications for a number of hours.<br>
 			<br> Check out a live feed of every highlight we track <a
-				href="https://twitter.com/pmr_notifier">on Twitter!</a> (or below) - you'll get a
+				href="https://twitter.com/pmr_notifier">on Twitter!</a> - you'll get a
 			subset of these, depending on who you subscribe to.
 		</p>
 	 </section>
 	 
-	 <section id="content2">
-	  
-		<div class="col-md-6 twitter-feed" style="border:1px solid gray; border-radius:20px; margin-top:40px">
-				<a class="twitter-timeline" data-lang="en" data-width="100%" data-height="42%" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/pmr_notifier">Tweets by pmr_notifier</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	 <section id="content2" style="">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 twitter-feed" style="margin-top: 40px; height:80%">
+					<a class="twitter-timeline" data-lang="en" data-width="100%"
+						data-height="100%" data-theme="light" data-link-color="#2B7BB9"
+						href="https://twitter.com/pmr_notifier">Tweets by pmr_notifier</a>
+					<script async src="//platform.twitter.com/widgets.js"
+						charset="utf-8"></script>
+				</div>
+				<div class="col-md-2"></div>
 			</div>
-	 </section>
+		</section>
 		
 		<!-- <div id="about-text-area">
 			<div class="row">
@@ -314,6 +321,8 @@ input:checked + label {
 			}
 			return query_string;
 		}();
+		
+		$(".about-box").css("height",$(window).height() - 60 - 44 - 40) /* header - footer - margin-top */
 		
 		
 		$(document).ready(function() {
