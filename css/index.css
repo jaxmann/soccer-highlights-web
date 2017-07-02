@@ -25,11 +25,13 @@
 	
 }
 
-@media ( min-width : 781px ) and (max-width : 940px) {
+@media ( min-width : 781px ) and (max-width : 940px) and (min-height: 750px) {
 	.card-main {
 		visibility: hidden;
 	}
-	
+	.circle-container {
+		display:block !important;
+	}
 	
 	#main-subtitle {
 		font-size:16px;
@@ -37,7 +39,7 @@
 	
 }
 
-@media ( min-width : 941px ) and (max-width : 1150px) {
+@media ( min-width : 941px ) and (max-width : 1150px) and (min-height:750px) {
 	.card-main {
 		visibility: hidden;
 	}
@@ -50,6 +52,16 @@
 		font-size:16px;
 	}
 	
+}
+
+@media ( min-width : 780px ) and (max-width : 1150px) and (max-height:750px) {
+	.card-main {
+		visibility: hidden;
+	}
+	
+	#main-subtitle {
+		font-size:16px;
+	}
 }
 
 @media ( min-width : 1151px ) and (max-width : 1449px) {
