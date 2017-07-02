@@ -29,9 +29,7 @@
 	.card-main {
 		visibility: hidden;
 	}
-	.circle-container {
-		display:block !important;
-	}
+	
 	
 	#main-subtitle {
 		font-size:16px;
