@@ -1,23 +1,17 @@
-     _____     ___ ___     _ __  
-    /\ '__`\ /' __` __`\  /\`'__\
-    \ \ \L\ \/\ \/\ \/\ \ \ \ \/ 
-     \ \ ,__/\ \_\ \_\ \_\ \ \_\ 
-      \ \ \/  \/_/\/_/\/_/  \/_/ 
-       \ \_\                     
-        \/_/   
 
-# pmr-web < 20
+# Soccer Highlights
+
 just the webapp though
 
 &nbsp;
 
-### PMR Services
+### S Services
 
-[pmr-server](https://github.com/jaxmann/pmr-server)
+[s-server](https://github.com/jaxmann/s-server)
 
 [pmr-rest](https://github.com/kevinchesser/pmr-rest)
 
-[pmr-web](https://github.com/jaxmann/pmr-web)
+[s-web](https://github.com/jaxmann/s-web)
 
 ## Usage
 
